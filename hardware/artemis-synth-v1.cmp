@@ -1,0 +1,423 @@
+Cmp-Mod V01 Created by CvPcb (2011-nov-30)-testing date = Wed 27 Jun 2012 01:15:06 PM EDT
+
+BeginCmp
+TimeStamp = /4FE8EE52;
+Reference = BT1;
+ValeurCmp = BATTERY;
+IdModule  = 2PIN EXTERNAL WITH SUPPORT HOLES;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FEA30D9;
+Reference = C1;
+ValeurCmp = .1uF;
+IdModule  = C1;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FE9268A;
+Reference = C2;
+ValeurCmp = 22pF;
+IdModule  = C1;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FE9268E;
+Reference = C3;
+ValeurCmp = 22pF;
+IdModule  = C1;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FDC0590;
+Reference = C4;
+ValeurCmp = 10uF;
+IdModule  = SparkFun-CPOL-RADIAL-10UF-25V;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FDC0550;
+Reference = C5;
+ValeurCmp = .1uF;
+IdModule  = C1;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FDE5025;
+Reference = C6;
+ValeurCmp = .1uF;
+IdModule  = C1;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FDAB71E;
+Reference = C7;
+ValeurCmp = .1uF;
+IdModule  = C1;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FE8EEFB;
+Reference = C8;
+ValeurCmp = .1uF;
+IdModule  = C1;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FE4C461;
+Reference = C9;
+ValeurCmp = .01uF;
+IdModule  = C1;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FE4E18B;
+Reference = C10;
+ValeurCmp = 10uF;
+IdModule  = SparkFun-CPOL-RADIAL-10UF-25V;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FE4E194;
+Reference = C11;
+ValeurCmp = .1uF;
+IdModule  = C1;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FDE49DE;
+Reference = C12;
+ValeurCmp = .1uF;
+IdModule  = C1;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FE4E2B1;
+Reference = C13;
+ValeurCmp = .1uF;
+IdModule  = C1;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FE4E2BE;
+Reference = C14;
+ValeurCmp = .1uF;
+IdModule  = C1;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FE60A3A;
+Reference = D1;
+ValeurCmp = 3V6;
+IdModule  = D4;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FE60A45;
+Reference = D2;
+ValeurCmp = 3V6;
+IdModule  = D4;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FE9212D;
+Reference = D3;
+ValeurCmp = LED;
+IdModule  = LED-5MM;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FE923C2;
+Reference = D4;
+ValeurCmp = LED;
+IdModule  = LED-5MM;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FE92131;
+Reference = D5;
+ValeurCmp = LED;
+IdModule  = LED-5MM;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FE923C1;
+Reference = D6;
+ValeurCmp = LED;
+IdModule  = LED-5MM;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FE9213A;
+Reference = D7;
+ValeurCmp = LED;
+IdModule  = LED-5MM;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FE923C0;
+Reference = D8;
+ValeurCmp = LED;
+IdModule  = LED-5MM;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FE923B3;
+Reference = D9;
+ValeurCmp = LED;
+IdModule  = LED-5MM;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FE923BF;
+Reference = D10;
+ValeurCmp = LED;
+IdModule  = LED-5MM;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FDABFE3;
+Reference = IC1;
+ValeurCmp = ATMEGA328P;
+IdModule  = DIP-28__300;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FEB3A7D;
+Reference = J1;
+ValeurCmp = USB_2_MB;
+IdModule  = SparkFun-USB-MB-H;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FDABF46;
+Reference = J2;
+ValeurCmp = AVR-ISP-6;
+IdModule  = pin_array_3x2;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FEA2A59;
+Reference = R1;
+ValeurCmp = 2.2K;
+IdModule  = R4;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FE60938;
+Reference = R2;
+ValeurCmp = 68;
+IdModule  = R4;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FE6093F;
+Reference = R3;
+ValeurCmp = 68;
+IdModule  = R4;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FE925BF;
+Reference = R4;
+ValeurCmp = 47;
+IdModule  = R4;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FE925CB;
+Reference = R5;
+ValeurCmp = 47;
+IdModule  = R4;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FE925DA;
+Reference = R6;
+ValeurCmp = 47;
+IdModule  = R4;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FE925EE;
+Reference = R7;
+ValeurCmp = 47;
+IdModule  = R4;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FE9315D;
+Reference = R8;
+ValeurCmp = 10K;
+IdModule  = R4;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FDE503B;
+Reference = R9;
+ValeurCmp = 100k;
+IdModule  = R4;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FE933EF;
+Reference = R10;
+ValeurCmp = LDR;
+IdModule  = SIL-2;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FE93373;
+Reference = R11;
+ValeurCmp = 100K;
+IdModule  = R4;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FE9337B;
+Reference = R12;
+ValeurCmp = 1K;
+IdModule  = R4;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FE93379;
+Reference = R13;
+ValeurCmp = 1K;
+IdModule  = R4;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FE4C455;
+Reference = R14;
+ValeurCmp = 1.5k;
+IdModule  = R4;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FE4E2AB;
+Reference = R15;
+ValeurCmp = 4.7;
+IdModule  = R4;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FE4E2BB;
+Reference = R16;
+ValeurCmp = 4.7;
+IdModule  = R4;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FE4E272;
+Reference = RV1;
+ValeurCmp = 100K;
+IdModule  = THUMBWHEEL_POT_3352T;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FE4E2E3;
+Reference = SP1;
+ValeurCmp = SPEAKER;
+IdModule  = 2PIN EXTERNAL WITH SUPPORT HOLES;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FEA3AC8;
+Reference = SW1;
+ValeurCmp = SWITCH_PUSH_CW;
+IdModule  = SparkFun-TACTILE-PTH-12MM;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FE8EFE5;
+Reference = SW2;
+ValeurCmp = SWITCH_PUSH_CW;
+IdModule  = SparkFun-TACTILE-PTH-12MM;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FE8EFF0;
+Reference = SW3;
+ValeurCmp = SWITCH_PUSH_CW;
+IdModule  = SparkFun-TACTILE-PTH-12MM;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FE8EFF4;
+Reference = SW4;
+ValeurCmp = SWITCH_PUSH_CW;
+IdModule  = SparkFun-TACTILE-PTH-12MM;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FE8EFF7;
+Reference = SW5;
+ValeurCmp = SWITCH_PUSH_CW;
+IdModule  = SparkFun-TACTILE-PTH-12MM;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FE8EFFA;
+Reference = SW6;
+ValeurCmp = SWITCH_PUSH_CW;
+IdModule  = SparkFun-TACTILE-PTH-12MM;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FE8F267;
+Reference = SW7;
+ValeurCmp = SWITCH_PUSH_CW;
+IdModule  = SparkFun-TACTILE-PTH-12MM;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FE8F266;
+Reference = SW8;
+ValeurCmp = SWITCH_PUSH_CW;
+IdModule  = SparkFun-TACTILE-PTH-12MM;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FE8F265;
+Reference = SW9;
+ValeurCmp = SWITCH_PUSH_CW;
+IdModule  = SparkFun-TACTILE-PTH-12MM;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FE8F264;
+Reference = SW10;
+ValeurCmp = SWITCH_PUSH_CW;
+IdModule  = SparkFun-TACTILE-PTH-12MM;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FE8F263;
+Reference = SW11;
+ValeurCmp = SWITCH_PUSH_CW;
+IdModule  = SparkFun-TACTILE-PTH-12MM;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FDE48FE;
+Reference = U1;
+ValeurCmp = MCP4921;
+IdModule  = DIP-8__300;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FDC04EF;
+Reference = U2;
+ValeurCmp = TDA2722M;
+IdModule  = DIP-8__300;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FE92681;
+Reference = X1;
+ValeurCmp = 16MHz;
+IdModule  = HC-49V;
+EndCmp
+
+EndListe
