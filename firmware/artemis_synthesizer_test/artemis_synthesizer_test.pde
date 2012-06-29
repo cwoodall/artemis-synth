@@ -3,7 +3,7 @@
 #include <util/delay.h>
 #include "HRL_SPI.h"
 #include "HRL_MCP492x.h"
-#include "notes.h"
+#include "notes.h" // Note increments (format Q9.7)
 
 // 256 samples = 1 wave
 // 22kHz Sample frequency
