@@ -1,8 +1,8 @@
-# EESchema Netlist Version 1.1 created  Wed 27 Jun 2012 03:35:12 PM EDT
+# EESchema Netlist Version 1.1 created  Mon 02 Jul 2012 09:41:53 AM EDT
 (
  ( /4FE933EF SIL-2  R10 LDR {Lib=RVAR}
   (    1 +3.3V )
-  (    2 N-000019 )
+  (    2 N-000016 )
  )
  ( /4FE9337B R4  R12 1K {Lib=R}
   (    1 +3.3V )
@@ -13,7 +13,7 @@
   (    2 GND )
  )
  ( /4FE93373 R4  R11 100K {Lib=R}
-  (    1 N-000019 )
+  (    1 N-000016 )
   (    2 GND )
  )
  ( /4FE9315D R4  R8 10K {Lib=R}
@@ -125,7 +125,7 @@
   (    4 GND )
  )
  ( /4FE8EEFB C1  C8 .1uF {Lib=C}
-  (    1 N-000028 )
+  (    1 N-000021 )
   (    2 N-000035 )
  )
  ( /4FE8EE52 2PIN  BT1 BATTERY {Lib=BATTERY}
@@ -150,14 +150,14 @@
  )
  ( /4FDE5025 C1  C6 .1uF {Lib=C}
   (    1 GND )
-  (    2 N-000003 )
+  (    2 N-000025 )
  )
  ( /4FE4E2E3 2PIN  SP1 SPEAKER {Lib=SPEAKER}
-  (    1 N-000020 )
-  (    2 N-000001 )
+  (    1 N-000023 )
+  (    2 N-000024 )
  )
  ( /4FE4E2BE C1  C14 .1uF {Lib=C}
-  (    1 N-000020 )
+  (    1 N-000023 )
   (    2 N-000039 )
  )
  ( /4FE4E2BB R4  R16 4.7 {Lib=R}
@@ -165,35 +165,35 @@
   (    2 GND )
  )
  ( /4FE4E2B1 C1  C13 .1uF {Lib=C}
-  (    1 N-000001 )
+  (    1 N-000024 )
   (    2 N-000040 )
  )
  ( /4FE4E2AB R4  R15 4.7 {Lib=R}
   (    1 N-000040 )
   (    2 GND )
  )
- ( /4FE4E272 THUMBWHEEL_POT_3352T  RV1 100K {Lib=POT}
-  (    1 N-000028 )
-  (    2 N-000029 )
+ ( /4FE4E272 THUMBWHEEL_POT_3352T  RV1 1K {Lib=POT}
+  (    1 N-000020 )
+  (    2 N-000027 )
   (    3 GND )
  )
  ( /4FDC04EF DIP-8__300  U2 TDA2722M {Lib=TDA2822M}
-  (    1 N-000020 )
+  (    1 N-000023 )
   (    2 +3.3V )
-  (    3 N-000001 )
+  (    3 N-000024 )
   (    4 GND )
-  (    5 N-000002 )
+  (    5 N-000028 )
   (    6 GND )
-  (    7 N-000029 )
-  (    8 N-000007 )
+  (    7 N-000027 )
+  (    8 N-000029 )
  )
  ( /4FE4E194 C1  C11 .1uF {Lib=C}
-  (    1 N-000002 )
+  (    1 N-000028 )
   (    2 GND )
  )
  ( /4FE4E18B SparkFun-CPOL-RADIAL-10UF-25V  C10 10uF {Lib=CP1}
-  (    1 N-000007 )
-  (    2 N-000002 )
+  (    1 N-000029 )
+  (    2 N-000028 )
  )
  ( /4FE4C461 C1  C9 .01uF {Lib=C}
   (    1 N-000035 )
@@ -201,11 +201,11 @@
  )
  ( /4FE4C455 R4  R14 1.5k {Lib=R}
   (    1 N-000035 )
-  (    2 N-000004 )
+  (    2 N-000026 )
  )
  ( /4FDE503B R4  R9 100k {Lib=R}
   (    1 +3.3V )
-  (    2 N-000003 )
+  (    2 N-000025 )
  )
  ( /4FDE49DE C1  C12 .1uF {Lib=C}
   (    1 GND )
@@ -217,9 +217,9 @@
   (    3 /SCK )
   (    4 /MOSI )
   (    5 GND )
-  (    6 N-000003 )
+  (    6 N-000025 )
   (    7 GND )
-  (    8 N-000004 )
+  (    8 N-000026 )
  )
  ( /4FDC0550 C1  C5 .1uF {Lib=C}
   (    1 +3.3V )
@@ -237,7 +237,7 @@
   (    9 /XTAL1 )
   (   10 /XTAL2 )
   (   11 /BT5 )
-  (   12 N-000019 )
+  (   12 N-000016 )
   (   13 N-000015 )
   (   14 /BT6 )
   (   15 /BT7 )
@@ -268,19 +268,22 @@
   (    2 +3.3V )
  )
  ( /4FEA2A59 R4  R1 2.2K {Lib=R}
-  (    1 N-000025 )
+  (    1 N-000018 )
   (    2 /D- )
  )
  ( /4FEA30D9 C1  C1 .1uF {Lib=C}
   (    1 GND )
-  (    2 N-000025 )
+  (    2 N-000018 )
  )
- ( /4FEB3A7D SparkFun-USB-MB-H  J1 USB_2_MB {Lib=USB_2_MB}
-  (   D+ /D- )
-  (   D- /D+ )
-  (  GND GND )
-  (   ID ? )
-  ( VBUS N-000025 )
+ ( /4FEC8EFF R4  R4 50K {Lib=R}
+  (    1 N-000020 )
+  (    2 N-000021 )
+ )
+ ( /4FF1A71F USB_B  J1 USB_2 {Lib=USB_2}
+  (    1 N-000018 )
+  (    2 /D- )
+  (    3 /D+ )
+  (    4 GND )
  )
 )
 *
@@ -512,152 +515,105 @@ $component C1
  C?
  C1-1
 $endlist
+$component R4
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
 $endfootprintlist
 }
 { Pin List by Nets
-Net 1 "" ""
- C13 1
- SP1 2
- U2 3
-Net 2 "" ""
- C11 1
- C10 2
- U2 5
-Net 3 "" ""
- U1 6
- C6 2
- R9 2
-Net 4 "" ""
- U1 8
- R14 2
-Net 5 "/MOSI" "MOSI"
+Net 1 "/BT3" "BT3"
+ SW5 1
+ SW5 2
+ IC1 5
+Net 2 "/BT1" "BT1"
+ SW3 1
+ SW3 2
+ IC1 3
+Net 3 "/BT0" "BT0"
+ SW2 2
+ SW2 1
+ IC1 2
+Net 4 "/BT8" "BT8"
+ SW10 1
+ SW10 2
+ IC1 27
+Net 5 "/BT9" "BT9"
+ IC1 28
+ SW11 2
+ SW11 1
+Net 6 "/BT6" "BT6"
+ SW8 1
+ IC1 14
+ SW8 2
+Net 7 "/BT5" "BT5"
+ SW7 1
+ IC1 11
+ SW7 2
+Net 8 "/BT7" "BT7"
+ SW9 2
+ IC1 15
+ SW9 1
+Net 9 "/L3" "L3"
+ IC1 26
+ D10 1
+ D9 2
+Net 10 "/L1" "L1"
+ IC1 24
+ D6 1
+ D5 2
+Net 11 "/MOSI" "MOSI"
  U1 4
  IC1 17
  J2 4
-Net 6 "/MISO" "MISO"
- J2 1
+Net 12 "/MISO" "MISO"
  IC1 18
-Net 7 "" ""
- U2 8
- C10 1
-Net 8 "/BT9" "BT9"
- SW11 1
- IC1 28
- SW11 2
-Net 9 "/BT8" "BT8"
- SW10 2
- SW10 1
- IC1 27
-Net 10 "/L2" "L2"
+ J2 1
+Net 13 "/L2" "L2"
+ D7 2
  IC1 25
  D8 1
- D7 2
-Net 11 "/BT7" "BT7"
- IC1 15
- SW9 2
- SW9 1
-Net 12 "/L1" "L1"
- D6 1
- IC1 24
- D5 2
-Net 13 "/BT6" "BT6"
- IC1 14
- SW8 1
- SW8 2
 Net 14 "/L0" "L0"
+ D4 1
  D3 2
  IC1 23
- D4 1
 Net 15 "" ""
- IC1 13
  R13 1
  R12 2
-Net 17 "/BT5" "BT5"
- IC1 11
- SW7 1
- SW7 2
-Net 18 "/L3" "L3"
- D10 1
- IC1 26
- D9 2
-Net 19 "" ""
- R10 2
+ IC1 13
+Net 16 "" ""
  R11 1
  IC1 12
-Net 20 "" ""
- C14 1
- SP1 1
- U2 1
-Net 21 "/BT3" "BT3"
- IC1 5
- SW5 1
- SW5 2
-Net 22 "/BT0" "BT0"
- SW2 1
- SW2 2
- IC1 2
-Net 23 "/BT1" "BT1"
- IC1 3
- SW3 2
- SW3 1
-Net 25 "" ""
+ R10 2
+Net 18 "" ""
+ J1 1
  C1 2
  R1 1
- J1 VBUS
-Net 26 "+3.3V" "+3.3V"
- R10 1
- D7 1
- D9 1
- IC1 7
- C5 1
- R8 1
- D3 1
- R12 1
- R9 1
- J2 2
- IC1 20
- C12 2
- U1 1
- U2 2
- BT1 1
- C7 2
- D5 1
-Net 27 "GND" "GND"
- SW6 4
- SW5 3
- SW6 3
- SW11 4
- BT1 2
- SW5 4
- C12 1
- C9 2
- U1 5
- C11 2
- U2 6
- U1 7
- U2 4
- C5 2
- C2 2
- C3 2
- D2 1
- D1 1
- R11 2
- R13 2
- D10 2
- D8 2
- D6 2
- D4 2
+Net 19 "GND" "GND"
  R15 2
- RV1 3
- IC1 22
+ C3 2
  R16 2
- J2 6
- C7 1
- SW2 3
- SW2 4
- J1 GND
- C6 1
+ SW6 3
+ SW3 4
+ SW3 3
+ SW4 4
+ SW4 3
+ SW5 4
+ SW5 3
+ SW6 4
+ SW11 3
+ R13 2
+ R11 2
+ SW11 4
+ C2 2
+ D4 2
  IC1 8
+ D6 2
+ D8 2
+ D10 2
  SW7 3
  SW10 4
  SW10 3
@@ -666,65 +622,122 @@ Net 27 "GND" "GND"
  SW8 4
  SW8 3
  SW7 4
- SW11 3
- SW3 4
- SW3 3
- SW4 4
- SW4 3
+ IC1 22
  C1 1
-Net 28 "" ""
- C8 1
+ C6 1
+ C7 1
+ J2 6
+ D2 1
+ D1 1
+ RV1 3
+ U1 5
+ U1 7
+ BT1 2
+ U2 6
+ J1 4
+ C11 2
+ C9 2
+ C12 1
+ C5 2
+ U2 4
+ SW2 3
+ SW2 4
+Net 20 "" ""
+ R4 1
  RV1 1
-Net 29 "" ""
+Net 21 "" ""
+ C8 1
+ R4 2
+Net 22 "+3.3V" "+3.3V"
+ C5 1
+ C7 2
+ U1 1
+ C12 2
+ R9 1
+ U2 2
+ IC1 20
+ R8 1
+ J2 2
+ BT1 1
+ D5 1
+ R12 1
+ D3 1
+ R10 1
+ D7 1
+ D9 1
+ IC1 7
+Net 23 "" ""
+ SP1 1
+ C14 1
+ U2 1
+Net 24 "" ""
+ C13 1
+ U2 3
+ SP1 2
+Net 25 "" ""
+ U1 6
+ C6 2
+ R9 2
+Net 26 "" ""
+ U1 8
+ R14 2
+Net 27 "" ""
  U2 7
  RV1 2
+Net 28 "" ""
+ C11 1
+ C10 2
+ U2 5
+Net 29 "" ""
+ C10 1
+ U2 8
 Net 30 "/BT4" "BT4"
  SW6 1
  SW6 2
  IC1 6
  R2 1
 Net 31 "/BT2" "BT2"
- R3 1
  SW4 1
  SW4 2
+ R3 1
  IC1 4
 Net 32 "/XTAL2" "XTAL2"
  IC1 10
  X1 2
  C3 1
 Net 33 "/XTAL1" "XTAL1"
- IC1 9
  C2 1
+ IC1 9
  X1 1
 Net 34 "/RST" "RST"
+ IC1 1
  R8 2
  J2 5
- IC1 1
 Net 35 "" ""
- C8 2
- R14 1
  C9 1
+ R14 1
+ C8 2
 Net 36 "/SCK" "SCK"
- J2 3
- IC1 19
  U1 3
+ IC1 19
+ J2 3
 Net 37 "/CS/" "CS/"
  IC1 16
  U1 2
 Net 38 "/D+" "D+"
  D2 2
- J1 D-
+ J1 3
  R3 2
 Net 39 "" ""
- C14 2
  R16 1
+ C14 2
 Net 40 "" ""
- R15 1
  C13 2
+ R15 1
 Net 41 "/D-" "D-"
- R2 2
- R1 2
+ J1 2
  D1 2
- J1 D+
+ R1 2
+ R2 2
 }
 #End
