@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by PcbNew date = Mon 02 Jul 2012 09:42:34 AM EDT
+Cmp-Mod V01 Created by PcbNew date = Mon 02 Jul 2012 04:28:45 PM EDT
 
 BeginCmp
 TimeStamp = /4FE8EE52;
@@ -382,7 +382,7 @@ BeginCmp
 TimeStamp = /4FE8F265;
 Reference = SW9;
 ValeurCmp = SWITCH_PUSH_CW;
-IdModule  = SparkFun-TACTILE-PTH-12MM;
+IdModule  = TACTILE-PTH-12MM;
 EndCmp
 
 BeginCmp
