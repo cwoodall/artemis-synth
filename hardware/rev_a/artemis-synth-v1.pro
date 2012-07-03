@@ -1,4 +1,4 @@
-update=Fri 29 Jun 2012 02:38:53 PM EDT
+update=Monday, July 02, 2012 09:39:58 PM
 version=1
 last_client=pcbnew
 [general]
@@ -76,7 +76,6 @@ NetIExt=net
 EquName1=devcms
 [pcbnew]
 version=1
-LastNetListRead=
 PadDrlX=320
 PadDimH=600
 PadDimV=600
@@ -91,8 +90,9 @@ DrawLar=150
 EdgeLar=150
 TxtLar=120
 MSegLar=80
+LastNetListRead=
 [pcbnew/libraries]
-LibDir=
+LibDir=lib
 LibName1=sockets
 LibName2=connect
 LibName3=discret
