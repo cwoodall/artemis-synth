@@ -136,15 +136,13 @@ print """/**
  * Generates macros for increments for looking into wave tables for
  * note frequencies between C0 and C8
  */
+
 #ifndef _notes_h_
 #define _notes_h_
-<<<<<<< HEAD
-""" % (m, q, samples, sample_rate)
-=======
 
 #define NOTES_BASE %d
 """ % (m, q, samples, sample_rate, q)
->>>>>>> b722b5b7f2baadd6f2a5fa7d339ea1ab79f4ff35
+
 for i in range(len(note_names)):
     print "#define %s %s" % (note_names[i], freqs[i].hex())
 

@@ -1,9 +1,4 @@
 #!/usr/bin/python
-<<<<<<< HEAD
-=======
-from math import floor
->>>>>>> b722b5b7f2baadd6f2a5fa7d339ea1ab79f4ff35
-
 class UFixedPoint(object):
     def __init__(self, num, m, n):
         self.mask = 2**(m + n) - 1
@@ -11,11 +6,7 @@ class UFixedPoint(object):
         self.m = m
         self.n = n
         
-<<<<<<< HEAD
         temp = int(num * 2**self.n)
-=======
-        temp =int(round(num * 2**self.n))
->>>>>>> b722b5b7f2baadd6f2a5fa7d339ea1ab79f4ff35
         self.value = temp & self.mask
 
     def __add__(self, other):

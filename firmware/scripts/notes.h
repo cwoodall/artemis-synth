@@ -12,10 +12,12 @@
  * Generates macros for increments for looking into wave tables for
  * note frequencies between C0 and C8
  */
+
 #ifndef _notes_h_
 #define _notes_h_
 
-<<<<<<< HEAD
+#define NOTES_BASE 7
+
 #define C0 0x18
 #define Cs0 0x19
 #define D0 0x1b
@@ -94,88 +96,6 @@
 #define Ds6 0x73d
 #define E6 0x7ab
 #define F6 0x820
-=======
-#define NOTES_BASE 7
-
-#define C0 0x18
-#define Cs0 0x1a
-#define D0 0x1b
-#define Ds0 0x1d
-#define E0 0x1f
-#define F0 0x21
-#define Fs0 0x22
-#define G0 0x24
-#define Gs0 0x27
-#define A0 0x29
-#define As0 0x2b
-#define B0 0x2e
-#define C1 0x31
-#define Cs1 0x34
-#define D1 0x37
-#define Ds1 0x3a
-#define E1 0x3d
-#define F1 0x41
-#define Fs1 0x45
-#define G1 0x49
-#define Gs1 0x4d
-#define A1 0x52
-#define As1 0x57
-#define B1 0x5c
-#define C2 0x61
-#define Cs2 0x67
-#define D2 0x6d
-#define Ds2 0x74
-#define E2 0x7b
-#define F2 0x82
-#define Fs2 0x8a
-#define G2 0x92
-#define Gs2 0x9b
-#define A2 0xa4
-#define As2 0xae
-#define B2 0xb8
-#define C3 0xc3
-#define Cs3 0xce
-#define D3 0xdb
-#define Ds3 0xe8
-#define E3 0xf5
-#define F3 0x104
-#define Fs3 0x114
-#define G3 0x124
-#define Gs3 0x135
-#define A3 0x148
-#define As3 0x15b
-#define B3 0x170
-#define C4 0x186
-#define Cs4 0x19d
-#define D4 0x1b5
-#define Ds4 0x1cf
-#define E4 0x1eb
-#define F4 0x208
-#define Fs4 0x227
-#define G4 0x248
-#define Gs4 0x26b
-#define A4 0x28f
-#define As4 0x2b6
-#define B4 0x2e0
-#define C5 0x30b
-#define Cs5 0x33a
-#define D5 0x36b
-#define Ds5 0x39f
-#define E5 0x3d6
-#define F5 0x410
-#define Fs5 0x44e
-#define G5 0x490
-#define Gs5 0x4d5
-#define A5 0x51f
-#define As5 0x56d
-#define B5 0x5bf
-#define C6 0x617
-#define Cs6 0x673
-#define D6 0x6d6
-#define Ds6 0x73e
-#define E6 0x7ac
-#define F6 0x821
->>>>>>> b722b5b7f2baadd6f2a5fa7d339ea1ab79f4ff35
 #define Fs6 0x89c
 #define G6 0x91f
 #define Gs6 0x9aa
@@ -183,7 +103,6 @@
 #define As6 0xad9
 #define B6 0xb7e
 #define C7 0xc2d
-<<<<<<< HEAD
 #define Cs7 0xce6
 #define D7 0xdab
 #define Ds7 0xe7b
@@ -199,23 +118,6 @@
 #define Cs8 0x19cd
 #define D8 0x1b56
 #define Ds8 0x1cf6
-=======
-#define Cs7 0xce7
-#define D7 0xdab
-#define Ds7 0xe7b
-#define E7 0xf58
-#define F7 0x1041
-#define Fs7 0x1139
-#define G7 0x123f
-#define Gs7 0x1355
-#define A7 0x147b
-#define As7 0x15b3
-#define B7 0x16fd
-#define C8 0x185b
-#define Cs8 0x19ce
-#define D8 0x1b56
-#define Ds8 0x1cf7
->>>>>>> b722b5b7f2baadd6f2a5fa7d339ea1ab79f4ff35
 
 #endif
 

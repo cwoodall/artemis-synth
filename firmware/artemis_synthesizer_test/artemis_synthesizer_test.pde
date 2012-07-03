@@ -10,7 +10,6 @@
 // (22kHz/256) = 85.9375Hz <- with increment size of 1
 // Tone = sample rate / (samples * increments)
 // increments_for_tone = [Tone Frequency]*[SAMPLES]/[SAMPLE RATE]
-
 void setupTimer() {
     TCCR1A = 0;     // set entire TCCR1A register to 0
     TCCR1B = 0;     // same for TCCR1B
@@ -698,7 +697,7 @@ void loop() {
 }
 
 uint16_t iA = 0;
-uint16_t iB = 0x000;
+uint16_t iB = 0;
 uint16_t final = 0;
 uint8_t divis = 0;
 
@@ -718,7 +717,6 @@ ISR(TIMER1_COMPA_vect) {
     } 
   }
 
-/*
   if (noteB) {
     if (iB < 0x7FFF-noteB) 
       iB += noteB;
@@ -731,6 +729,5 @@ ISR(TIMER1_COMPA_vect) {
       divis = 1;
     } 
   }  
-  */
   writeMCP492x(final, config);
 }

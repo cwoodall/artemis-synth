@@ -9,6 +9,8 @@ for elem in range(len(table)):
     out += "%d, " % table[elem]
 out += "%d };" % table[-1] 
 print out;
+print
+
 print "//Square Wave"
 table = []
 for i in range(256/2):
@@ -23,18 +25,17 @@ for elem in range(len(table)):
 out += "%d };" % table[-1] 
 
 print out
-
+print
 print "//Sawtooth Wave"
 table = []
 for i in range(256):
     table.append(int((float(i)/256)*0xFFF))
-
 out = "uint16_t channelC[] = { "
 for elem in range(len(table)):
     out += "%d, " % table[elem]
 out += "%d };" % table[-1] 
 print out
-
+print
 print "// Triangle Wave"
 table = []
 for i in range(256/2):
