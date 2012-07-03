@@ -1,4 +1,4 @@
-PCBNEW-BOARD Version 1 date Tue 03 Jul 2012 11:25:29 AM EDT
+PCBNEW-BOARD Version 1 date Tue 03 Jul 2012 11:45:30 AM EDT
 
 # Created by Pcbnew(2011-nov-30)-testing
 
@@ -61,7 +61,7 @@ PadDrill 320
 Pad2MaskClearance 30
 AuxiliaryAxisOrg 27000 49500
 VisibleElements FFFFFFBF
-PcbPlotParams (pcbplotparams (layerselection 278953985) (usegerberextensions true) (excludeedgelayer false) (linewidth 1) (plotframeref false) (viasonmask false) (mode 1) (useauxorigin true) (hpglpennumber 1) (hpglpenspeed 20) (hpglpendiameter 15) (hpglpenoverlay 2) (pscolor true) (psnegative false) (psa4output false) (plotreference true) (plotvalue false) (plotothertext false) (plotinvisibletext false) (padsonsilk false) (subtractmaskfromsilk true) (outputformat 1) (mirror false) (drillshape 1) (scaleselection 1) (outputdirectory pcb/))
+PcbPlotParams (pcbplotparams (layerselection 278953985) (usegerberextensions true) (excludeedgelayer false) (linewidth 1) (plotframeref false) (viasonmask false) (mode 1) (useauxorigin true) (hpglpennumber 1) (hpglpenspeed 20) (hpglpendiameter 15) (hpglpenoverlay 2) (pscolor true) (psnegative false) (psa4output false) (plotreference true) (plotvalue false) (plotothertext false) (plotinvisibletext false) (padsonsilk false) (subtractmaskfromsilk true) (outputformat 1) (mirror false) (drillshape 1) (scaleselection 1) (outputdirectory gerbers/))
 $EndSETUP
 
 $EQUIPOT
