@@ -1,4 +1,5 @@
 #!/usr/bin/python
+import math
 class UFixedPoint(object):
     def __init__(self, num, m, n):
         self.mask = 2**(m + n) - 1
@@ -6,7 +7,7 @@ class UFixedPoint(object):
         self.m = m
         self.n = n
         
-        temp = int(num * 2**self.n)
+        temp = int(round(num * 2**self.n))
         self.value = temp & self.mask
 
     def __add__(self, other):
@@ -61,3 +62,6 @@ class UFixedPoint(object):
 
     def hex(self):
         return hex(self.value)
+
+print UFixedPoint(880.0, 32, 7)*UFixedPoint(240
+
