@@ -1,0 +1,11 @@
+= Scripts for Artemis Synthesizer
+
+cw_fixedpoint.py : A somewhat wonky implementation of fixed point mathematics. 
+		   Converts from floating to the desired FixedPoint 
+		   representation very well.
+gen_note_macros.py : Utilizes UFixedPoint and the appropriate maths to generate
+		     notes.h (python gen_note_macros.py > notes.h), which is a
+		     list of all notes from C0 to Ds8 (D#8) paired with their
+		     appropriate "incrementer" for table lookups.
+tabe_gen.py : Generate 4 basic wave tables. Sine, Square, Triangle and Ramp.
+	      Each with 256 samples.

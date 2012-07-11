@@ -1,3 +1,9 @@
 = Artemis Synthesizer Version 1
 
 Christopher Woodall
+
+== Hardware
+
+All hardware designs are done in KiCAD
+
+== Firmware
