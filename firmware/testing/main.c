@@ -107,12 +107,14 @@ int main(void)
   PORTC &= 0xF0;
   
   int i;
-
+  int j;
+  uint8_t keyboard;
 
   uint8_t settings_pressed;
   sei(); // Enable Interrupts now that we are all ready to go
   for(;;) 
     {
+
       if (readButton(9) && ((settings_pressed & (0x01 << 0)) == 0)) 
 	{
 	  PORTC ^= 0x0F;
@@ -194,6 +196,7 @@ void setupSampleRate(uint16_t frequency)
   // enable global interrupts:
 }
 
+uint8_t keyboard = 0;
 ISR(TIMER1_COMPA_vect) 
 {
   static uint16_t iA = 0;
@@ -201,9 +204,9 @@ ISR(TIMER1_COMPA_vect)
   static uint16_t iC = 0;
   static uint16_t iD = 0;
   static uint16_t final = 0;
-  static int j = 0;
-  static uint8_t keyboard = 0;
-  keyboard = readKeyboard();
+  static uint8_t j = 0;
+  static uint8_t keyboard;
+ keyboard = readKeyboard();
   poly_buffer[0] = 0;
   poly_buffer[1] = 0;
   poly_buffer[2] = 0;
@@ -212,7 +215,7 @@ ISR(TIMER1_COMPA_vect)
   
   for (j = 0; j < 8; j++) 
     {
-      if (((keyboard & (0x01 << j)) == 0) && (poly_i < 3))
+      if (((keyboard & (0x01 << j)) == 0) && (poly_i <= 3))
 	{
 	  poly_buffer[poly_i] = scales[scale_i][j];
 	  poly_i += 1;
@@ -224,7 +227,7 @@ ISR(TIMER1_COMPA_vect)
   INCREMENT_NOTE(poly_buffer[2], iC);
   INCREMENT_NOTE(poly_buffer[3], iD);
   
-  final = (channelA[iA>>NOTES_BASE] + channelA[iB>>NOTES_BASE] + channelA[iC>>NOTES_BASE] + channelA[iD>>NOTES_BASE])/4;
+  final = (channelA[iA>>NOTES_BASE]) ;
 
   writeMCP492x(final, MCP492x_CONFIG);
 }

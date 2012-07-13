@@ -21,8 +21,8 @@ Discarded input sections
  .text          0x0000000000000000        0x0 main.o
  .data          0x0000000000000000        0x0 main.o
  .bss           0x0000000000000000        0x0 main.o
- .stab          0x0000000000000000      0x96c main.o
- .stabstr       0x0000000000000000      0xa38 main.o
+ .stab          0x0000000000000000      0x99c main.o
+ .stabstr       0x0000000000000000      0xa48 main.o
  .text.readKeyboard
                 0x0000000000000000       0x12 main.o
  .data.channelB
@@ -35,21 +35,22 @@ Discarded input sections
  .bss.noteB     0x0000000000000000        0x2 main.o
  .bss.noteC     0x0000000000000000        0x2 main.o
  .bss.noteD     0x0000000000000000        0x2 main.o
+ .bss.keyboard  0x0000000000000000        0x1 main.o
  COMMON         0x0000000000000000        0x1 main.o
- .text          0x0000000000000000        0x0 /tmp/cc8EIJps.o
- .data          0x0000000000000000        0x0 /tmp/cc8EIJps.o
- .bss           0x0000000000000000        0x0 /tmp/cc8EIJps.o
- .stab          0x0000000000000000      0x51c /tmp/cc8EIJps.o
- .stabstr       0x0000000000000000      0x7d0 /tmp/cc8EIJps.o
+ .text          0x0000000000000000        0x0 /tmp/ccwVOhtj.o
+ .data          0x0000000000000000        0x0 /tmp/ccwVOhtj.o
+ .bss           0x0000000000000000        0x0 /tmp/ccwVOhtj.o
+ .stab          0x0000000000000000      0x51c /tmp/ccwVOhtj.o
+ .stabstr       0x0000000000000000      0x7d0 /tmp/ccwVOhtj.o
  .text.disableSPI
-                0x0000000000000000        0x8 /tmp/cc8EIJps.o
+                0x0000000000000000        0x8 /tmp/ccwVOhtj.o
  .text.received_from_spi
-                0x0000000000000000        0x6 /tmp/cc8EIJps.o
- .text          0x0000000000000000        0x0 /tmp/cc3QxjSf.o
- .data          0x0000000000000000        0x0 /tmp/cc3QxjSf.o
- .bss           0x0000000000000000        0x0 /tmp/cc3QxjSf.o
- .stab          0x0000000000000000      0x378 /tmp/cc3QxjSf.o
- .stabstr       0x0000000000000000      0x771 /tmp/cc3QxjSf.o
+                0x0000000000000000        0x6 /tmp/ccwVOhtj.o
+ .text          0x0000000000000000        0x0 /tmp/ccbEWdQD.o
+ .data          0x0000000000000000        0x0 /tmp/ccbEWdQD.o
+ .bss           0x0000000000000000        0x0 /tmp/ccbEWdQD.o
+ .stab          0x0000000000000000      0x378 /tmp/ccbEWdQD.o
+ .stabstr       0x0000000000000000      0x771 /tmp/ccbEWdQD.o
  .text          0x0000000000000000        0x0 /usr/lib/gcc/avr/4.3.5/avr5/libgcc.a(_exit.o)
  .data          0x0000000000000000        0x0 /usr/lib/gcc/avr/4.3.5/avr5/libgcc.a(_exit.o)
  .bss           0x0000000000000000        0x0 /usr/lib/gcc/avr/4.3.5/avr5/libgcc.a(_exit.o)
@@ -79,8 +80,8 @@ Linker script and memory map
 Address of section .data set to 0x800100
 LOAD /usr/lib/gcc/avr/4.3.5/../../../avr/lib/avr5/crtm328p.o
 LOAD main.o
-LOAD /tmp/cc8EIJps.o
-LOAD /tmp/cc3QxjSf.o
+LOAD /tmp/ccwVOhtj.o
+LOAD /tmp/ccbEWdQD.o
 LOAD /usr/lib/gcc/avr/4.3.5/avr5/libgcc.a
 LOAD /usr/lib/gcc/avr/4.3.5/../../../avr/lib/avr5/libc.a
 LOAD /usr/lib/gcc/avr/4.3.5/avr5/libgcc.a
@@ -175,7 +176,7 @@ LOAD /usr/lib/gcc/avr/4.3.5/avr5/libgcc.a
 .rela.plt
  *(.rela.plt)
 
-.text           0x0000000000000000      0x53e
+.text           0x0000000000000000      0x4ce
  *(.vectors)
  .vectors       0x0000000000000000       0x68 /usr/lib/gcc/avr/4.3.5/../../../avr/lib/avr5/crtm328p.o
                 0x0000000000000000                __vectors
@@ -268,23 +269,23 @@ LOAD /usr/lib/gcc/avr/4.3.5/avr5/libgcc.a
                 0x0000000000000146       0x2e main.o
                 0x0000000000000146                setupSampleRate
  .text.__vector_11
-                0x0000000000000174      0x26a main.o
+                0x0000000000000174      0x1fa main.o
                 0x0000000000000174                __vector_11
- .text.main     0x00000000000003de       0xb8 main.o
-                0x00000000000003de                main
+ .text.main     0x000000000000036e       0xb8 main.o
+                0x000000000000036e                main
  .text.setupSPI
-                0x0000000000000496       0x7a /tmp/cc8EIJps.o
-                0x0000000000000496                setupSPI
- .text.sendSPI  0x0000000000000510        0xc /tmp/cc8EIJps.o
-                0x0000000000000510                sendSPI
+                0x0000000000000426       0x7a /tmp/ccwVOhtj.o
+                0x0000000000000426                setupSPI
+ .text.sendSPI  0x00000000000004a0        0xc /tmp/ccwVOhtj.o
+                0x00000000000004a0                sendSPI
  .text.writeMCP492x
-                0x000000000000051c       0x1e /tmp/cc3QxjSf.o
-                0x000000000000051c                writeMCP492x
-                0x000000000000053a                . = ALIGN (0x2)
+                0x00000000000004ac       0x1e /tmp/ccbEWdQD.o
+                0x00000000000004ac                writeMCP492x
+                0x00000000000004ca                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x000000000000053a        0x0 /usr/lib/gcc/avr/4.3.5/avr5/libgcc.a(_exit.o)
-                0x000000000000053a                exit
-                0x000000000000053a                _exit
+ .fini9         0x00000000000004ca        0x0 /usr/lib/gcc/avr/4.3.5/avr5/libgcc.a(_exit.o)
+                0x00000000000004ca                exit
+                0x00000000000004ca                _exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -303,11 +304,11 @@ LOAD /usr/lib/gcc/avr/4.3.5/avr5/libgcc.a
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x000000000000053a        0x4 /usr/lib/gcc/avr/4.3.5/avr5/libgcc.a(_exit.o)
+ .fini0         0x00000000000004ca        0x4 /usr/lib/gcc/avr/4.3.5/avr5/libgcc.a(_exit.o)
  *(.fini0)
-                0x000000000000053e                _etext = .
+                0x00000000000004ce                _etext = .
 
-.data           0x0000000000800100      0x240 load address 0x000000000000053e
+.data           0x0000000000800100      0x240 load address 0x00000000000004ce
                 0x0000000000800100                PROVIDE (__data_start, .)
  *(.data)
  *(.data*)
@@ -323,7 +324,7 @@ LOAD /usr/lib/gcc/avr/4.3.5/avr5/libgcc.a
                 0x0000000000800340                _edata = .
                 0x0000000000800340                PROVIDE (__data_end, .)
 
-.bss            0x0000000000800340       0x19
+.bss            0x0000000000800340       0x18
                 0x0000000000800340                PROVIDE (__bss_start, .)
  *(.bss)
  *(.bss*)
@@ -334,26 +335,26 @@ LOAD /usr/lib/gcc/avr/4.3.5/avr5/libgcc.a
                 0x000000000080034a                poly_i
  .bss.scale_i   0x000000000080034b        0x1 main.o
                 0x000000000080034b                scale_i
- .bss.keyboard.1426
+ .bss.keyboard.1429
                 0x000000000080034c        0x1 main.o
- .bss.j.1425    0x000000000080034d        0x2 main.o
- .bss.final.1424
-                0x000000000080034f        0x2 main.o
- .bss.iD.1423   0x0000000000800351        0x2 main.o
- .bss.iC.1422   0x0000000000800353        0x2 main.o
- .bss.iB.1421   0x0000000000800355        0x2 main.o
- .bss.iA.1420   0x0000000000800357        0x2 main.o
+ .bss.j.1428    0x000000000080034d        0x1 main.o
+ .bss.final.1427
+                0x000000000080034e        0x2 main.o
+ .bss.iD.1426   0x0000000000800350        0x2 main.o
+ .bss.iC.1425   0x0000000000800352        0x2 main.o
+ .bss.iB.1424   0x0000000000800354        0x2 main.o
+ .bss.iA.1423   0x0000000000800356        0x2 main.o
  *(COMMON)
-                0x0000000000800359                PROVIDE (__bss_end, .)
-                0x000000000000053e                __data_load_start = LOADADDR (.data)
-                0x000000000000077e                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x0000000000800358                PROVIDE (__bss_end, .)
+                0x00000000000004ce                __data_load_start = LOADADDR (.data)
+                0x000000000000070e                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x0000000000800359        0x0
-                0x0000000000800359                PROVIDE (__noinit_start, .)
+.noinit         0x0000000000800358        0x0
+                0x0000000000800358                PROVIDE (__noinit_start, .)
  *(.noinit*)
-                0x0000000000800359                PROVIDE (__noinit_end, .)
-                0x0000000000800359                _end = .
-                0x0000000000800359                PROVIDE (__heap_start, .)
+                0x0000000000800358                PROVIDE (__noinit_end, .)
+                0x0000000000800358                _end = .
+                0x0000000000800358                PROVIDE (__heap_start, .)
 
 .eeprom         0x0000000000810000        0x0
  *(.eeprom*)
