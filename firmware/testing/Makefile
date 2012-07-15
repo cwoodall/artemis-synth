@@ -6,7 +6,7 @@ MCU_TARGET     = atmega328p
 AVRDUDE_TARGET = ATMEGA328P
 OPTIMIZE       = -Os -fpack-struct -fshort-enums -funsigned-char -funsigned-bitfields -ffunction-sections -fdata-sections
 DEFS           =
-LIBS           = HRL_SPI.c HRL_MCP492x.c
+LIBS           = HRL_SPI.c HRL_MCP492x.c inst.c buttons.c
 
 #BAUDRATE       = 57600
 HZ             = 16000000
@@ -73,7 +73,7 @@ esrec: $(PRG)_eeprom.srec
   $(OBJCOPY) -j .eeprom --change-section-lma .eeprom=0 -O binary $< $@
 
 
-install:  $(PRG).hex
+flash:  $(PRG).hex
 	avrdude -p $(AVRDUDE_TARGET) -c $(PROGRAMMER) -P $(PORT) -v  \
          -U flash:w:$(PRG).hex 
 
