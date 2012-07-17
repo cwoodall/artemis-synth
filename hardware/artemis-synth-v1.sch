@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Mon 02 Jul 2012 02:20:01 PM EDT
+EESchema Schematic File Version 2  date Fri 13 Jul 2012 07:03:59 PM EDT
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -31,14 +31,13 @@ LIBS:contrib
 LIBS:valves
 LIBS:mcp49x1
 LIBS:tda2822m
-LIBS:artemis-synth-v1-cache
 EELAYER 25  0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title ""
-Date "2 jul 2012"
+Date "12 jul 2012"
 Rev ""
 Comp ""
 Comment1 ""

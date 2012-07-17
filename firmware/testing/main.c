@@ -9,132 +9,74 @@
 #include "notes.h"
 #include "inst.h"
 #include "buttons.h"
+#include "leds.h"
+#include "optoloader.h"
 
-#define LED_PORT PORTC
-#define LED_DDR DDRC
-#define LED0_m ~(0x08)
-#define LED1_m 0x08
-#define LED2_m ~(0x04)
-#define LED3_m 0x04
-#define LED4_m ~(0x02)
-#define LED5_m 0x02
-#define LED6_m ~(0x01)
-#define LED7_m 0x01
-
+uint8_t opto_enable_ctr = 0;
+uint8_t led_refresh_flag = 0;
 uint8_t led_display = 0x00000000;
+optoloader_t optoloader;
 
-void setupDisplay()
-{
-  LED_PORT &= 0xF0;
-  LED_DDR &= 0xF0;
-}
-
-void updateDisplay(uint8_t new_display)
-{
-  led_display = new_display;
-}
-
-#define MAX_LOOKUP  0x7FFF
-#define INCREMENT_NOTE(note, i) 			\
-  if (note)                                 \
-    {                                       \
-       if (i + note < MAX_LOOKUP)			\
-        {                                   \
-          i += note;                        \
-        }                                   \
-      else                                  \
-        {                                   \
-          i = note - (MAX_LOOKUP - i);      \
-        }                                   \
-    }                                       \
-  else                                      \
-    {                                       \
-      i = 0;                                \
-    }							
-
-#define FREQUENCY_TO_COUNT(x) (F_CPU/1000)/(x/1000)
-
-// Setup Sample rate at 22kHz, externally we filter at 11kHz
-// this satisfies Nyquist and technically we should be able
-// to accurately reconstruct waves up to 11kHz
-void setupSampleRate();
-void setupControlTimer();
-
-#define SCALE_LENGTH 8
-uint8_t scale_i = 0;
-uint16_t scales[4][SCALE_LENGTH] = {
-  {C6, D6, E6, F6, G6, A6, B6, C7},
-  {C5, D5, E5, G5, A5, C6, D6, E6},
-  {C5, Ds5, F5, Fs5, G5, As5, C6, Ds6},
-  {C5, D5, Ds5, F5, G5, A5, As5, C6}
-};
-
-uint16_t poly_buffer[4] = {0,0,0,0};
-uint8_t poly_i = 0;
-uint8_t key_pressed;
-uint8_t debounce = 0;
 uint8_t settings_debounce = 0;
 
-int main(void) 
+void setupControlTimer();
+
+int main(void)
 {
   // Disable Interrupts for setup
   cli();
   
+  setupControlTimer();
   // SETUP BUTTON INPUTS
   setupButtons();
-  
-  setupDisplay();
 
-  // Setup the SPI Bus
-  setupSPI(SPI_MODE_0, SPI_MSB, SPI_NO_INTERRUPT, SPI_MASTER_CLK2);
-  SETUP_DAC;
-  setupSampleRate(22000); // Setup Timer1 to work at 22KHz sample rate
-  setupControlTimer();
+  led_display = setupDisplay();
+  optoloader = setupOptoloader();
+
+  disableOptoloader(&optoloader);
 
   uint8_t settings = 0;
   uint8_t settings_prev = 0;
-
-  led_display = 0b11111111;
-
   sei(); // Enable Interrupts now that we are all ready to go
 
   for(;;) 
-    {      
-        settings = readSettings();
-        if (settings_debounce == 0)
-        {
-
-          if (((settings & 0x02) == 0) && ((settings_prev & 0x02) != 0))
-            { 
-              led_display <<= 1;
-              led_display |= 0x01;
-              if (scale_i < 3)
-                {
-                  scale_i += 1;
-                }
-              else
-                {
-                  scale_i = 0;
-                }
-              settings_debounce = 1;
-            }
-          if (((settings & 0x01) == 0) && ((settings_prev & 0x01) != 0))
-            {
-              led_display >>= 1;
-              if (scale_i > 0) 
-                {
-                  scale_i -= 1;
-                }
-              else
-                {
-                  scale_i = 3;
-                }
-              settings_debounce = 1;
-            }
-        }
+    {
+      updateDisplay(&led_display, &led_refresh_flag);
+      settings = readSettings();
+      if (optoloader.flags & OPTO_ACTI_bm)
+	{
+	  if (settings_debounce == 0)
+	    {	
+	      if ((settings == 0) && (settings_prev != 0))
+		{
+		  opto_enable_ctr = 1;
+		  settings_debounce = 1;
+		}
+	      else if ((settings != 0) && (settings_prev == 0))
+		{
+		  settings_debounce = 1;
+		  opto_enable_ctr = 0;
+		}
+	    }	  
+	} 
+      else
+	{
+	  if (settings_debounce == 0)
+	    {	
+	      if ((settings == 0) && (settings_prev != 0))
+		{
+		  opto_enable_ctr = 1;
+		  settings_debounce = 1;
+		}
+	      else if ((settings != 0) && (settings_prev == 0))
+		{
+		  settings_debounce = 1;
+		  opto_enable_ctr = 0;
+		}
+	    }
+	}
       settings_prev = settings;
     }
-  
   return(0);
 }
 
@@ -144,12 +86,13 @@ void setupControlTimer()
   TCCR2B = 0;     // same for TCCR1B
   TIMSK2 = 0;
   TCNT2 = 0;
-  // target_freq = 120 Hz
+
+  // target_freq = 306.4 Hz
   // timer_res = 1/16MHz
   // prescaler = 1024
   // timer_counts = (1.0/target_freq)/(timer_res*prescaler) - 1
-  OCR2A = 129; 
-
+  OCR2A = 50; 
+  
   // Turn on CTC mode
   TCCR2A |= (1 << WGM21);
   // set CS20, CS21 & CS22 for 1024 precaler
@@ -163,153 +106,145 @@ void setupControlTimer()
 
 ISR(TIMER2_COMPA_vect)
 {
-  static uint8_t keyboard = 0;
-  static uint8_t j = 0; 
-  static uint8_t led_refresh_flag = 0;
 
-  keyboard = readKeyboard();
-  poly_buffer[0] = 0;
-  poly_buffer[1] = 0;
-  poly_buffer[2] = 0;
-  poly_buffer[3] = 0;
-  poly_i = 0;
-  
-  for (j = 0; j < 8; j++) 
+  if (optoloader.flags & OPTO_ACTI_bm)
     {
-      if (((keyboard & (0x01 << j)) == 0) && (poly_i <= 3))
-        {
-          poly_buffer[poly_i] = scales[scale_i][j];
-          poly_i += 1;
-        }
-    }
-  
-  if (settings_debounce > 0)
-    {
-      (settings_debounce < 20)?(settings_debounce += 1):(settings_debounce = 0);
-    }
-  
+      optoloader.counter += 1;
+      if (opto_enable_ctr == 0xFF)
+	{
+	  optoloader.flags &= ~OPTO_ACTI_bm;
+	  setDisplay(&led_display, 0x00);
+	  disableOptoloader(&optoloader);
+	  opto_enable_ctr = 0;
+	}
+      if (opto_enable_ctr > 0)
+	{
+	  opto_enable_ctr += 1;
+	}      
 
-  PORTC &= 0xF0;
-  DDRC &= 0xF0;
-  if (led_refresh_flag)
-    {
-      led_refresh_flag = 0;
-      if (led_display & 1)
-        {
-          PORTC &= LED0_m;
-          DDRC |= ~LED0_m;
-        }
-      else
-        {
-          DDRC &= LED0_m;
-        }
-      if ((led_display & (1<<2)) != 0)
-        {
-          PORTC &= LED2_m;
-          DDRC |= ~LED2_m;
-        }
-      else
-        {
-          DDRC &= LED2_m;
-        }
-      if ((led_display & (1<<4)) != 0)
-        {
-          PORTC &= LED4_m;
-          DDRC |= ~LED4_m;
-        }
-      else
-        {
-          DDRC &= LED4_m;
-        }
-      if ((led_display & (1<<6)) != 0)
-        {
-          PORTC &= LED6_m;
-          DDRC |= ~LED6_m;
-        }
-      else
-        {
-          DDRC &= LED6_m;
-        }
     }
   else
     {
-      led_refresh_flag = 0xFF;
-      if (led_display & (1<<1))
-        {
-          DDRC |= LED1_m;
-          PORTC |= LED1_m;
-        }
-      else
-        {
-          DDRC &= ~LED1_m;
-        }
-
-      if (led_display & (1<<3))
-        {
-          DDRC |= LED3_m;
-          PORTC |= LED3_m;
-        }
-      else
-        {
-            DDRC &= ~LED3_m;
-        }
-      if (led_display & (1<<5))
-        {
-          DDRC |= LED5_m;
-          PORTC |= LED5_m;
-        }
-      else
-        {
-          DDRC &= ~LED5_m;
-        }
-      if (led_display & (1<<7))
-        {
-          DDRC |= LED7_m;
-          PORTC |= LED7_m;
-        }
-      else
-        {
-          DDRC &= ~LED7_m;
-        }
+      if (opto_enable_ctr == 0xFF)
+	{
+	  optoloader.flags |= OPTO_ACTI_bm;
+	  setDisplay(&led_display, 0xFF);
+	  TCNT2 = 0;
+	  enableOptoloader(&optoloader);
+	  opto_enable_ctr = 0;
+	}
+      if (opto_enable_ctr > 0)
+	{
+	  opto_enable_ctr += 1;
+	}      
     }
+
+  if (settings_debounce == 30) 
+    {
+      settings_debounce = 0;
+    }
+  else if (settings_debounce >= 1) 
+    {
+      settings_debounce += 1;
+    }
+
+  led_refresh_flag ^= 0x01;
+  led_refresh_flag |= 0x02;
 }
 
-void setupSampleRate(uint16_t frequency)
-{    
-  TCCR1A = 0;     // set entire TCCR1A register to 0
-  TCCR1B = 0;     // same for TCCR1B
-  
-  // set compare match register to desired timer count:
-  // We want to compare at 22kHz
-  // target time/timer resolution
-  // (1/22kHz)/(1/16MHz) = 727
-  //OCR1A = 727; 
-  OCR1A = (uint16_t) FREQUENCY_TO_COUNT(frequency);
-
-  // turn on CTC mode:
-  TCCR1B |= (1 << WGM12);
-  TCCR1B |= (1 << CS10); // No prescaler
-  // enable timer compare interrupt:
-  TIMSK1 |= (1 << OCIE1A);
-  // enable global interrupts:
-}
-
-#define GET_WAVE_VALUE(inst, num) (poly_buffer[num]?inst[inc[num]>>NOTES_BASE]:0)
-
-ISR(TIMER1_COMPA_vect) 
+ISR(ANALOG_COMP_vect)
 {
-  static uint16_t inc[4] = {0, 0, 0, 0};
-  static uint16_t final = 0;
+  // Turn off Timer 2 Interrupt A
+  TIMSK2 &= ~(1<<OCIE2A);
+  // Reset Timer2 Counter
+  TCNT2 = 0;
 
-  INCREMENT_NOTE(poly_buffer[0], inc[0]);
-  INCREMENT_NOTE(poly_buffer[1], inc[1]);
-  INCREMENT_NOTE(poly_buffer[2], inc[2]);
-  INCREMENT_NOTE(poly_buffer[3], inc[3]);
+  // If the sync flag is set we can do some stuff
+  if ((optoloader.flags & OPTO_SYNC_bm) != 0)
+    {
+      // If we are getting a zero
+      if (optoloader.counter > (5*optoloader.zero_count/8))
+	{
+	  // If both the start and sync bits are set we can start collecting messages
+	  // This is a 0 so we shift in a 0
+	  if (optoloader.flags & OPTO_STRT_bm)
+	    {
+	      
+	      optoloader.message <<= 1;
+	      optoloader.message_count += 1;
+	    }
+	}
+      else if (optoloader.counter > (optoloader.zero_count/16))
+	{
+	  // If the ones flag, ONEF is set the first part of the one message has been seen
+	  if (optoloader.flags & OPTO_ONEF_bm)
+	    {
+	      optoloader.flags &= ~OPTO_ONEF_bm;
+	      // When both parts of a 1 are observed 
+	      // a one is shifted into the message buffer.
+	      if (optoloader.flags & OPTO_STRT_bm)
+		{
+		  optoloader.message <<= 1;
+		  optoloader.message |= 0x01;
+		  optoloader.message_count += 1;
+		}
+	      else
+		{
+		  // The first one we see sets the start bit, it does not get shifted
+		  // into the message.
+		  optoloader.flags |= OPTO_STRT_bm;
+		}
+	    }
+	  else
+	    {
+	      optoloader.flags |= OPTO_ONEF_bm;
+	    }
+	}
+    }
+  else // When we are not synced we need to find a sync
+    {
+      // If we have more than 4 successful counts taht are close to one another,
+      // Accept that as our sync count.
+      if (optoloader.sync_count == 4)
+	{
+	  optoloader.flags |= OPTO_SYNC_bm;
+	  clearDisplay(&led_display);
+	}
+      else
+	{
+	  if ((optoloader.counter < (4*optoloader.prev_count/3)) &&
+	      (optoloader.counter > (2*optoloader.prev_count/3)))
+	    {
+	      // Average them together if zero_count has already been set.
+	      if (optoloader.zero_count > 0)
+		{
+		  // Add and divide by two (shift right by 1)
+		  optoloader.zero_count = (optoloader.zero_count + optoloader.counter)>>1;
+		}
+	      else 
+		{
+		  optoloader.zero_count = optoloader.counter;
+		}
+	      optoloader.sync_count += 1;
+	    } 
+	  else
+	    {
+	      optoloader.zero_count = 0;
+	      optoloader.sync_count = 0;
+	    }
+	  setDisplay(&led_display,1<<(optoloader.sync_count+1));
+	}
+    }
+
+  if (optoloader.message_count == 8) 
+    {
+      optoloader.message_count = 0;
+      led_display = optoloader.message;
+    }
   
-  final = (GET_WAVE_VALUE(channelA, 0) + 
-           GET_WAVE_VALUE(channelA, 1) +
-           GET_WAVE_VALUE(channelA, 2) +
-           GET_WAVE_VALUE(channelA, 3))/poly_i;
+  optoloader.prev_count = optoloader.counter;
+  optoloader.counter = 0;
 
-  writeMCP492x(final, MCP492x_CONFIG);
+  TIMSK2 |= (1<<OCIE2A);
 }
+

@@ -7,30 +7,30 @@
 //   0-5: Port D
 //   6-7: Port B
 //   8-9: PORT C
-#define BUTTONS_0to5_bm 0b00111111
+#define BUTTONS_0to5_m 0b00111111
 #define BUTTONS_0to5_PIN PIND
 #define BUTTONS_0to5_PORT PORTD
 #define BUTTONS_0to5_DDR DDRD
-#define BUTTON0_bm 0x01
-#define BUTTON1_bm 0x02
-#define BUTTON2_bm 0x04
-#define BUTTON3_bm 0x08
-#define BUTTON4_bm 0x10
-#define BUTTON5_bm 0x20
+#define BUTTON0_m 0x01
+#define BUTTON1_m 0x02
+#define BUTTON2_m 0x04
+#define BUTTON3_m 0x08
+#define BUTTON4_m 0x10
+#define BUTTON5_m 0x20
 
-#define BUTTONS_6to7_bm 0b00000011
+#define BUTTONS_6to7_m 0b00000011
 #define BUTTONS_6to7_PIN PINB
 #define BUTTONS_6to7_PORT PORTB
 #define BUTTONS_6to7_DDR DDRB
-#define BUTTON6_bm 0x01
-#define BUTTON7_bm 0x02
+#define BUTTON6_m 0x01
+#define BUTTON7_m 0x02
 
-#define BUTTONS_8to9_bm 0b00110000
+#define BUTTONS_8to9_m 0b00110000
 #define BUTTONS_8to9_PIN PINC
 #define BUTTONS_8to9_PORT PORTC
 #define BUTTONS_8to9_DDR DDRC
-#define BUTTON8_bm 0x10
-#define BUTTON9_bm 0x20
+#define BUTTON8_m 0x10
+#define BUTTON9_m 0x20
 
 void setupButtons();
 

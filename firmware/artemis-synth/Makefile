@@ -6,7 +6,7 @@ MCU_TARGET     = atmega328p
 AVRDUDE_TARGET = ATMEGA328P
 OPTIMIZE       = -Os -fpack-struct -fshort-enums -funsigned-char -funsigned-bitfields -ffunction-sections -fdata-sections
 DEFS           =
-LIBS           = HRL_SPI.c HRL_MCP492x.c inst.c buttons.c leds.c optoloader.c
+LIBS           = HRL_SPI.c HRL_MCP492x.c inst.c buttons.c leds.c
 
 #BAUDRATE       = 57600
 HZ             = 16000000
