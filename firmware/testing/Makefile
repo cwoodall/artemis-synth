@@ -13,14 +13,14 @@ HZ             = 16000000
 
 # You should not have to change anything below here.
 CC             = avr-gcc
-CXX            = avr-g++
+CXX            = avr-gcc
 
 # Override is only needed by avr-lib build system.
 
 
-override CFLAGS        = -g -DF_CPU=$(HZ) -Wall $(OPTIMIZE) -mmcu=$(MCU_TARGET) $(DEFS)
+override CFLAGS        = -std=c99 -g -DF_CPU=$(HZ) -Wall $(OPTIMIZE) -mmcu=$(MCU_TARGET) $(DEFS)
 override LDFLAGS       = -Wl,-Map,$(PRG).map -s -Wl,--gc-sections
-override CPPFLAGS      = -g -DF_CPU=$(HZ) -Wall $(OPTIMIZE) -fvtable-gc -mmcu=$(MCU_TARGET) $(DEFS)
+override CPPFLAGS      = -std=c99 -g -DF_CPU=$(HZ) -Wall $(OPTIMIZE) -fvtable-gc -mmcu=$(MCU_TARGET) $(DEFS)
 
 OBJCOPY        = avr-objcopy
 OBJDUMP        = avr-objdump
@@ -28,7 +28,7 @@ OBJDUMP        = avr-objdump
 all: $(PRG).elf lst text #eeprom
 
 $(PRG).elf: $(OBJ)
-	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $^ $(LIBS) 
+	$(CC) -std=c99 $(CFLAGS) $(LDFLAGS) -o $@ $^ $(LIBS) 
 
 clean:
 	rm -rf *.o $(PRG).elf *.eps *.png *.pdf *.bak *.hex *.bin *.srec

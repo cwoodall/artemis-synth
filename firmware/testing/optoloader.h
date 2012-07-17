@@ -50,5 +50,6 @@ void disableOptoloader(optoloader_t *opto);
 optoloader_t setupOptoloader();
 
 void enableOptoloader(optoloader_t *opto);
+void runOptoloader(optoloader_t *optoloader, uint8_t *led_display);
 
 #endif
