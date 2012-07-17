@@ -163,7 +163,7 @@ ISR(TIMER2_COMPA_vect)
           poly_i += 1;
         }
     }
-  */
+    *
   if (settings_debounce > 0)
     {
       (settings_debounce < 20)?(settings_debounce += 1):(settings_debounce = 0);
