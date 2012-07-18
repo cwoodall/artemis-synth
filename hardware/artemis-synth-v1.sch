@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Fri 13 Jul 2012 07:03:59 PM EDT
+EESchema Schematic File Version 2  date Wed 18 Jul 2012 10:01:27 AM EDT
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -31,13 +31,14 @@ LIBS:contrib
 LIBS:valves
 LIBS:mcp49x1
 LIBS:tda2822m
+LIBS:artemis-synth-v1-cache
 EELAYER 25  0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title ""
-Date "12 jul 2012"
+Date "18 jul 2012"
 Rev ""
 Comp ""
 Comment1 ""
@@ -50,20 +51,10 @@ Optoloader\n
 $Comp
 L +3.3V #PWR01
 U 1 1 4FE933FC
-P 6775 3325
-F 0 "#PWR01" H 6775 3285 30  0001 C CNN
-F 1 "+3.3V" H 6775 3435 30  0000 C CNN
-	1    6775 3325
-	1    0    0    -1  
-$EndComp
-$Comp
-L RVAR R10
-U 1 1 4FE933EF
-P 6775 3575
-F 0 "R10" V 6855 3525 50  0000 C CNN
-F 1 "LDR" V 6695 3635 50  0000 C CNN
-F 2 "SIL-2" V 6795 3635 50  0001 C CNN
-	1    6775 3575
+P 6600 3350
+F 0 "#PWR01" H 6600 3310 30  0001 C CNN
+F 1 "+3.3V" H 6600 3460 30  0000 C CNN
+	1    6600 3350
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -107,11 +98,11 @@ $EndComp
 $Comp
 L R R11
 U 1 1 4FE93373
-P 6775 4400
-F 0 "R11" V 6855 4400 50  0000 C CNN
-F 1 "100K" V 6775 4400 50  0000 C CNN
-F 2 "R4" V 6875 4400 50  0001 C CNN
-	1    6775 4400
+P 6600 4425
+F 0 "R11" V 6680 4425 50  0000 C CNN
+F 1 "47k" V 6600 4425 50  0000 C CNN
+F 2 "R4" V 6700 4425 50  0001 C CNN
+	1    6600 4425
 	1    0    0    -1  
 $EndComp
 Text Label 5425 3225 2    60   ~ 0
@@ -1028,10 +1019,10 @@ $EndComp
 $Comp
 L GND #PWR040
 U 1 1 4FEA58E6
-P 6775 4850
-F 0 "#PWR040" H 6775 4850 30  0001 C CNN
-F 1 "GND" H 6775 4780 30  0001 C CNN
-	1    6775 4850
+P 6600 4875
+F 0 "#PWR040" H 6600 4875 30  0001 C CNN
+F 1 "GND" H 6600 4805 30  0001 C CNN
+	1    6600 4875
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -1066,6 +1057,29 @@ F 2 "R4" H 7875 1475 60  0001 C CNN
 	1    7875 1475
 	1    0    0    -1  
 $EndComp
+$Comp
+L USB_2 J1
+U 1 1 4FF1A71F
+P 1150 4625
+F 0 "J1" H 1075 4875 60  0000 C CNN
+F 1 "USB_2" H 1200 4325 60  0001 C CNN
+F 2 "USB_B" H 1150 4625 60  0001 C CNN
+F 4 "VCC" H 1475 4775 50  0001 C CNN "VCC"
+F 5 "D+" H 1450 4675 50  0001 C CNN "Data+"
+F 6 "D-" H 1450 4575 50  0001 C CNN "Data-"
+F 7 "GND" H 1475 4475 50  0001 C CNN "Ground"
+	1    1150 4625
+	1    0    0    -1  
+$EndComp
+$Comp
+L OPTO_NPN R10
+U 1 1 5006C304
+P 6500 3600
+F 0 "R10" H 6650 3650 50  0000 L CNN
+F 1 "TEPT4400" H 6650 3500 50  0000 L CNN
+	1    6500 3600
+	1    0    0    -1  
+$EndComp
 Wire Wire Line
 	7875 1725 7875 1775
 Wire Wire Line
@@ -1082,7 +1096,7 @@ Connection ~ 7100 4075
 Wire Wire Line
 	7100 3825 7100 4325
 Wire Wire Line
-	6775 4850 6775 4650
+	6600 4875 6600 4675
 Connection ~ 1400 4250
 Wire Wire Line
 	700  4350 700  4250
@@ -1229,9 +1243,9 @@ Wire Wire Line
 Wire Wire Line
 	1725 5175 1725 5250
 Wire Wire Line
-	1350 4575 2050 4575
+	2050 4575 1350 4575
 Wire Wire Line
-	2050 4575 2050 4250
+	2050 4250 2050 4575
 Wire Wire Line
 	5175 3775 5525 3775
 Wire Wire Line
@@ -1417,10 +1431,7 @@ Wire Wire Line
 	1300 3025 1725 3025
 Connection ~ 1450 3025
 Wire Wire Line
-	6775 3825 6775 4150
-Connection ~ 6775 3975
-Wire Wire Line
-	6775 3975 5175 3975
+	6600 3975 5175 3975
 Wire Wire Line
 	10175 2150 10175 2100
 Wire Wire Line
@@ -1438,18 +1449,11 @@ Wire Wire Line
 	5625 2075 5175 2075
 Wire Wire Line
 	5825 2075 6075 2075
-$Comp
-L USB_2 J1
-U 1 1 4FF1A71F
-P 1150 4625
-F 0 "J1" H 1075 4875 60  0000 C CNN
-F 1 "USB_2" H 1200 4325 60  0001 C CNN
-F 2 "USB_B" H 1150 4625 60  0001 C CNN
-F 4 "VCC" H 1475 4775 50  0001 C CNN "VCC"
-F 5 "D+" H 1450 4675 50  0001 C CNN "Data+"
-F 6 "D-" H 1450 4575 50  0001 C CNN "Data-"
-F 7 "GND" H 1475 4475 50  0001 C CNN "Ground"
-	1    1150 4625
-	1    0    0    -1  
-$EndComp
+Wire Wire Line
+	6600 3350 6600 3400
+Wire Wire Line
+	6600 3800 6600 4175
+Connection ~ 6600 3975
+Text Notes 6350 3575 2    40   ~ 0
+Fix annotation\nand footprint\nin future\ndesigns\n
 $EndSCHEMATC

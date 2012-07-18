@@ -13,6 +13,31 @@
 #include "optoloader.h"
 
 uint8_t opto_enable_ctr = 0;
+uint8_t keyboard_ctr = 0;
+uint8_t sequencer_ctr = 0;
+
+#define KEYBOARD  0x01
+#define SEQUENCER 0x02
+#define BLINKING  0x03
+#define OPTOLOADER 0x04 // Currently not used, maintianed by optoloader.flag...
+uint8_t mode = KEYBOARD;
+
+#define SEQUENCER_LENGTH 8
+uint8_t sequencer[SEQUENCER_LENGTH] = {
+  0b01010101,
+  0b10101010,
+  0b01010101,
+  0b00000010,
+  0b10111000,
+  0b11111111,
+  0b01000000,
+  0b10000001
+};
+uint8_t sequencer_display_i = 0;
+uint8_t sequencer_metronome = 0;
+uint8_t sequencer_metronome_ctr = 0;
+uint8_t sequencer_flag = 0;
+
 uint8_t led_refresh_flag = 0;
 uint8_t led_display = 0x00000000;
 optoloader_t optoloader;
@@ -55,7 +80,7 @@ uint16_t scales[4][SCALE_LENGTH] = {
   {C5, D5, Ds5, F5, G5, A5, As5, C6}
 };
 
-uint16_t poly_buffer[4] = {0,0,0,0};
+uint16_t poly_buffer[8] = {0,0,0,0,0,0,0,0};
 uint8_t poly_i = 0;
 uint8_t key_pressed;
 uint8_t debounce = 0;
@@ -126,74 +151,200 @@ int main(void)
 		  opto_enable_ctr = 0;
 		}
 	    }	  
-	} 
-      else
+	}
+      else 
 	{
-	  if (settings_debounce == 0)
-	    {	
-	      if (((settings & 0x02) == 0) && ((settings_prev & 0x02) != 0))
-		{ 
-		  if (scale_i < 3)
-		    {
-		      scale_i += 1;
-		    }
-		  else
-		    {
-		      scale_i = 0;
-		    }
-		  settings_debounce = 1;
-		  setDisplay(&led_display, shiftOnes(scale_i+1));
-		}
-	      if (((settings & 0x01) == 0) && ((settings_prev & 0x01) != 0))
-		{
-		  if (scale_i > 0) 
-		    {
-		      scale_i -= 1;
-		    }
-		  else
-		    {
-		      scale_i = 3;
-		    }
-		  setDisplay(&led_display, shiftOnes(scale_i+1));		  
-		  settings_debounce = 1;
-		}
-	    }
-
 	  if ((settings == 0) && (opto_enable_ctr == 0))
 	    {
 	      opto_enable_ctr = 1;
+	      sequencer_ctr = 0;
+	      keyboard_ctr = 0;
 	    }
 	  else if (settings)
 	    {
 	      opto_enable_ctr = 0;
+	      if (!(settings & 0x01) && (sequencer_ctr == 0))
+		{
+		  sequencer_ctr = 1;
+		}
+	      else if (settings & 0x01)
+		{
+		  sequencer_ctr = 0;
+		}
+	      
+	      if (!(settings & 0x20) && (keyboard_ctr == 0))
+		{
+		  keyboard_ctr = 1;
+		}
+	      else if (settings & 0x02)
+		{
+		  keyboard_ctr = 0;
+		}
 	    }
-
-	  if (read_keyboard_flag)
+	  
+	  if (mode == KEYBOARD)
 	    {
-	      ATOMIC_BLOCK(ATOMIC_RESTORESTATE)
-	        {
-		  read_keyboard_flag = 0;
-		  keyboard = readKeyboard();
-		  poly_buffer[0] = 0;
-		  poly_buffer[1] = 0;
-		  poly_buffer[2] = 0;
-		  poly_buffer[3] = 0;
-		  poly_i = 0;
-		  
-		  for (uint8_t j = 0; j < 8; j++) 
-		    {
-		      if (((keyboard & (0x01 << j)) == 0) && (poly_i <= 3))
+	      if (settings_debounce == 0)
+		{	
+		  if (((settings & 0x02) == 0) && ((settings_prev & 0x02) != 0))
+		    { 
+		      if (scale_i < 3)
 			{
-			  poly_buffer[poly_i] = scales[scale_i][j];
-			  poly_i += 1;
+			  scale_i += 1;
 			}
+		      else
+			{
+			  scale_i = 0;
+			}
+		      settings_debounce = 1;
+		      setDisplay(&led_display, shiftOnes(scale_i+1));
+		    }
+		  if (((settings & 0x01) == 0) && ((settings_prev & 0x01) != 0))
+		    {
+		      if (scale_i > 0) 
+			{
+			  scale_i -= 1;
+			}
+		      else
+			{
+			  scale_i = 3;
+			}
+		      setDisplay(&led_display, shiftOnes(scale_i+1));		  
+		      settings_debounce = 1;
 		    }
 		}
+	      
+	      if (read_keyboard_flag)
+		{
+		  read_keyboard_flag = 0;
+		  keyboard = readKeyboard();
+		  
+		  // Prevent the following array accesses to be disturbed, otherwise you get nasty sounds
+		  ATOMIC_BLOCK(ATOMIC_RESTORESTATE)
+		  {
+		    
+		    poly_buffer[0] = 0;
+		    poly_buffer[1] = 0;
+		    poly_buffer[2] = 0;
+		    poly_buffer[3] = 0;
+		    poly_buffer[5] = 0;
+		    poly_buffer[6] = 0;
+		    poly_buffer[7] = 0;
+		    
+		    poly_i = 0;
+
+		    for (uint8_t j = 0; j < 8; j++) 
+		      {
+			if (((keyboard & (0x01 << j)) == 0) && (poly_i <= 3))
+			  {
+			    poly_buffer[poly_i] = scales[scale_i][j];
+			    poly_i += 1;
+			  }
+		      }
+		  }
+		}
+	    }
+	  else if (mode == SEQUENCER)
+	    {
+	      //setDisplay(&led_display, sequencer_metronome);
+	      setDisplay(&led_display, sequencer[sequencer_display_i]);
+	      if (settings_debounce == 0)
+		{	
+		  if (((settings & 0x02) == 0) && ((settings_prev & 0x02) != 0))
+		    { 
+		      if(sequencer_display_i < (SEQUENCER_LENGTH-1))
+			{
+			  sequencer_display_i += 1;
+			}
+		      settings_debounce = 1;
+		    }
+		  if (((settings & 0x01) == 0) && ((settings_prev & 0x01) != 0))
+		    {
+		      if (sequencer_display_i > 0) 
+			{
+			  sequencer_display_i -= 1;
+			}
+		      settings_debounce = 1;
+		    }
+		}
+	      poly_i = 4;
+	      ATOMIC_BLOCK(ATOMIC_RESTORESTATE)
+	      {
+		  {
+		    sequencer_flag = 0;
+		    if (sequencer[0] & (1<<sequencer_metronome))
+		      {
+			poly_buffer[0] = C6;
+		      }
+		    else
+		      {
+			poly_buffer[0] = 0;
+		      }
+		    
+		    if (sequencer[1] & (1<<sequencer_metronome))
+		      {
+			poly_buffer[1] = D6;
+		      }
+		    else
+		      {
+			poly_buffer[1] = 0;
+		      }
+		    
+		    if (sequencer[2] & (1<<sequencer_metronome))
+		      {
+			poly_buffer[2] = E6;
+		      }
+		    else
+		      {
+			poly_buffer[2] = 0;
+		      }
+		  }
+		if (sequencer[3] & (1<<sequencer_metronome))
+		  {
+		    poly_buffer[3] = F6;
+		  }
+		else
+		  {
+		    poly_buffer[3] = 0;
+		  }
+		if (sequencer[4] & (1<<sequencer_metronome))
+		  {
+		    poly_buffer[4] = G6;
+		  }
+		else
+		  {
+		    poly_buffer[4] = 0;
+		  }
+		if (sequencer[5] & (1<<sequencer_metronome))
+		  {
+		    poly_buffer[5] = A6;
+		  }
+		else
+		  {
+		    poly_buffer[5] = 0;
+		  }
+		if (sequencer[6] & (1<<sequencer_metronome))
+		  {
+		    poly_buffer[6] = B6;
+		  }
+		else
+		  {
+		    poly_buffer[6] = 0;
+		  }
+		if (sequencer[7] & (1<<sequencer_metronome))
+		  {
+		    poly_buffer[7] = C7;
+		  }
+		else
+		  {
+		    poly_buffer[7] = 0;
+		  }
+	      }
 	    }
 	}
       settings_prev = settings;
     }
-  return(0);
+  return 0;
 }
 
 void setupControlTimer()
@@ -251,10 +402,58 @@ ISR(TIMER2_COMPA_vect)
 	  enableOptoloader(&optoloader);
 	  opto_enable_ctr = 0;
 	}
-      if (opto_enable_ctr > 0)
+      else if (opto_enable_ctr > 0)
 	{
 	  opto_enable_ctr += 1;
 	}      
+      
+      if (sequencer_ctr == 0xFF)
+	{
+	  setDisplay(&led_display, 0x0F);
+	  sequencer_ctr = 0;
+	  mode = SEQUENCER;
+	}
+      else if (sequencer_ctr > 0)
+	{
+	  sequencer_ctr += 1;
+	}
+
+      if (keyboard_ctr == 0xFF)
+	{
+	  setDisplay(&led_display, 0xF0);
+	  keyboard_ctr = 0;
+	  mode = KEYBOARD;
+	}
+      else if (keyboard_ctr > 0)
+	{
+	  keyboard_ctr += 1;
+	}
+
+      if (mode == SEQUENCER)
+	{
+	  sequencer_metronome_ctr += 1;
+
+	  if ((sequencer_metronome_ctr >= 0x3F) && !(sequencer_metronome % 2))
+	    {
+	      sequencer_metronome += 1;
+	      sequencer_metronome_ctr = 0;
+	      sequencer_flag = 1;
+	    }
+	  else if ((sequencer_metronome_ctr >= 0x38))
+	    {
+	      sequencer_metronome += 1;
+	      sequencer_metronome_ctr = 0;
+	      sequencer_flag = 1;
+	    }
+
+
+	  if (sequencer_metronome > 7)
+	    {
+	      sequencer_flag = 1;
+	      sequencer_metronome = 0;
+	    }
+	}
+      
     }
 
   if (settings_debounce == 30) 
@@ -277,93 +476,16 @@ ISR(ANALOG_COMP_vect)
   // Reset Timer2 Counter
   TCNT2 = 0;
 
+  // Get optoloader information
   runOptoloader(&optoloader, &led_display);
-  // If the sync flag is set we can do some stuff
-  /*if ((optoloader.flags & OPTO_SYNC_bm) != 0)
-    {
-      // If we are getting a zero
-      if (optoloader.counter > (5*optoloader.zero_count/8))
-	{
-	  // If both the start and sync bits are set we can start collecting messages
-	  // This is a 0 so we shift in a 0
-	  if (optoloader.flags & OPTO_STRT_bm)
-	    {
-	      
-	      optoloader.message <<= 1;
-	      optoloader.message_count += 1;
-	    }
-	}
-      else if (optoloader.counter > (optoloader.zero_count/16))
-	{
-	  // If the ones flag, ONEF is set the first part of the one message has been seen
-	  if (optoloader.flags & OPTO_ONEF_bm)
-	    {
-	      optoloader.flags &= ~OPTO_ONEF_bm;
-	      // When both parts of a 1 are observed 
-	      // a one is shifted into the message buffer.
-	      if (optoloader.flags & OPTO_STRT_bm)
-		{
-		  optoloader.message <<= 1;
-		  optoloader.message |= 0x01;
-		  optoloader.message_count += 1;
-		}
-	      else
-		{
-		  // The first one we see sets the start bit, it does not get shifted
-		  // into the message.
-		  optoloader.flags |= OPTO_STRT_bm;
-		}
-	    }
-	  else
-	    {
-	      optoloader.flags |= OPTO_ONEF_bm;
-	    }
-	}
-    }
-  else // When we are not synced we need to find a sync
-    {
-      // If we have more than 4 successful counts taht are close to one another,
-      // Accept that as our sync count.
-      if (optoloader.sync_count == 4)
-	{
-	  optoloader.flags |= OPTO_SYNC_bm;
-	  clearDisplay(&led_display);
-	}
-      else
-	{
-	  if ((optoloader.counter < (4*optoloader.prev_count/3)) &&
-	      (optoloader.counter > (2*optoloader.prev_count/3)))
-	    {
-	      // Average them together if zero_count has already been set.
-	      if (optoloader.zero_count > 0)
-		{
-		  // Add and divide by two (shift right by 1)
-		  optoloader.zero_count = (optoloader.zero_count + optoloader.counter)>>1;
-		}
-	      else 
-		{
-		  optoloader.zero_count = optoloader.counter;
-		}
-	      optoloader.sync_count += 1;
-	    } 
-	  else
-	    {
-	      optoloader.zero_count = 0;
-	      optoloader.sync_count = 0;
-	    }
-	  setDisplay(&led_display,(1<<(optoloader.sync_count+1))|1);
-	}
-    }
-*/
+
+  // When we have a full byte, read it out and display it.
   if (optoloader.message_count == 8) 
     {
       optoloader.message_count = 0;
       led_display = optoloader.message;
     }
-  /*
-  optoloader.prev_count = optoloader.counter;
-  optoloader.counter = 0;
-  */
+
   TIMSK2 |= (1<<OCIE2A);
 }
 
@@ -391,18 +513,26 @@ void setupSampleRate(uint16_t frequency)
 
 ISR(TIMER1_COMPA_vect) 
 {
-  static uint16_t inc[4] = {0, 0, 0, 0};
+  static uint16_t inc[8] = {0, 0, 0, 0,0,0,0,0};
   static uint16_t final = 0;
 
   INCREMENT_NOTE(poly_buffer[0], inc[0]);
   INCREMENT_NOTE(poly_buffer[1], inc[1]);
   INCREMENT_NOTE(poly_buffer[2], inc[2]);
   INCREMENT_NOTE(poly_buffer[3], inc[3]);
+  INCREMENT_NOTE(poly_buffer[4], inc[4]);
+  INCREMENT_NOTE(poly_buffer[5], inc[5]);
+  INCREMENT_NOTE(poly_buffer[6], inc[6]);
+  INCREMENT_NOTE(poly_buffer[7], inc[7]);
   
   final = (GET_WAVE_VALUE(channelC, 0) + 
            GET_WAVE_VALUE(channelC, 1) +
            GET_WAVE_VALUE(channelC, 2) +
-           GET_WAVE_VALUE(channelC, 3))/poly_i;
+           GET_WAVE_VALUE(channelC, 3) +
+           GET_WAVE_VALUE(channelC, 4) +
+           GET_WAVE_VALUE(channelC, 5) +
+           GET_WAVE_VALUE(channelC, 6) +
+           GET_WAVE_VALUE(channelC, 7))/poly_i;
 
   writeMCP492x(final, MCP492x_CONFIG);
 }
