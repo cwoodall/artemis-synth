@@ -3,7 +3,7 @@ Archive member included because of file (symbol)
 /usr/lib/gcc/avr/4.3.5/avr5/libgcc.a(_udivmodhi4.o)
                               main.o (__udivmodhi4)
 /usr/lib/gcc/avr/4.3.5/avr5/libgcc.a(_divmodhi4.o)
-                              /tmp/ccB7lglF.o (__divmodhi4)
+                              /tmp/ccymbTKX.o (__divmodhi4)
 /usr/lib/gcc/avr/4.3.5/avr5/libgcc.a(_exit.o)
                               /usr/lib/gcc/avr/4.3.5/../../../avr/lib/avr5/crtm328p.o (exit)
 /usr/lib/gcc/avr/4.3.5/avr5/libgcc.a(_copy_data.o)
@@ -26,55 +26,55 @@ Discarded input sections
  .text          0x0000000000000000        0x0 main.o
  .data          0x0000000000000000        0x0 main.o
  .bss           0x0000000000000000        0x0 main.o
- .stab          0x0000000000000000     0x11a0 main.o
- .stabstr       0x0000000000000000      0xc68 main.o
+ .stab          0x0000000000000000     0x1230 main.o
+ .stabstr       0x0000000000000000      0xc99 main.o
  .text.shiftOnes
                 0x0000000000000000       0x26 main.o
  .bss.debounce  0x0000000000000000        0x1 main.o
- .text          0x0000000000000000        0x0 /tmp/ccqn4vGb.o
- .data          0x0000000000000000        0x0 /tmp/ccqn4vGb.o
- .bss           0x0000000000000000        0x0 /tmp/ccqn4vGb.o
- .stab          0x0000000000000000      0x51c /tmp/ccqn4vGb.o
- .stabstr       0x0000000000000000      0x7d0 /tmp/ccqn4vGb.o
+ .text          0x0000000000000000        0x0 /tmp/ccTZC58E.o
+ .data          0x0000000000000000        0x0 /tmp/ccTZC58E.o
+ .bss           0x0000000000000000        0x0 /tmp/ccTZC58E.o
+ .stab          0x0000000000000000      0x51c /tmp/ccTZC58E.o
+ .stabstr       0x0000000000000000      0x7d0 /tmp/ccTZC58E.o
  .text.disableSPI
-                0x0000000000000000        0x8 /tmp/ccqn4vGb.o
+                0x0000000000000000        0x8 /tmp/ccTZC58E.o
  .text.received_from_spi
-                0x0000000000000000        0x6 /tmp/ccqn4vGb.o
- .text          0x0000000000000000        0x0 /tmp/cc9WmbhG.o
- .data          0x0000000000000000        0x0 /tmp/cc9WmbhG.o
- .bss           0x0000000000000000        0x0 /tmp/cc9WmbhG.o
- .stab          0x0000000000000000      0x378 /tmp/cc9WmbhG.o
- .stabstr       0x0000000000000000      0x771 /tmp/cc9WmbhG.o
- .text          0x0000000000000000        0x0 /tmp/cckb77Ua.o
- .data          0x0000000000000000        0x0 /tmp/cckb77Ua.o
- .bss           0x0000000000000000        0x0 /tmp/cckb77Ua.o
- .stab          0x0000000000000000      0x324 /tmp/cckb77Ua.o
- .stabstr       0x0000000000000000      0x7ad /tmp/cckb77Ua.o
+                0x0000000000000000        0x6 /tmp/ccTZC58E.o
+ .text          0x0000000000000000        0x0 /tmp/cc4MMV8U.o
+ .data          0x0000000000000000        0x0 /tmp/cc4MMV8U.o
+ .bss           0x0000000000000000        0x0 /tmp/cc4MMV8U.o
+ .stab          0x0000000000000000      0x378 /tmp/cc4MMV8U.o
+ .stabstr       0x0000000000000000      0x771 /tmp/cc4MMV8U.o
+ .text          0x0000000000000000        0x0 /tmp/cctzHYbb.o
+ .data          0x0000000000000000        0x0 /tmp/cctzHYbb.o
+ .bss           0x0000000000000000        0x0 /tmp/cctzHYbb.o
+ .stab          0x0000000000000000      0x324 /tmp/cctzHYbb.o
+ .stabstr       0x0000000000000000      0x7ad /tmp/cctzHYbb.o
  .rodata.channelA
-                0x0000000000000000      0x200 /tmp/cckb77Ua.o
+                0x0000000000000000      0x200 /tmp/cctzHYbb.o
  .rodata.channelB
-                0x0000000000000000      0x200 /tmp/cckb77Ua.o
+                0x0000000000000000      0x200 /tmp/cctzHYbb.o
  .rodata.channelD
-                0x0000000000000000      0x200 /tmp/cckb77Ua.o
- .text          0x0000000000000000        0x0 /tmp/cczhK9DF.o
- .data          0x0000000000000000        0x0 /tmp/cczhK9DF.o
- .bss           0x0000000000000000        0x0 /tmp/cczhK9DF.o
- .stab          0x0000000000000000      0x504 /tmp/cczhK9DF.o
- .stabstr       0x0000000000000000      0x7a2 /tmp/cczhK9DF.o
+                0x0000000000000000      0x200 /tmp/cctzHYbb.o
+ .text          0x0000000000000000        0x0 /tmp/ccg4Fuir.o
+ .data          0x0000000000000000        0x0 /tmp/ccg4Fuir.o
+ .bss           0x0000000000000000        0x0 /tmp/ccg4Fuir.o
+ .stab          0x0000000000000000      0x504 /tmp/ccg4Fuir.o
+ .stabstr       0x0000000000000000      0x7a2 /tmp/ccg4Fuir.o
  .text.readButton
-                0x0000000000000000       0x84 /tmp/cczhK9DF.o
- .text          0x0000000000000000        0x0 /tmp/cceT6Osa.o
- .data          0x0000000000000000        0x0 /tmp/cceT6Osa.o
- .bss           0x0000000000000000        0x0 /tmp/cceT6Osa.o
- .stab          0x0000000000000000      0x63c /tmp/cceT6Osa.o
- .stabstr       0x0000000000000000      0x7d9 /tmp/cceT6Osa.o
+                0x0000000000000000       0x84 /tmp/ccg4Fuir.o
+ .text          0x0000000000000000        0x0 /tmp/ccTl6NuH.o
+ .data          0x0000000000000000        0x0 /tmp/ccTl6NuH.o
+ .bss           0x0000000000000000        0x0 /tmp/ccTl6NuH.o
+ .stab          0x0000000000000000      0x63c /tmp/ccTl6NuH.o
+ .stabstr       0x0000000000000000      0x7d9 /tmp/ccTl6NuH.o
  .text.clearDisplay
-                0x0000000000000000       0x12 /tmp/cceT6Osa.o
- .text          0x0000000000000000        0x0 /tmp/ccB7lglF.o
- .data          0x0000000000000000        0x0 /tmp/ccB7lglF.o
- .bss           0x0000000000000000        0x0 /tmp/ccB7lglF.o
- .stab          0x0000000000000000      0x63c /tmp/ccB7lglF.o
- .stabstr       0x0000000000000000      0x8b3 /tmp/ccB7lglF.o
+                0x0000000000000000       0x12 /tmp/ccTl6NuH.o
+ .text          0x0000000000000000        0x0 /tmp/ccymbTKX.o
+ .data          0x0000000000000000        0x0 /tmp/ccymbTKX.o
+ .bss           0x0000000000000000        0x0 /tmp/ccymbTKX.o
+ .stab          0x0000000000000000      0x63c /tmp/ccymbTKX.o
+ .stabstr       0x0000000000000000      0x8b3 /tmp/ccymbTKX.o
  .text          0x0000000000000000        0x0 /usr/lib/gcc/avr/4.3.5/avr5/libgcc.a(_udivmodhi4.o)
  .data          0x0000000000000000        0x0 /usr/lib/gcc/avr/4.3.5/avr5/libgcc.a(_udivmodhi4.o)
  .bss           0x0000000000000000        0x0 /usr/lib/gcc/avr/4.3.5/avr5/libgcc.a(_udivmodhi4.o)
@@ -110,12 +110,12 @@ Linker script and memory map
 Address of section .data set to 0x800100
 LOAD /usr/lib/gcc/avr/4.3.5/../../../avr/lib/avr5/crtm328p.o
 LOAD main.o
-LOAD /tmp/ccqn4vGb.o
-LOAD /tmp/cc9WmbhG.o
-LOAD /tmp/cckb77Ua.o
-LOAD /tmp/cczhK9DF.o
-LOAD /tmp/cceT6Osa.o
-LOAD /tmp/ccB7lglF.o
+LOAD /tmp/ccTZC58E.o
+LOAD /tmp/cc4MMV8U.o
+LOAD /tmp/cctzHYbb.o
+LOAD /tmp/ccg4Fuir.o
+LOAD /tmp/ccTl6NuH.o
+LOAD /tmp/ccymbTKX.o
 LOAD /usr/lib/gcc/avr/4.3.5/avr5/libgcc.a
 LOAD /usr/lib/gcc/avr/4.3.5/../../../avr/lib/avr5/libc.a
 LOAD /usr/lib/gcc/avr/4.3.5/avr5/libgcc.a
@@ -210,7 +210,7 @@ LOAD /usr/lib/gcc/avr/4.3.5/avr5/libgcc.a
 .rela.plt
  *(.rela.plt)
 
-.text           0x0000000000000000      0xede
+.text           0x0000000000000000      0xf12
  *(.vectors)
  .vectors       0x0000000000000000       0x68 /usr/lib/gcc/avr/4.3.5/../../../avr/lib/avr5/crtm328p.o
                 0x0000000000000000                __vectors
@@ -301,61 +301,61 @@ LOAD /usr/lib/gcc/avr/4.3.5/avr5/libgcc.a
                 0x0000000000000126      0x39e main.o
                 0x0000000000000126                __vector_11
  .text.__vector_23
-                0x00000000000004c4       0x7c main.o
+                0x00000000000004c4       0xac main.o
                 0x00000000000004c4                __vector_23
  .text.__vector_7
-                0x0000000000000540      0x1b0 main.o
-                0x0000000000000540                __vector_7
- .text.main     0x00000000000006f0      0x48e main.o
-                0x00000000000006f0                main
+                0x0000000000000570      0x1b4 main.o
+                0x0000000000000570                __vector_7
+ .text.main     0x0000000000000724      0x48e main.o
+                0x0000000000000724                main
  .text.setupSPI
-                0x0000000000000b7e       0x7a /tmp/ccqn4vGb.o
-                0x0000000000000b7e                setupSPI
- .text.sendSPI  0x0000000000000bf8        0xc /tmp/ccqn4vGb.o
-                0x0000000000000bf8                sendSPI
+                0x0000000000000bb2       0x7a /tmp/ccTZC58E.o
+                0x0000000000000bb2                setupSPI
+ .text.sendSPI  0x0000000000000c2c        0xc /tmp/ccTZC58E.o
+                0x0000000000000c2c                sendSPI
  .text.writeMCP492x
-                0x0000000000000c04       0x1e /tmp/cc9WmbhG.o
-                0x0000000000000c04                writeMCP492x
+                0x0000000000000c38       0x1e /tmp/cc4MMV8U.o
+                0x0000000000000c38                writeMCP492x
  .text.setupButtons
-                0x0000000000000c22       0x26 /tmp/cczhK9DF.o
-                0x0000000000000c22                setupButtons
+                0x0000000000000c56       0x26 /tmp/ccg4Fuir.o
+                0x0000000000000c56                setupButtons
  .text.readKeyboard
-                0x0000000000000c48       0x12 /tmp/cczhK9DF.o
-                0x0000000000000c48                readKeyboard
+                0x0000000000000c7c       0x12 /tmp/ccg4Fuir.o
+                0x0000000000000c7c                readKeyboard
  .text.readSettings
-                0x0000000000000c5a       0x14 /tmp/cczhK9DF.o
-                0x0000000000000c5a                readSettings
+                0x0000000000000c8e       0x14 /tmp/ccg4Fuir.o
+                0x0000000000000c8e                readSettings
  .text.setupDisplay
-                0x0000000000000c6e       0x10 /tmp/cceT6Osa.o
-                0x0000000000000c6e                setupDisplay
+                0x0000000000000ca2       0x10 /tmp/ccTl6NuH.o
+                0x0000000000000ca2                setupDisplay
  .text.setDisplay
-                0x0000000000000c7e        0x6 /tmp/cceT6Osa.o
-                0x0000000000000c7e                setDisplay
+                0x0000000000000cb2        0x6 /tmp/ccTl6NuH.o
+                0x0000000000000cb2                setDisplay
  .text.updateDisplay
-                0x0000000000000c84       0x86 /tmp/cceT6Osa.o
-                0x0000000000000c84                updateDisplay
+                0x0000000000000cb8       0x86 /tmp/ccTl6NuH.o
+                0x0000000000000cb8                updateDisplay
  .text.disableOptoloader
-                0x0000000000000d0a        0xc /tmp/ccB7lglF.o
-                0x0000000000000d0a                disableOptoloader
+                0x0000000000000d3e        0xc /tmp/ccymbTKX.o
+                0x0000000000000d3e                disableOptoloader
  .text.setupOptoloader
-                0x0000000000000d16       0x56 /tmp/ccB7lglF.o
-                0x0000000000000d16                setupOptoloader
+                0x0000000000000d4a       0x56 /tmp/ccymbTKX.o
+                0x0000000000000d4a                setupOptoloader
  .text.enableOptoloader
-                0x0000000000000d6c       0x1c /tmp/ccB7lglF.o
-                0x0000000000000d6c                enableOptoloader
+                0x0000000000000da0       0x1c /tmp/ccymbTKX.o
+                0x0000000000000da0                enableOptoloader
  .text.runOptoloader
-                0x0000000000000d88      0x104 /tmp/ccB7lglF.o
-                0x0000000000000d88                runOptoloader
- .text.libgcc   0x0000000000000e8c       0x28 /usr/lib/gcc/avr/4.3.5/avr5/libgcc.a(_udivmodhi4.o)
-                0x0000000000000e8c                __udivmodhi4
- .text.libgcc   0x0000000000000eb4       0x26 /usr/lib/gcc/avr/4.3.5/avr5/libgcc.a(_divmodhi4.o)
-                0x0000000000000eb4                __divmodhi4
-                0x0000000000000eb4                _div
-                0x0000000000000eda                . = ALIGN (0x2)
+                0x0000000000000dbc      0x104 /tmp/ccymbTKX.o
+                0x0000000000000dbc                runOptoloader
+ .text.libgcc   0x0000000000000ec0       0x28 /usr/lib/gcc/avr/4.3.5/avr5/libgcc.a(_udivmodhi4.o)
+                0x0000000000000ec0                __udivmodhi4
+ .text.libgcc   0x0000000000000ee8       0x26 /usr/lib/gcc/avr/4.3.5/avr5/libgcc.a(_divmodhi4.o)
+                0x0000000000000ee8                __divmodhi4
+                0x0000000000000ee8                _div
+                0x0000000000000f0e                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x0000000000000eda        0x0 /usr/lib/gcc/avr/4.3.5/avr5/libgcc.a(_exit.o)
-                0x0000000000000eda                exit
-                0x0000000000000eda                _exit
+ .fini9         0x0000000000000f0e        0x0 /usr/lib/gcc/avr/4.3.5/avr5/libgcc.a(_exit.o)
+                0x0000000000000f0e                exit
+                0x0000000000000f0e                _exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -374,11 +374,11 @@ LOAD /usr/lib/gcc/avr/4.3.5/avr5/libgcc.a
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x0000000000000eda        0x4 /usr/lib/gcc/avr/4.3.5/avr5/libgcc.a(_exit.o)
+ .fini0         0x0000000000000f0e        0x4 /usr/lib/gcc/avr/4.3.5/avr5/libgcc.a(_exit.o)
  *(.fini0)
-                0x0000000000000ede                _etext = .
+                0x0000000000000f12                _etext = .
 
-.data           0x0000000000800100      0x24a load address 0x0000000000000ede
+.data           0x0000000000800100      0x24a load address 0x0000000000000f12
                 0x0000000000800100                PROVIDE (__data_start, .)
  *(.data)
  *(.data*)
@@ -392,7 +392,7 @@ LOAD /usr/lib/gcc/avr/4.3.5/avr5/libgcc.a
  *(.rodata)
  *(.rodata*)
  .rodata.channelC
-                0x0000000000800149      0x200 /tmp/cckb77Ua.o
+                0x0000000000800149      0x200 /tmp/cctzHYbb.o
                 0x0000000000800149                channelC
  *(.gnu.linkonce.d*)
                 0x000000000080034a                . = ALIGN (0x2)
@@ -400,7 +400,7 @@ LOAD /usr/lib/gcc/avr/4.3.5/avr5/libgcc.a
                 0x000000000080034a                _edata = .
                 0x000000000080034a                PROVIDE (__data_end, .)
 
-.bss            0x000000000080034a       0x37
+.bss            0x000000000080034a       0x39
                 0x000000000080034a                PROVIDE (__bss_start, .)
  *(.bss)
  *(.bss*)
@@ -413,54 +413,58 @@ LOAD /usr/lib/gcc/avr/4.3.5/avr5/libgcc.a
  .bss.sequencer_ctr
                 0x000000000080034c        0x1 main.o
                 0x000000000080034c                sequencer_ctr
+ .bss.msg_ctr   0x000000000080034d        0x1 main.o
+                0x000000000080034d                msg_ctr
  .bss.sequencer_display_i
-                0x000000000080034d        0x1 main.o
-                0x000000000080034d                sequencer_display_i
- .bss.sequencer_metronome
                 0x000000000080034e        0x1 main.o
-                0x000000000080034e                sequencer_metronome
- .bss.sequencer_metronome_ctr
+                0x000000000080034e                sequencer_display_i
+ .bss.sequencer_metronome
                 0x000000000080034f        0x1 main.o
-                0x000000000080034f                sequencer_metronome_ctr
- .bss.sequencer_flag
+                0x000000000080034f                sequencer_metronome
+ .bss.sequencer_metronome_ctr
                 0x0000000000800350        0x1 main.o
-                0x0000000000800350                sequencer_flag
- .bss.led_refresh_flag
+                0x0000000000800350                sequencer_metronome_ctr
+ .bss.sequencer_flag
                 0x0000000000800351        0x1 main.o
-                0x0000000000800351                led_refresh_flag
- .bss.led_display
+                0x0000000000800351                sequencer_flag
+ .bss.led_refresh_flag
                 0x0000000000800352        0x1 main.o
-                0x0000000000800352                led_display
- .bss.read_keyboard_flag
+                0x0000000000800352                led_refresh_flag
+ .bss.led_display
                 0x0000000000800353        0x1 main.o
-                0x0000000000800353                read_keyboard_flag
- .bss.settings_debounce
+                0x0000000000800353                led_display
+ .bss.read_keyboard_flag
                 0x0000000000800354        0x1 main.o
-                0x0000000000800354                settings_debounce
- .bss.scale_i   0x0000000000800355        0x1 main.o
-                0x0000000000800355                scale_i
+                0x0000000000800354                read_keyboard_flag
+ .bss.settings_debounce
+                0x0000000000800355        0x1 main.o
+                0x0000000000800355                settings_debounce
+ .bss.scale_i   0x0000000000800356        0x1 main.o
+                0x0000000000800356                scale_i
  .bss.poly_buffer
-                0x0000000000800356       0x10 main.o
-                0x0000000000800356                poly_buffer
- .bss.poly_i    0x0000000000800366        0x1 main.o
-                0x0000000000800366                poly_i
- .bss.final.1411
-                0x0000000000800367        0x2 main.o
- .bss.inc.1410  0x0000000000800369       0x10 main.o
+                0x0000000000800357       0x10 main.o
+                0x0000000000800357                poly_buffer
+ .bss.poly_i    0x0000000000800367        0x1 main.o
+                0x0000000000800367                poly_i
+ .bss.final.1422
+                0x0000000000800368        0x2 main.o
+ .bss.inc.1421  0x000000000080036a       0x10 main.o
+ .bss.num_bytes.1383
+                0x000000000080037a        0x1 main.o
  *(COMMON)
- COMMON         0x0000000000800379        0x8 main.o
-                0x0000000000800379                key_pressed
-                0x000000000080037a                optoloader
-                0x0000000000800381                PROVIDE (__bss_end, .)
-                0x0000000000000ede                __data_load_start = LOADADDR (.data)
-                0x0000000000001128                __data_load_end = (__data_load_start + SIZEOF (.data))
+ COMMON         0x000000000080037b        0x8 main.o
+                0x000000000080037b                key_pressed
+                0x000000000080037c                optoloader
+                0x0000000000800383                PROVIDE (__bss_end, .)
+                0x0000000000000f12                __data_load_start = LOADADDR (.data)
+                0x000000000000115c                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x0000000000800381        0x0
-                0x0000000000800381                PROVIDE (__noinit_start, .)
+.noinit         0x0000000000800383        0x0
+                0x0000000000800383                PROVIDE (__noinit_start, .)
  *(.noinit*)
-                0x0000000000800381                PROVIDE (__noinit_end, .)
-                0x0000000000800381                _end = .
-                0x0000000000800381                PROVIDE (__heap_start, .)
+                0x0000000000800383                PROVIDE (__noinit_end, .)
+                0x0000000000800383                _end = .
+                0x0000000000800383                PROVIDE (__heap_start, .)
 
 .eeprom         0x0000000000810000        0x0
  *(.eeprom*)

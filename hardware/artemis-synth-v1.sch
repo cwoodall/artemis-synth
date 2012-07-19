@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Wed 18 Jul 2012 10:01:27 AM EDT
+EESchema Schematic File Version 2  date Thu 19 Jul 2012 05:37:40 PM EDT
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -38,7 +38,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title ""
-Date "18 jul 2012"
+Date "19 jul 2012"
 Rev ""
 Comp ""
 Comment1 ""
@@ -753,7 +753,7 @@ L TDA2822M U2
 U 1 1 4FDC04EF
 P 9075 2575
 F 0 "U2" H 9625 2375 60  0000 C CNN
-F 1 "TDA2722M" H 9800 2475 60  0000 C CNN
+F 1 "TDA2822M" H 9800 2475 60  0000 C CNN
 F 2 "DIP-8__300" H 9800 2575 60  0001 C CNN
 	1    9075 2575
 	1    0    0    -1  

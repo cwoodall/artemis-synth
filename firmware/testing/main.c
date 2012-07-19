@@ -15,6 +15,7 @@
 uint8_t opto_enable_ctr = 0;
 uint8_t keyboard_ctr = 0;
 uint8_t sequencer_ctr = 0;
+uint8_t msg_ctr = 0;
 
 #define KEYBOARD  0x01
 #define SEQUENCER 0x02
@@ -298,46 +299,46 @@ int main(void)
 		      {
 			poly_buffer[2] = 0;
 		      }
-		  }
-		if (sequencer[3] & (1<<sequencer_metronome))
-		  {
-		    poly_buffer[3] = F6;
-		  }
-		else
-		  {
-		    poly_buffer[3] = 0;
-		  }
-		if (sequencer[4] & (1<<sequencer_metronome))
-		  {
-		    poly_buffer[4] = G6;
-		  }
-		else
-		  {
-		    poly_buffer[4] = 0;
-		  }
-		if (sequencer[5] & (1<<sequencer_metronome))
-		  {
-		    poly_buffer[5] = A6;
-		  }
-		else
-		  {
-		    poly_buffer[5] = 0;
-		  }
-		if (sequencer[6] & (1<<sequencer_metronome))
-		  {
-		    poly_buffer[6] = B6;
-		  }
-		else
-		  {
-		    poly_buffer[6] = 0;
-		  }
-		if (sequencer[7] & (1<<sequencer_metronome))
-		  {
-		    poly_buffer[7] = C7;
-		  }
-		else
-		  {
-		    poly_buffer[7] = 0;
+		    if (sequencer[3] & (1<<sequencer_metronome))
+		      {
+			poly_buffer[3] = F6;
+		      }
+		    else
+		      {
+			poly_buffer[3] = 0;
+		      }
+		    if (sequencer[4] & (1<<sequencer_metronome))
+		      {
+			poly_buffer[4] = G6;
+		      }
+		    else
+		      {
+			poly_buffer[4] = 0;
+		      }
+		    if (sequencer[5] & (1<<sequencer_metronome))
+		      {
+			poly_buffer[5] = A6;
+		      }
+		    else
+		      {
+			poly_buffer[5] = 0;
+		      }
+		    if (sequencer[6] & (1<<sequencer_metronome))
+		      {
+			poly_buffer[6] = B6;
+		      }
+		    else
+		      {
+			poly_buffer[6] = 0;
+		      }
+		    if (sequencer[7] & (1<<sequencer_metronome))
+		      {
+			poly_buffer[7] = C7;
+		      }
+		    else
+		      {
+			poly_buffer[7] = 0;
+		      }
 		  }
 	      }
 	    }
@@ -401,6 +402,7 @@ ISR(TIMER2_COMPA_vect)
 	  TCCR1B = 0;
 	  enableOptoloader(&optoloader);
 	  opto_enable_ctr = 0;
+	  msg_ctr = 0;
 	}
       else if (opto_enable_ctr > 0)
 	{
@@ -471,6 +473,7 @@ ISR(TIMER2_COMPA_vect)
 
 ISR(ANALOG_COMP_vect)
 {
+  static uint8_t num_bytes = 0; // number of bytes expected to be received
   // Turn off Timer 2 Interrupt A
   TIMSK2 &= ~(1<<OCIE2A);
   // Reset Timer2 Counter
@@ -484,6 +487,38 @@ ISR(ANALOG_COMP_vect)
     {
       optoloader.message_count = 0;
       led_display = optoloader.message;
+      
+      if (msg_ctr == 0)
+	{
+#define SEQUENCER_MSG 0x30 // Upper 4 bits of "0011" means a sequencer message is being sent
+#define HARMONICS_MSG 0xC0 // Upper 4 bits of "1100" means a harmonics message is being sent
+	  if (optoloader.message & SEQUENCER_MSG)
+	    {
+	      // if we are getting a sequencer message do something here
+	    }
+	  else if (optoloader.message & HARMONICS_MSG)
+	    {
+	      // if we are getting a harmonics message do the appropraite thing here
+	    }
+	  else
+	    {
+	      // ERROR STATE
+	    }
+	  num_bytes = 0x0F & optoloader.message;
+	}
+      else if (msg_ctr > num_bytes)
+	{
+	  if (optoloader.message = 0x80)
+	    { 
+	      // We received the epilogue and we can wrap up
+	    }
+	}
+      else if (msg_ctr > 0)
+	{
+	  sequencer[msg_ctr-1] = optoloader.message;
+	}
+      
+      msg_ctr += 1;
     }
 
   TIMSK2 |= (1<<OCIE2A);
