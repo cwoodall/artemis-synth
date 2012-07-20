@@ -10,4 +10,4 @@ All hardware designs are done in KiCAD
 
 == Documentation
 
-[http://ohm.bu.edu/cgi-bin/edf/SoundSynthesizer]
+[[http://ohm.bu.edu/cgi-bin/edf/SoundSynthesizer]]
