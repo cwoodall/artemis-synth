@@ -2,9 +2,11 @@
 #include <avr/io.h>
 #include <avr/interrupt.h>
 #include <util/atomic.h>
+#include <avr/eeprom.h> 
+
 #include "HRL_SPI.h"
 #include "HRL_MCP492x.h"
-#define MCP492x_CONFIG 0x30 // Define configuration bits for MCP4921
+#define MCP492x_CONFIG 0x30 // Define configuration bits for MCP4921, that we are going to use
 
 #include "notes.h"
 #include "inst.h"
@@ -16,6 +18,7 @@ uint8_t opto_enable_ctr = 0;
 uint8_t keyboard_ctr = 0;
 uint8_t sequencer_ctr = 0;
 uint8_t msg_ctr = 0;
+uint8_t speed = 0x5F;
 
 #define KEYBOARD  0x01
 #define SEQUENCER 0x02
@@ -24,21 +27,41 @@ uint8_t msg_ctr = 0;
 uint8_t mode = KEYBOARD;
 
 #define SEQUENCER_LENGTH 8
-uint8_t sequencer[SEQUENCER_LENGTH] = {
-  0b01010101,
-  0b10101010,
-  0b01010101,
-  0b00000010,
-  0b10111000,
-  0b11111111,
-  0b01000000,
-  0b10000001
+#define TOTAL_SEQUENCES 8
+uint8_t sequencer_i = 0;
+
+//#define SEQUENCER_EEPROM (const void*)12
+uint8_t EEMEM sequencer_EEPROM[TOTAL_SEQUENCES][SEQUENCER_LENGTH] = {
+  {0,0,0,0,0,0,0,0},
+  {0,0,0,0,0,0,0,0},
+  {0,0,0,0,0,0,0,0},
+  {0,0,0,0,0,0,0,0},
+  {0,0,0,0,0,0,0,0},
+  {0,0,0,0,0,0,0,0},
+  {0,0,0,0,0,0,0,0},
+  {0,0,0,0,0,0,0,0}
 };
+
+uint8_t sequencer[TOTAL_SEQUENCES][SEQUENCER_LENGTH] = {
+  {0,0,0,0,0,0,0,0},
+  {0,0,0,0,0,0,0,0},
+  {0,0,0,0,0,0,0,0},
+  {0,0,0,0,0,0,0,0},
+  {0,0,0,0,0,0,0,0},
+  {0,0,0,0,0,0,0,0},
+  {0,0,0,0,0,0,0,0},
+  {0,0,0,0,0,0,0,0}
+};
+
 uint8_t sequencer_display_i = 0;
 uint8_t sequencer_metronome = 0;
 uint8_t sequencer_metronome_ctr = 0;
 uint8_t sequencer_flag = 0;
 
+// WAVE/HARMONICS stuff
+uint16_t harmonics[256];
+uint16_t harmonics_amplitudes[5] = {0,0,0,0,0};
+// LED, Optoloader and Keyboard globals
 uint8_t led_refresh_flag = 0;
 uint8_t led_display = 0x00000000;
 optoloader_t optoloader;
@@ -46,6 +69,7 @@ uint8_t read_keyboard_flag = 0;
 uint8_t settings_debounce = 0;
 
 #define MAX_LOOKUP  0x7FFF
+#define GET_WAVE_VALUE(inst, num) (poly_buffer[num]?inst[inc[num]>>NOTES_BASE]:0)
 #define INCREMENT_NOTE(note, i) 			\
   if (note)						\
     {							\
@@ -62,7 +86,6 @@ uint8_t settings_debounce = 0;
     {							\
       i = 0;						\
     }							
-
 #define FREQUENCY_TO_COUNT(x) (F_CPU/1000)/(x/1000)
 
 // Setup Sample rate at 22kHz, externally we filter at 11kHz
@@ -101,6 +124,10 @@ int main(void)
 {
   // Disable Interrupts for setup
   cli();
+  for (int i = 0; i < 256; i++)
+    {
+      harmonics[i] = sine[i];
+    }
   
   // Setup Timer2, which is our "control timer"
   setupControlTimer();
@@ -129,7 +156,9 @@ int main(void)
   uint8_t settings = 0;
   uint8_t settings_prev = 0;
   uint8_t keyboard = 0;
-
+  uint8_t keyboard_prev = 0;
+  
+  eeprom_read_block((void*)sequencer, (const void *)sequencer_EEPROM, 64);
   sei(); // Enable Interrupts now that we are all ready to go
   for(;;) 
     {
@@ -228,6 +257,7 @@ int main(void)
 		    poly_buffer[1] = 0;
 		    poly_buffer[2] = 0;
 		    poly_buffer[3] = 0;
+		    poly_buffer[4] = 0;
 		    poly_buffer[5] = 0;
 		    poly_buffer[6] = 0;
 		    poly_buffer[7] = 0;
@@ -248,92 +278,145 @@ int main(void)
 	  else if (mode == SEQUENCER)
 	    {
 	      //setDisplay(&led_display, sequencer_metronome);
-	      setDisplay(&led_display, sequencer[sequencer_display_i]);
+	      setDisplay(&led_display, shiftOnes(sequencer_i+1));
+	      
+	      keyboard = readKeyboard();
 	      if (settings_debounce == 0)
-		{	
+		{
 		  if (((settings & 0x02) == 0) && ((settings_prev & 0x02) != 0))
 		    { 
-		      if(sequencer_display_i < (SEQUENCER_LENGTH-1))
+		      if (speed < 0xCF)
 			{
-			  sequencer_display_i += 1;
+			  speed += 0x10;
+			}
+		      else
+			{
+			  speed = 0xCF;
 			}
 		      settings_debounce = 1;
+		      setDisplay(&led_display, shiftOnes(scale_i+1));
 		    }
 		  if (((settings & 0x01) == 0) && ((settings_prev & 0x01) != 0))
 		    {
-		      if (sequencer_display_i > 0) 
+		      if (speed > 0x2F) 
 			{
-			  sequencer_display_i -= 1;
+			  speed -= 0x10;
 			}
+		      else
+			{
+			  speed = 0x2F;
+			}
+		      
+		      settings_debounce = 1;
+		    }
+
+		  if (((keyboard & 0x01)==0) && ((keyboard_prev & 0x01) != 0))
+		    {
+		      sequencer_i = 0;
+		      settings_debounce = 1;
+		    }
+		  if (((keyboard & 0x02)==0) && ((keyboard_prev & 0x02) != 0))
+		    {
+		      sequencer_i = 1;
+		      settings_debounce = 1;
+		    }
+		  if (((keyboard & 0x04)==0) && ((keyboard_prev & 0x04) != 0))
+		    {
+		      sequencer_i = 2;
+		      settings_debounce = 1;
+		    }
+		  if (((keyboard & 0x08)==0) && ((keyboard_prev & 0x08) != 0))
+		    {
+		      sequencer_i = 3;
+		      settings_debounce = 1;
+		    }
+		  if (((keyboard & 0x10)==0) && ((keyboard_prev & 0x10) != 0))
+		    {
+		      sequencer_i = 4;
+		      settings_debounce = 1;
+		    }
+		  if (((keyboard & 0x20)==0) && ((keyboard_prev & 0x20) != 0))
+		    {
+		      sequencer_i = 5;
+		      settings_debounce = 1;
+		    }
+		  if (((keyboard & 0x40)==0) && ((keyboard_prev & 0x40) != 0))
+		    {
+		      sequencer_i = 6;
+		      settings_debounce = 1;
+		    }
+		  if (((keyboard & 0x80)==0) && ((keyboard_prev & 0x80) != 0))
+		    {
+		      sequencer_i = 7;
 		      settings_debounce = 1;
 		    }
 		}
+	      keyboard_prev = keyboard;
 	      poly_i = 4;
 	      ATOMIC_BLOCK(ATOMIC_RESTORESTATE)
 	      {
 		  {
 		    sequencer_flag = 0;
-		    if (sequencer[0] & (1<<sequencer_metronome))
+		    if (sequencer[sequencer_i][sequencer_metronome] & (1<<0))
 		      {
-			poly_buffer[0] = C6;
+			poly_buffer[0] = C5;
 		      }
 		    else
 		      {
 			poly_buffer[0] = 0;
 		      }
 		    
-		    if (sequencer[1] & (1<<sequencer_metronome))
+		    if (sequencer[sequencer_i][sequencer_metronome] & (1<<1))
 		      {
-			poly_buffer[1] = D6;
+			poly_buffer[1] = D5;
 		      }
 		    else
 		      {
 			poly_buffer[1] = 0;
 		      }
-		    
-		    if (sequencer[2] & (1<<sequencer_metronome))
+		    if (sequencer[sequencer_i][sequencer_metronome] & (1<<2))
 		      {
-			poly_buffer[2] = E6;
+			poly_buffer[2] = E5;
 		      }
 		    else
 		      {
 			poly_buffer[2] = 0;
 		      }
-		    if (sequencer[3] & (1<<sequencer_metronome))
+		    if (sequencer[sequencer_i][sequencer_metronome] & (1<<3))
 		      {
-			poly_buffer[3] = F6;
+			poly_buffer[3] = F5;
 		      }
 		    else
 		      {
 			poly_buffer[3] = 0;
 		      }
-		    if (sequencer[4] & (1<<sequencer_metronome))
+		    if (sequencer[sequencer_i][sequencer_metronome] & (1<<4))
 		      {
-			poly_buffer[4] = G6;
+			poly_buffer[4] = G5;
 		      }
 		    else
 		      {
 			poly_buffer[4] = 0;
 		      }
-		    if (sequencer[5] & (1<<sequencer_metronome))
+		    if (sequencer[sequencer_i][sequencer_metronome] & (1<<5))
 		      {
-			poly_buffer[5] = A6;
+			poly_buffer[5] = A5;
 		      }
 		    else
 		      {
 			poly_buffer[5] = 0;
 		      }
-		    if (sequencer[6] & (1<<sequencer_metronome))
+		    if (sequencer[sequencer_i][sequencer_metronome] & (1<<6))
 		      {
-			poly_buffer[6] = B6;
+			poly_buffer[6] = B5;
 		      }
 		    else
 		      {
 			poly_buffer[6] = 0;
 		      }
-		    if (sequencer[7] & (1<<sequencer_metronome))
+		    if (sequencer[sequencer_i][sequencer_metronome] & (1<<7))
 		      {
-			poly_buffer[7] = C7;
+			poly_buffer[7] = C6;
 		      }
 		    else
 		      {
@@ -384,7 +467,9 @@ ISR(TIMER2_COMPA_vect)
 	  setDisplay(&led_display, shiftOnes(scale_i+1));
 	  disableOptoloader(&optoloader);
 	  opto_enable_ctr = 0;
-	  
+
+	  eeprom_write_block((const void *)sequencer, (void *)sequencer_EEPROM, 64);
+
 	  setupSampleRate(22000);
 	}
       if (opto_enable_ctr > 0)
@@ -435,13 +520,13 @@ ISR(TIMER2_COMPA_vect)
 	{
 	  sequencer_metronome_ctr += 1;
 
-	  if ((sequencer_metronome_ctr >= 0x3F) && !(sequencer_metronome % 2))
+	  if ((sequencer_metronome_ctr >= speed) && !(sequencer_metronome % 2))
 	    {
 	      sequencer_metronome += 1;
 	      sequencer_metronome_ctr = 0;
 	      sequencer_flag = 1;
 	    }
-	  else if ((sequencer_metronome_ctr >= 0x38))
+	  else if ((sequencer_metronome_ctr >= (speed-0x05)))
 	    {
 	      sequencer_metronome += 1;
 	      sequencer_metronome_ctr = 0;
@@ -474,6 +559,11 @@ ISR(TIMER2_COMPA_vect)
 ISR(ANALOG_COMP_vect)
 {
   static uint8_t num_bytes = 0; // number of bytes expected to be received
+#define SEQUENCER_MSG 0x30 // Upper 4 bits of "0011" means a sequencer message is being sent
+#define HARMONICS_MSG 0xC0 // Upper 4 bits of "1100" means a harmonics message is being sent
+
+  static uint32_t temp_harmonics = 0;
+  static uint8_t msg_mode = 0; 
   // Turn off Timer 2 Interrupt A
   TIMSK2 &= ~(1<<OCIE2A);
   // Reset Timer2 Counter
@@ -487,37 +577,59 @@ ISR(ANALOG_COMP_vect)
     {
       optoloader.message_count = 0;
       led_display = optoloader.message;
-      
+
+      // NEED TO FINISH WRITING MESSAGE INTERPRETATION STUFF
       if (msg_ctr == 0)
 	{
-#define SEQUENCER_MSG 0x30 // Upper 4 bits of "0011" means a sequencer message is being sent
-#define HARMONICS_MSG 0xC0 // Upper 4 bits of "1100" means a harmonics message is being sent
 	  if (optoloader.message & SEQUENCER_MSG)
 	    {
 	      // if we are getting a sequencer message do something here
+	      msg_mode = SEQUENCER_MSG;
 	    }
 	  else if (optoloader.message & HARMONICS_MSG)
 	    {
 	      // if we are getting a harmonics message do the appropraite thing here
+	      msg_mode = HARMONICS_MSG;
 	    }
 	  else
 	    {
-	      // ERROR STATE
+	      // ERROR STATE!!!
 	    }
+	  // How many bytes before epilogue?
 	  num_bytes = 0x0F & optoloader.message;
 	}
       else if (msg_ctr > num_bytes)
 	{
-	  if (optoloader.message = 0x80)
+	  #define EPILOGUE_MSG 0x80
+	  if (optoloader.message == EPILOGUE_MSG)
 	    { 
-	      // We received the epilogue and we can wrap up
+	      if (msg_mode == HARMONICS_MSG)
+		{
+		  for (uint16_t i = 0; i < 256; i++)
+		    {
+		      temp_harmonics = (((harmonics_amplitudes[0]*(sine[i]<<2))>>4) + 
+					((harmonics_amplitudes[1]*(sine[(i*2)%256]<<2))>>4) + 
+					((harmonics_amplitudes[2]*(sine[(i*4)%256]<<2))>>4) + 
+					((harmonics_amplitudes[3]*(sine[(i*8)%256]<<2))>>4) + 
+					((harmonics_amplitudes[4]*(sine[(i*16)%256]<<2))>>4))/5;
+
+		      harmonics[i] = (uint16_t) temp_harmonics;
+		    }
+		}
+	      //	      opto_enable_ctr = 0xFF;
 	    }
 	}
       else if (msg_ctr > 0)
 	{
-	  sequencer[msg_ctr-1] = optoloader.message;
+	  if (msg_mode == SEQUENCER_MSG)
+	    {
+	      sequencer[sequencer_i][msg_ctr-1] = optoloader.message;
+	    }
+	  else if (msg_mode == HARMONICS_MSG)
+	    {
+	      harmonics_amplitudes[(optoloader.message>>5)] = (optoloader.message>>2) & 0x07;
+	    }
 	}
-      
       msg_ctr += 1;
     }
 
@@ -541,14 +653,12 @@ void setupSampleRate(uint16_t frequency)
   TCCR1B |= (1 << CS10); // No prescaler
   // enable timer compare interrupt:
   TIMSK1 |= (1 << OCIE1A);
-  // enable global interrupts:
 }
 
-#define GET_WAVE_VALUE(inst, num) (poly_buffer[num]?inst[inc[num]>>NOTES_BASE]:0)
-
+   
 ISR(TIMER1_COMPA_vect) 
 {
-  static uint16_t inc[8] = {0, 0, 0, 0,0,0,0,0};
+  static uint16_t inc[8] = {0, 0, 0, 0, 0, 0, 0, 0};
   static uint16_t final = 0;
 
   INCREMENT_NOTE(poly_buffer[0], inc[0]);
@@ -560,14 +670,14 @@ ISR(TIMER1_COMPA_vect)
   INCREMENT_NOTE(poly_buffer[6], inc[6]);
   INCREMENT_NOTE(poly_buffer[7], inc[7]);
   
-  final = (GET_WAVE_VALUE(channelC, 0) + 
-           GET_WAVE_VALUE(channelC, 1) +
-           GET_WAVE_VALUE(channelC, 2) +
-           GET_WAVE_VALUE(channelC, 3) +
-           GET_WAVE_VALUE(channelC, 4) +
-           GET_WAVE_VALUE(channelC, 5) +
-           GET_WAVE_VALUE(channelC, 6) +
-           GET_WAVE_VALUE(channelC, 7))/poly_i;
+  final = (GET_WAVE_VALUE(harmonics, 0) + 
+           GET_WAVE_VALUE(harmonics, 1) +
+           GET_WAVE_VALUE(harmonics, 2) +
+           GET_WAVE_VALUE(harmonics, 3) +
+           GET_WAVE_VALUE(harmonics, 4) +
+           GET_WAVE_VALUE(harmonics, 5) +
+           GET_WAVE_VALUE(harmonics, 6) +
+           GET_WAVE_VALUE(harmonics, 7))/poly_i;
 
   writeMCP492x(final, MCP492x_CONFIG);
 }

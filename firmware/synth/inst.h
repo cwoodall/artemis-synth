@@ -2,7 +2,7 @@
 #define _inst_h_
 #include <avr/io.h>
 // Sine Wave
-extern const uint16_t channelA[256];
+extern const uint16_t sine[256];
 
 //Square Wave
 extern const uint16_t channelB[256];

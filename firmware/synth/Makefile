@@ -1,9 +1,9 @@
 PRG            = main
 OBJ            = main.o
-PROGRAMMER     = avrisp2
+PROGRAMMER     = usbasp
 PORT           = usb
 MCU_TARGET     = atmega328p
-AVRDUDE_TARGET = ATMEGA328P
+AVRDUDE_TARGET = m328p
 OPTIMIZE       = -Os -fpack-struct -fshort-enums -funsigned-char -funsigned-bitfields -ffunction-sections -fdata-sections
 DEFS           =
 LIBS           = HRL_SPI.c HRL_MCP492x.c inst.c buttons.c leds.c optoloader.c
@@ -55,27 +55,12 @@ srec: $(PRG).srec
 
 %.bin: %.elf
 	$(OBJCOPY) -j .text -j .data -O binary $< $@
-	# Rules for building the .eeprom rom images
 
-eeprom: ehex ebin esrec
-
-ehex:  $(PRG)_eeprom.hex
-#ebin:  $(PRG)_eeprom.bin
-esrec: $(PRG)_eeprom.srec
-
-%_eeprom.hex: %.elf
-  $(OBJCOPY) -j .eeprom --change-section-lma .eeprom=0 -O ihex $< $@
-
-#%_eeprom.srec: %.elf
-#	$(OBJCOPY) -j .eeprom --change-section-lma .eeprom=0 -O srec $< $@
-
-%_eeprom.bin: %.elf
-  $(OBJCOPY) -j .eeprom --change-section-lma .eeprom=0 -O binary $< $@
-
+# Rules for building the .eeprom rom images
 
 flash:  $(PRG).hex
 	avrdude -p $(AVRDUDE_TARGET) -c $(PROGRAMMER) -P $(PORT) -v  \
-         -U flash:w:$(PRG).hex 
+         -U flash:w:$(PRG).hex #-U eeprom:w:$(PRG).eep
 
 fuse:
 	avrdude -p $(AVRDUDE_TARGET) -c $(PROGRAMMER) -P $(PORT) -v \
