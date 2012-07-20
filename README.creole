@@ -7,3 +7,7 @@ Christopher Woodall
 All hardware designs are done in KiCAD
 
 == Firmware
+
+== Documentation
+
+[http://ohm.bu.edu/cgi-bin/edf/SoundSynthesizer]
