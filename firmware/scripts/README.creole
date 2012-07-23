@@ -1,11 +1,46 @@
 = Scripts for Artemis Synthesizer
 
-cw_fixedpoint.py : A somewhat wonky implementation of fixed point mathematics. 
-		   Converts from floating to the desired FixedPoint 
-		   representation very well.
-gen_note_macros.py : Utilizes UFixedPoint and the appropriate maths to generate
-		     notes.h (python gen_note_macros.py > notes.h), which is a
-		     list of all notes from C0 to Ds8 (D#8) paired with their
-		     appropriate "incrementer" for table lookups.
-tabe_gen.py : Generate 4 basic wave tables. Sine, Square, Triangle and Ramp.
-	      Each with 256 samples.
+== cw_fixedpoint.py  
+
+cw_fixedpoint.py implements a  somewhat wonky implementation of fixed point 
+mathematics. It can convert from floating to the desired [[http://en.wikipedia.org/wiki/Fixed-point_arithmetic|Fixed Point]] representation. 
+
+cw_fixed point implements UFixedPoint which is an unsigned fixed point number with m and 
+n parameters specified by the user. m represents the number of whole number bits and n 
+represents the number of fractional bits. This can be represented as Qm.n colloqually 
+according to [[http://en.wikipedia.org/wiki/Q_%28number_format%29|Q notation]]
+
+=== Problems
+
+There seem to be some rounding issues
+
+== gen_note_macros.py
+
+Utilizes UFixedPoint and the appropriate maths to generate notes.h (python gen_note_macros.py > notes.h), which is a list of all notes from C0 to Ds8 (D#8) paired with their appropriate "incrementer" for table lookups. 
+
+Can also generate notes.js, which creates a javascript object notes which contains the constants. An example of a call would be:
+
+{{{
+notes.A4;
+/* OR */
+notes["A4"]
+}}}
+     
+== table_gen.py
+
+Generate 4 basic wave tables. Sine, Square, Triangle and Ramp. Each with 256 samples.
+
+Implements the class WaveTable, which inherits from object. A WaveTable takes the number of
+samples, the max_value it can generate then a function which is based into it which is later
+executed when you call the //generate()// method. I use lambda functiosn, but whatever
+function is passed in should have three arguments: x, sam, max where //x// is the current position
+in the for loop which iterates through the samples, //sam// is the number of samples and //max// is the maximum value. I have been able to use this method for easily making wave tables, but other more completely functional methods could be implemented.
+
+== load.sh
+
+This script was used for programming 50 microcontrollers in under 30 minutes.
+The programming rig uses a ZIF socket and follows this following process:
+
+# Program the bootloader using the AVRISP,
+# Wait to make sure the ATMEGA328P reboots and has the bootloader on it
+# Use the USBASP bootloader we just burned to flash the keyboard/sequencer firmware!
