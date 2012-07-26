@@ -1,21 +1,23 @@
 Archive member included because of file (symbol)
 
-/usr/lib/gcc/avr/4.3.5/avr5/libgcc.a(_udivmodhi4.o)
+/usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/avr5/libgcc.a(_udivmodhi4.o)
                               main.o (__udivmodhi4)
-/usr/lib/gcc/avr/4.3.5/avr5/libgcc.a(_divmodhi4.o)
-                              /tmp/cc2fYJ8m.o (__divmodhi4)
-/usr/lib/gcc/avr/4.3.5/avr5/libgcc.a(_exit.o)
-                              /usr/lib/gcc/avr/4.3.5/../../../avr/lib/avr5/crtm328p.o (exit)
-/usr/lib/gcc/avr/4.3.5/avr5/libgcc.a(_copy_data.o)
+/usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/avr5/libgcc.a(_divmodhi4.o)
+                              /var/folders/hX/hXBB4wZrEYO-ZmkKU5fWSk+++TI/-Tmp-//ccBcmVGr.o (__divmodhi4)
+/usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/avr5/libgcc.a(_exit.o)
+                              /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm328p.o (exit)
+/usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/avr5/libgcc.a(_copy_data.o)
                               main.o (__do_copy_data)
-/usr/lib/gcc/avr/4.3.5/avr5/libgcc.a(_clear_bss.o)
+/usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/avr5/libgcc.a(_clear_bss.o)
                               main.o (__do_clear_bss)
-/usr/lib/gcc/avr/4.3.5/../../../avr/lib/avr5/libc.a(eerd_block_atmega328p.o)
+/usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/libc.a(eerd_block_atmega328p.o)
                               main.o (__eerd_block_m328p)
-/usr/lib/gcc/avr/4.3.5/../../../avr/lib/avr5/libc.a(eewr_block_atmega328p.o)
+/usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/libc.a(eerd_byte_atmega328p.o)
+                              main.o (__eerd_byte_m328p)
+/usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/libc.a(eewr_block_atmega328p.o)
                               main.o (__eewr_block_m328p)
-/usr/lib/gcc/avr/4.3.5/../../../avr/lib/avr5/libc.a(eewr_byte_atmega328p.o)
-                              /usr/lib/gcc/avr/4.3.5/../../../avr/lib/avr5/libc.a(eewr_block_atmega328p.o) (__eewr_r18_m328p)
+/usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/libc.a(eewr_byte_atmega328p.o)
+                              main.o (__eewr_byte_m328p)
 
 Allocating common symbols
 Common symbol       size              file
@@ -26,123 +28,186 @@ optoloader          0x7               main.o
 
 Discarded input sections
 
- .data          0x0000000000000000        0x0 /usr/lib/gcc/avr/4.3.5/../../../avr/lib/avr5/crtm328p.o
- .bss           0x0000000000000000        0x0 /usr/lib/gcc/avr/4.3.5/../../../avr/lib/avr5/crtm328p.o
- .stab          0x0000000000000000      0x6b4 /usr/lib/gcc/avr/4.3.5/../../../avr/lib/avr5/crtm328p.o
- .stabstr       0x0000000000000000       0x64 /usr/lib/gcc/avr/4.3.5/../../../avr/lib/avr5/crtm328p.o
- .text          0x0000000000000000        0x0 main.o
- .data          0x0000000000000000        0x0 main.o
- .bss           0x0000000000000000        0x0 main.o
- .stab          0x0000000000000000     0x15c0 main.o
- .stabstr       0x0000000000000000      0xe6b main.o
+ .data          0x00000000        0x0 /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm328p.o
+ .bss           0x00000000        0x0 /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm328p.o
+ .stab          0x00000000        0x0 /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm328p.o
+ .stabstr       0x00000000        0x0 /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm328p.o
+ .text          0x00000000        0x0 main.o
+ .data          0x00000000        0x0 main.o
+ .bss           0x00000000        0x0 main.o
+ .debug_abbrev  0x00000000        0x0 main.o
+ .debug_info    0x00000000        0x0 main.o
+ .debug_line    0x00000000        0x0 main.o
  .text.shiftOnes
-                0x0000000000000000       0x26 main.o
+                0x00000000        0x0 main.o
  .bss.sequencer_display_i
-                0x0000000000000000        0x1 main.o
- .bss.debounce  0x0000000000000000        0x1 main.o
- .text          0x0000000000000000        0x0 /tmp/ccIVJAUA.o
- .data          0x0000000000000000        0x0 /tmp/ccIVJAUA.o
- .bss           0x0000000000000000        0x0 /tmp/ccIVJAUA.o
- .stab          0x0000000000000000      0x51c /tmp/ccIVJAUA.o
- .stabstr       0x0000000000000000      0x7ce /tmp/ccIVJAUA.o
+                0x00000000        0x0 main.o
+ .bss.debounce  0x00000000        0x0 main.o
+ .debug_frame   0x00000000        0x0 main.o
+ .debug_loc     0x00000000        0x0 main.o
+ .debug_pubnames
+                0x00000000        0x0 main.o
+ .debug_aranges
+                0x00000000        0x0 main.o
+ .debug_ranges  0x00000000        0x0 main.o
+ .debug_str     0x00000000        0x0 main.o
+ .text          0x00000000        0x0 /var/folders/hX/hXBB4wZrEYO-ZmkKU5fWSk+++TI/-Tmp-//ccFyWk6Q.o
+ .data          0x00000000        0x0 /var/folders/hX/hXBB4wZrEYO-ZmkKU5fWSk+++TI/-Tmp-//ccFyWk6Q.o
+ .bss           0x00000000        0x0 /var/folders/hX/hXBB4wZrEYO-ZmkKU5fWSk+++TI/-Tmp-//ccFyWk6Q.o
+ .debug_abbrev  0x00000000        0x0 /var/folders/hX/hXBB4wZrEYO-ZmkKU5fWSk+++TI/-Tmp-//ccFyWk6Q.o
+ .debug_info    0x00000000        0x0 /var/folders/hX/hXBB4wZrEYO-ZmkKU5fWSk+++TI/-Tmp-//ccFyWk6Q.o
+ .debug_line    0x00000000        0x0 /var/folders/hX/hXBB4wZrEYO-ZmkKU5fWSk+++TI/-Tmp-//ccFyWk6Q.o
  .text.disableSPI
-                0x0000000000000000        0x8 /tmp/ccIVJAUA.o
+                0x00000000        0x0 /var/folders/hX/hXBB4wZrEYO-ZmkKU5fWSk+++TI/-Tmp-//ccFyWk6Q.o
  .text.received_from_spi
-                0x0000000000000000        0x6 /tmp/ccIVJAUA.o
- .text          0x0000000000000000        0x0 /tmp/cco1pRqK.o
- .data          0x0000000000000000        0x0 /tmp/cco1pRqK.o
- .bss           0x0000000000000000        0x0 /tmp/cco1pRqK.o
- .stab          0x0000000000000000      0x378 /tmp/cco1pRqK.o
- .stabstr       0x0000000000000000      0x76f /tmp/cco1pRqK.o
- .text          0x0000000000000000        0x0 /tmp/ccUFJ8YT.o
- .data          0x0000000000000000        0x0 /tmp/ccUFJ8YT.o
- .bss           0x0000000000000000        0x0 /tmp/ccUFJ8YT.o
- .stab          0x0000000000000000      0x324 /tmp/ccUFJ8YT.o
- .stabstr       0x0000000000000000      0x7a7 /tmp/ccUFJ8YT.o
+                0x00000000        0x0 /var/folders/hX/hXBB4wZrEYO-ZmkKU5fWSk+++TI/-Tmp-//ccFyWk6Q.o
+ .debug_frame   0x00000000        0x0 /var/folders/hX/hXBB4wZrEYO-ZmkKU5fWSk+++TI/-Tmp-//ccFyWk6Q.o
+ .debug_loc     0x00000000        0x0 /var/folders/hX/hXBB4wZrEYO-ZmkKU5fWSk+++TI/-Tmp-//ccFyWk6Q.o
+ .debug_pubnames
+                0x00000000        0x0 /var/folders/hX/hXBB4wZrEYO-ZmkKU5fWSk+++TI/-Tmp-//ccFyWk6Q.o
+ .debug_aranges
+                0x00000000        0x0 /var/folders/hX/hXBB4wZrEYO-ZmkKU5fWSk+++TI/-Tmp-//ccFyWk6Q.o
+ .debug_ranges  0x00000000        0x0 /var/folders/hX/hXBB4wZrEYO-ZmkKU5fWSk+++TI/-Tmp-//ccFyWk6Q.o
+ .debug_str     0x00000000        0x0 /var/folders/hX/hXBB4wZrEYO-ZmkKU5fWSk+++TI/-Tmp-//ccFyWk6Q.o
+ .text          0x00000000        0x0 /var/folders/hX/hXBB4wZrEYO-ZmkKU5fWSk+++TI/-Tmp-//ccwHeNHJ.o
+ .data          0x00000000        0x0 /var/folders/hX/hXBB4wZrEYO-ZmkKU5fWSk+++TI/-Tmp-//ccwHeNHJ.o
+ .bss           0x00000000        0x0 /var/folders/hX/hXBB4wZrEYO-ZmkKU5fWSk+++TI/-Tmp-//ccwHeNHJ.o
+ .debug_abbrev  0x00000000        0x0 /var/folders/hX/hXBB4wZrEYO-ZmkKU5fWSk+++TI/-Tmp-//ccwHeNHJ.o
+ .debug_info    0x00000000        0x0 /var/folders/hX/hXBB4wZrEYO-ZmkKU5fWSk+++TI/-Tmp-//ccwHeNHJ.o
+ .debug_line    0x00000000        0x0 /var/folders/hX/hXBB4wZrEYO-ZmkKU5fWSk+++TI/-Tmp-//ccwHeNHJ.o
+ .debug_frame   0x00000000        0x0 /var/folders/hX/hXBB4wZrEYO-ZmkKU5fWSk+++TI/-Tmp-//ccwHeNHJ.o
+ .debug_loc     0x00000000        0x0 /var/folders/hX/hXBB4wZrEYO-ZmkKU5fWSk+++TI/-Tmp-//ccwHeNHJ.o
+ .debug_pubnames
+                0x00000000        0x0 /var/folders/hX/hXBB4wZrEYO-ZmkKU5fWSk+++TI/-Tmp-//ccwHeNHJ.o
+ .debug_aranges
+                0x00000000        0x0 /var/folders/hX/hXBB4wZrEYO-ZmkKU5fWSk+++TI/-Tmp-//ccwHeNHJ.o
+ .debug_ranges  0x00000000        0x0 /var/folders/hX/hXBB4wZrEYO-ZmkKU5fWSk+++TI/-Tmp-//ccwHeNHJ.o
+ .debug_str     0x00000000        0x0 /var/folders/hX/hXBB4wZrEYO-ZmkKU5fWSk+++TI/-Tmp-//ccwHeNHJ.o
+ .text          0x00000000        0x0 /var/folders/hX/hXBB4wZrEYO-ZmkKU5fWSk+++TI/-Tmp-//cc9fs1om.o
+ .data          0x00000000        0x0 /var/folders/hX/hXBB4wZrEYO-ZmkKU5fWSk+++TI/-Tmp-//cc9fs1om.o
+ .bss           0x00000000        0x0 /var/folders/hX/hXBB4wZrEYO-ZmkKU5fWSk+++TI/-Tmp-//cc9fs1om.o
+ .debug_abbrev  0x00000000        0x0 /var/folders/hX/hXBB4wZrEYO-ZmkKU5fWSk+++TI/-Tmp-//cc9fs1om.o
+ .debug_info    0x00000000        0x0 /var/folders/hX/hXBB4wZrEYO-ZmkKU5fWSk+++TI/-Tmp-//cc9fs1om.o
+ .debug_line    0x00000000        0x0 /var/folders/hX/hXBB4wZrEYO-ZmkKU5fWSk+++TI/-Tmp-//cc9fs1om.o
  .rodata.channelB
-                0x0000000000000000      0x200 /tmp/ccUFJ8YT.o
+                0x00000000        0x0 /var/folders/hX/hXBB4wZrEYO-ZmkKU5fWSk+++TI/-Tmp-//cc9fs1om.o
  .rodata.channelC
-                0x0000000000000000      0x200 /tmp/ccUFJ8YT.o
+                0x00000000        0x0 /var/folders/hX/hXBB4wZrEYO-ZmkKU5fWSk+++TI/-Tmp-//cc9fs1om.o
  .rodata.channelD
-                0x0000000000000000      0x200 /tmp/ccUFJ8YT.o
- .text          0x0000000000000000        0x0 /tmp/cckHOTC3.o
- .data          0x0000000000000000        0x0 /tmp/cckHOTC3.o
- .bss           0x0000000000000000        0x0 /tmp/cckHOTC3.o
- .stab          0x0000000000000000      0x504 /tmp/cckHOTC3.o
- .stabstr       0x0000000000000000      0x7a0 /tmp/cckHOTC3.o
+                0x00000000        0x0 /var/folders/hX/hXBB4wZrEYO-ZmkKU5fWSk+++TI/-Tmp-//cc9fs1om.o
+ .debug_pubnames
+                0x00000000        0x0 /var/folders/hX/hXBB4wZrEYO-ZmkKU5fWSk+++TI/-Tmp-//cc9fs1om.o
+ .debug_str     0x00000000        0x0 /var/folders/hX/hXBB4wZrEYO-ZmkKU5fWSk+++TI/-Tmp-//cc9fs1om.o
+ .text          0x00000000        0x0 /var/folders/hX/hXBB4wZrEYO-ZmkKU5fWSk+++TI/-Tmp-//ccQIqk6y.o
+ .data          0x00000000        0x0 /var/folders/hX/hXBB4wZrEYO-ZmkKU5fWSk+++TI/-Tmp-//ccQIqk6y.o
+ .bss           0x00000000        0x0 /var/folders/hX/hXBB4wZrEYO-ZmkKU5fWSk+++TI/-Tmp-//ccQIqk6y.o
+ .debug_abbrev  0x00000000        0x0 /var/folders/hX/hXBB4wZrEYO-ZmkKU5fWSk+++TI/-Tmp-//ccQIqk6y.o
+ .debug_info    0x00000000        0x0 /var/folders/hX/hXBB4wZrEYO-ZmkKU5fWSk+++TI/-Tmp-//ccQIqk6y.o
+ .debug_line    0x00000000        0x0 /var/folders/hX/hXBB4wZrEYO-ZmkKU5fWSk+++TI/-Tmp-//ccQIqk6y.o
  .text.readButton
-                0x0000000000000000       0x84 /tmp/cckHOTC3.o
- .text          0x0000000000000000        0x0 /tmp/ccuOnVld.o
- .data          0x0000000000000000        0x0 /tmp/ccuOnVld.o
- .bss           0x0000000000000000        0x0 /tmp/ccuOnVld.o
- .stab          0x0000000000000000      0x63c /tmp/ccuOnVld.o
- .stabstr       0x0000000000000000      0x7d7 /tmp/ccuOnVld.o
+                0x00000000        0x0 /var/folders/hX/hXBB4wZrEYO-ZmkKU5fWSk+++TI/-Tmp-//ccQIqk6y.o
+ .debug_frame   0x00000000        0x0 /var/folders/hX/hXBB4wZrEYO-ZmkKU5fWSk+++TI/-Tmp-//ccQIqk6y.o
+ .debug_loc     0x00000000        0x0 /var/folders/hX/hXBB4wZrEYO-ZmkKU5fWSk+++TI/-Tmp-//ccQIqk6y.o
+ .debug_pubnames
+                0x00000000        0x0 /var/folders/hX/hXBB4wZrEYO-ZmkKU5fWSk+++TI/-Tmp-//ccQIqk6y.o
+ .debug_aranges
+                0x00000000        0x0 /var/folders/hX/hXBB4wZrEYO-ZmkKU5fWSk+++TI/-Tmp-//ccQIqk6y.o
+ .debug_ranges  0x00000000        0x0 /var/folders/hX/hXBB4wZrEYO-ZmkKU5fWSk+++TI/-Tmp-//ccQIqk6y.o
+ .debug_str     0x00000000        0x0 /var/folders/hX/hXBB4wZrEYO-ZmkKU5fWSk+++TI/-Tmp-//ccQIqk6y.o
+ .text          0x00000000        0x0 /var/folders/hX/hXBB4wZrEYO-ZmkKU5fWSk+++TI/-Tmp-//cc5evZXv.o
+ .data          0x00000000        0x0 /var/folders/hX/hXBB4wZrEYO-ZmkKU5fWSk+++TI/-Tmp-//cc5evZXv.o
+ .bss           0x00000000        0x0 /var/folders/hX/hXBB4wZrEYO-ZmkKU5fWSk+++TI/-Tmp-//cc5evZXv.o
+ .debug_abbrev  0x00000000        0x0 /var/folders/hX/hXBB4wZrEYO-ZmkKU5fWSk+++TI/-Tmp-//cc5evZXv.o
+ .debug_info    0x00000000        0x0 /var/folders/hX/hXBB4wZrEYO-ZmkKU5fWSk+++TI/-Tmp-//cc5evZXv.o
+ .debug_line    0x00000000        0x0 /var/folders/hX/hXBB4wZrEYO-ZmkKU5fWSk+++TI/-Tmp-//cc5evZXv.o
  .text.clearDisplay
-                0x0000000000000000       0x12 /tmp/ccuOnVld.o
- .text          0x0000000000000000        0x0 /tmp/cc2fYJ8m.o
- .data          0x0000000000000000        0x0 /tmp/cc2fYJ8m.o
- .bss           0x0000000000000000        0x0 /tmp/cc2fYJ8m.o
- .stab          0x0000000000000000      0x63c /tmp/cc2fYJ8m.o
- .stabstr       0x0000000000000000      0x8b1 /tmp/cc2fYJ8m.o
- .text          0x0000000000000000        0x0 /usr/lib/gcc/avr/4.3.5/avr5/libgcc.a(_udivmodhi4.o)
- .data          0x0000000000000000        0x0 /usr/lib/gcc/avr/4.3.5/avr5/libgcc.a(_udivmodhi4.o)
- .bss           0x0000000000000000        0x0 /usr/lib/gcc/avr/4.3.5/avr5/libgcc.a(_udivmodhi4.o)
- .text          0x0000000000000000        0x0 /usr/lib/gcc/avr/4.3.5/avr5/libgcc.a(_divmodhi4.o)
- .data          0x0000000000000000        0x0 /usr/lib/gcc/avr/4.3.5/avr5/libgcc.a(_divmodhi4.o)
- .bss           0x0000000000000000        0x0 /usr/lib/gcc/avr/4.3.5/avr5/libgcc.a(_divmodhi4.o)
- .text          0x0000000000000000        0x0 /usr/lib/gcc/avr/4.3.5/avr5/libgcc.a(_exit.o)
- .data          0x0000000000000000        0x0 /usr/lib/gcc/avr/4.3.5/avr5/libgcc.a(_exit.o)
- .bss           0x0000000000000000        0x0 /usr/lib/gcc/avr/4.3.5/avr5/libgcc.a(_exit.o)
- .text.libgcc   0x0000000000000000        0x0 /usr/lib/gcc/avr/4.3.5/avr5/libgcc.a(_exit.o)
- .text          0x0000000000000000        0x0 /usr/lib/gcc/avr/4.3.5/avr5/libgcc.a(_copy_data.o)
- .data          0x0000000000000000        0x0 /usr/lib/gcc/avr/4.3.5/avr5/libgcc.a(_copy_data.o)
- .bss           0x0000000000000000        0x0 /usr/lib/gcc/avr/4.3.5/avr5/libgcc.a(_copy_data.o)
- .text.libgcc   0x0000000000000000        0x0 /usr/lib/gcc/avr/4.3.5/avr5/libgcc.a(_copy_data.o)
- .text          0x0000000000000000        0x0 /usr/lib/gcc/avr/4.3.5/avr5/libgcc.a(_clear_bss.o)
- .data          0x0000000000000000        0x0 /usr/lib/gcc/avr/4.3.5/avr5/libgcc.a(_clear_bss.o)
- .bss           0x0000000000000000        0x0 /usr/lib/gcc/avr/4.3.5/avr5/libgcc.a(_clear_bss.o)
- .text.libgcc   0x0000000000000000        0x0 /usr/lib/gcc/avr/4.3.5/avr5/libgcc.a(_clear_bss.o)
- .text          0x0000000000000000        0x0 /usr/lib/gcc/avr/4.3.5/../../../avr/lib/avr5/libc.a(eerd_block_atmega328p.o)
- .data          0x0000000000000000        0x0 /usr/lib/gcc/avr/4.3.5/../../../avr/lib/avr5/libc.a(eerd_block_atmega328p.o)
- .bss           0x0000000000000000        0x0 /usr/lib/gcc/avr/4.3.5/../../../avr/lib/avr5/libc.a(eerd_block_atmega328p.o)
- .stab          0x0000000000000000      0x114 /usr/lib/gcc/avr/4.3.5/../../../avr/lib/avr5/libc.a(eerd_block_atmega328p.o)
- .stabstr       0x0000000000000000       0x41 /usr/lib/gcc/avr/4.3.5/../../../avr/lib/avr5/libc.a(eerd_block_atmega328p.o)
- .text          0x0000000000000000        0x0 /usr/lib/gcc/avr/4.3.5/../../../avr/lib/avr5/libc.a(eewr_block_atmega328p.o)
- .data          0x0000000000000000        0x0 /usr/lib/gcc/avr/4.3.5/../../../avr/lib/avr5/libc.a(eewr_block_atmega328p.o)
- .bss           0x0000000000000000        0x0 /usr/lib/gcc/avr/4.3.5/../../../avr/lib/avr5/libc.a(eewr_block_atmega328p.o)
- .stab          0x0000000000000000       0xa8 /usr/lib/gcc/avr/4.3.5/../../../avr/lib/avr5/libc.a(eewr_block_atmega328p.o)
- .stabstr       0x0000000000000000       0x41 /usr/lib/gcc/avr/4.3.5/../../../avr/lib/avr5/libc.a(eewr_block_atmega328p.o)
- .text          0x0000000000000000        0x0 /usr/lib/gcc/avr/4.3.5/../../../avr/lib/avr5/libc.a(eewr_byte_atmega328p.o)
- .data          0x0000000000000000        0x0 /usr/lib/gcc/avr/4.3.5/../../../avr/lib/avr5/libc.a(eewr_byte_atmega328p.o)
- .bss           0x0000000000000000        0x0 /usr/lib/gcc/avr/4.3.5/../../../avr/lib/avr5/libc.a(eewr_byte_atmega328p.o)
- .stab          0x0000000000000000       0xf0 /usr/lib/gcc/avr/4.3.5/../../../avr/lib/avr5/libc.a(eewr_byte_atmega328p.o)
- .stabstr       0x0000000000000000       0x40 /usr/lib/gcc/avr/4.3.5/../../../avr/lib/avr5/libc.a(eewr_byte_atmega328p.o)
+                0x00000000        0x0 /var/folders/hX/hXBB4wZrEYO-ZmkKU5fWSk+++TI/-Tmp-//cc5evZXv.o
+ .debug_frame   0x00000000        0x0 /var/folders/hX/hXBB4wZrEYO-ZmkKU5fWSk+++TI/-Tmp-//cc5evZXv.o
+ .debug_loc     0x00000000        0x0 /var/folders/hX/hXBB4wZrEYO-ZmkKU5fWSk+++TI/-Tmp-//cc5evZXv.o
+ .debug_pubnames
+                0x00000000        0x0 /var/folders/hX/hXBB4wZrEYO-ZmkKU5fWSk+++TI/-Tmp-//cc5evZXv.o
+ .debug_aranges
+                0x00000000        0x0 /var/folders/hX/hXBB4wZrEYO-ZmkKU5fWSk+++TI/-Tmp-//cc5evZXv.o
+ .debug_ranges  0x00000000        0x0 /var/folders/hX/hXBB4wZrEYO-ZmkKU5fWSk+++TI/-Tmp-//cc5evZXv.o
+ .debug_str     0x00000000        0x0 /var/folders/hX/hXBB4wZrEYO-ZmkKU5fWSk+++TI/-Tmp-//cc5evZXv.o
+ .text          0x00000000        0x0 /var/folders/hX/hXBB4wZrEYO-ZmkKU5fWSk+++TI/-Tmp-//ccBcmVGr.o
+ .data          0x00000000        0x0 /var/folders/hX/hXBB4wZrEYO-ZmkKU5fWSk+++TI/-Tmp-//ccBcmVGr.o
+ .bss           0x00000000        0x0 /var/folders/hX/hXBB4wZrEYO-ZmkKU5fWSk+++TI/-Tmp-//ccBcmVGr.o
+ .debug_abbrev  0x00000000        0x0 /var/folders/hX/hXBB4wZrEYO-ZmkKU5fWSk+++TI/-Tmp-//ccBcmVGr.o
+ .debug_info    0x00000000        0x0 /var/folders/hX/hXBB4wZrEYO-ZmkKU5fWSk+++TI/-Tmp-//ccBcmVGr.o
+ .debug_line    0x00000000        0x0 /var/folders/hX/hXBB4wZrEYO-ZmkKU5fWSk+++TI/-Tmp-//ccBcmVGr.o
+ .debug_frame   0x00000000        0x0 /var/folders/hX/hXBB4wZrEYO-ZmkKU5fWSk+++TI/-Tmp-//ccBcmVGr.o
+ .debug_loc     0x00000000        0x0 /var/folders/hX/hXBB4wZrEYO-ZmkKU5fWSk+++TI/-Tmp-//ccBcmVGr.o
+ .debug_pubnames
+                0x00000000        0x0 /var/folders/hX/hXBB4wZrEYO-ZmkKU5fWSk+++TI/-Tmp-//ccBcmVGr.o
+ .debug_aranges
+                0x00000000        0x0 /var/folders/hX/hXBB4wZrEYO-ZmkKU5fWSk+++TI/-Tmp-//ccBcmVGr.o
+ .debug_ranges  0x00000000        0x0 /var/folders/hX/hXBB4wZrEYO-ZmkKU5fWSk+++TI/-Tmp-//ccBcmVGr.o
+ .debug_str     0x00000000        0x0 /var/folders/hX/hXBB4wZrEYO-ZmkKU5fWSk+++TI/-Tmp-//ccBcmVGr.o
+ .text          0x00000000        0x0 /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/avr5/libgcc.a(_udivmodhi4.o)
+ .data          0x00000000        0x0 /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/avr5/libgcc.a(_udivmodhi4.o)
+ .bss           0x00000000        0x0 /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/avr5/libgcc.a(_udivmodhi4.o)
+ .text          0x00000000        0x0 /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/avr5/libgcc.a(_divmodhi4.o)
+ .data          0x00000000        0x0 /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/avr5/libgcc.a(_divmodhi4.o)
+ .bss           0x00000000        0x0 /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/avr5/libgcc.a(_divmodhi4.o)
+ .text          0x00000000        0x0 /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/avr5/libgcc.a(_exit.o)
+ .data          0x00000000        0x0 /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/avr5/libgcc.a(_exit.o)
+ .bss           0x00000000        0x0 /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/avr5/libgcc.a(_exit.o)
+ .text.libgcc   0x00000000        0x0 /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/avr5/libgcc.a(_exit.o)
+ .text          0x00000000        0x0 /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/avr5/libgcc.a(_copy_data.o)
+ .data          0x00000000        0x0 /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/avr5/libgcc.a(_copy_data.o)
+ .bss           0x00000000        0x0 /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/avr5/libgcc.a(_copy_data.o)
+ .text.libgcc   0x00000000        0x0 /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/avr5/libgcc.a(_copy_data.o)
+ .text          0x00000000        0x0 /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/avr5/libgcc.a(_clear_bss.o)
+ .data          0x00000000        0x0 /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/avr5/libgcc.a(_clear_bss.o)
+ .bss           0x00000000        0x0 /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/avr5/libgcc.a(_clear_bss.o)
+ .text.libgcc   0x00000000        0x0 /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/avr5/libgcc.a(_clear_bss.o)
+ .text          0x00000000        0x0 /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/libc.a(eerd_block_atmega328p.o)
+ .data          0x00000000        0x0 /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/libc.a(eerd_block_atmega328p.o)
+ .bss           0x00000000        0x0 /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/libc.a(eerd_block_atmega328p.o)
+ .stab          0x00000000        0x0 /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/libc.a(eerd_block_atmega328p.o)
+ .stabstr       0x00000000        0x0 /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/libc.a(eerd_block_atmega328p.o)
+ .text          0x00000000        0x0 /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/libc.a(eerd_byte_atmega328p.o)
+ .data          0x00000000        0x0 /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/libc.a(eerd_byte_atmega328p.o)
+ .bss           0x00000000        0x0 /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/libc.a(eerd_byte_atmega328p.o)
+ .stab          0x00000000        0x0 /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/libc.a(eerd_byte_atmega328p.o)
+ .stabstr       0x00000000        0x0 /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/libc.a(eerd_byte_atmega328p.o)
+ .text          0x00000000        0x0 /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/libc.a(eewr_block_atmega328p.o)
+ .data          0x00000000        0x0 /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/libc.a(eewr_block_atmega328p.o)
+ .bss           0x00000000        0x0 /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/libc.a(eewr_block_atmega328p.o)
+ .stab          0x00000000        0x0 /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/libc.a(eewr_block_atmega328p.o)
+ .stabstr       0x00000000        0x0 /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/libc.a(eewr_block_atmega328p.o)
+ .text          0x00000000        0x0 /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/libc.a(eewr_byte_atmega328p.o)
+ .data          0x00000000        0x0 /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/libc.a(eewr_byte_atmega328p.o)
+ .bss           0x00000000        0x0 /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/libc.a(eewr_byte_atmega328p.o)
+ .stab          0x00000000        0x0 /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/libc.a(eewr_byte_atmega328p.o)
+ .stabstr       0x00000000        0x0 /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/libc.a(eewr_byte_atmega328p.o)
 
 Memory Configuration
 
 Name             Origin             Length             Attributes
-text             0x0000000000000000 0x0000000000020000 xr
-data             0x0000000000800060 0x000000000000ffa0 rw !x
-eeprom           0x0000000000810000 0x0000000000010000 rw !x
-fuse             0x0000000000820000 0x0000000000000400 rw !x
-lock             0x0000000000830000 0x0000000000000400 rw !x
-signature        0x0000000000840000 0x0000000000000400 rw !x
-*default*        0x0000000000000000 0xffffffffffffffff
+text             0x00000000         0x00020000         xr
+data             0x00800060         0x0000ffa0         rw !x
+eeprom           0x00810000         0x00010000         rw !x
+fuse             0x00820000         0x00000400         rw !x
+lock             0x00830000         0x00000400         rw !x
+signature        0x00840000         0x00000400         rw !x
+*default*        0x00000000         0xffffffff
 
 Linker script and memory map
 
 Address of section .data set to 0x800100
-LOAD /usr/lib/gcc/avr/4.3.5/../../../avr/lib/avr5/crtm328p.o
+LOAD /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm328p.o
 LOAD main.o
-LOAD /tmp/ccIVJAUA.o
-LOAD /tmp/cco1pRqK.o
-LOAD /tmp/ccUFJ8YT.o
-LOAD /tmp/cckHOTC3.o
-LOAD /tmp/ccuOnVld.o
-LOAD /tmp/cc2fYJ8m.o
-LOAD /usr/lib/gcc/avr/4.3.5/avr5/libgcc.a
-LOAD /usr/lib/gcc/avr/4.3.5/../../../avr/lib/avr5/libc.a
-LOAD /usr/lib/gcc/avr/4.3.5/avr5/libgcc.a
+LOAD /var/folders/hX/hXBB4wZrEYO-ZmkKU5fWSk+++TI/-Tmp-//ccFyWk6Q.o
+LOAD /var/folders/hX/hXBB4wZrEYO-ZmkKU5fWSk+++TI/-Tmp-//ccwHeNHJ.o
+LOAD /var/folders/hX/hXBB4wZrEYO-ZmkKU5fWSk+++TI/-Tmp-//cc9fs1om.o
+LOAD /var/folders/hX/hXBB4wZrEYO-ZmkKU5fWSk+++TI/-Tmp-//ccQIqk6y.o
+LOAD /var/folders/hX/hXBB4wZrEYO-ZmkKU5fWSk+++TI/-Tmp-//cc5evZXv.o
+LOAD /var/folders/hX/hXBB4wZrEYO-ZmkKU5fWSk+++TI/-Tmp-//ccBcmVGr.o
+LOAD /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/avr5/libgcc.a
+LOAD /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/libc.a
+LOAD /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/avr5/libgcc.a
 
 .hash
  *(.hash)
@@ -234,48 +299,48 @@ LOAD /usr/lib/gcc/avr/4.3.5/avr5/libgcc.a
 .rela.plt
  *(.rela.plt)
 
-.text           0x0000000000000000     0x125a
+.text           0x00000000     0x1296
  *(.vectors)
- .vectors       0x0000000000000000       0x68 /usr/lib/gcc/avr/4.3.5/../../../avr/lib/avr5/crtm328p.o
-                0x0000000000000000                __vectors
-                0x0000000000000000                __vector_default
+ .vectors       0x00000000       0x68 /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm328p.o
+                0x00000000                __vectors
+                0x00000000                __vector_default
  *(.vectors)
  *(.progmem.gcc*)
  *(.progmem*)
-                0x0000000000000068                . = ALIGN (0x2)
-                0x0000000000000068                __trampolines_start = .
+                0x00000068                . = ALIGN (0x2)
+                0x00000068                __trampolines_start = .
  *(.trampolines)
- .trampolines   0x0000000000000068        0x0 linker stubs
+ .trampolines   0x00000068        0x0 linker stubs
  *(.trampolines*)
-                0x0000000000000068                __trampolines_end = .
+                0x00000068                __trampolines_end = .
  *(.jumptables)
  *(.jumptables*)
  *(.lowtext)
  *(.lowtext*)
-                0x0000000000000068                __ctors_start = .
+                0x00000068                __ctors_start = .
  *(.ctors)
-                0x0000000000000068                __ctors_end = .
-                0x0000000000000068                __dtors_start = .
+                0x00000068                __ctors_end = .
+                0x00000068                __dtors_start = .
  *(.dtors)
-                0x0000000000000068                __dtors_end = .
+                0x00000068                __dtors_end = .
  SORT(*)(.ctors)
  SORT(*)(.dtors)
  *(.init0)
- .init0         0x0000000000000068        0x0 /usr/lib/gcc/avr/4.3.5/../../../avr/lib/avr5/crtm328p.o
-                0x0000000000000068                __init
+ .init0         0x00000068        0x0 /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm328p.o
+                0x00000068                __init
  *(.init0)
  *(.init1)
  *(.init1)
  *(.init2)
- .init2         0x0000000000000068        0xc /usr/lib/gcc/avr/4.3.5/../../../avr/lib/avr5/crtm328p.o
+ .init2         0x00000068        0xc /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm328p.o
  *(.init2)
  *(.init3)
  *(.init3)
  *(.init4)
- .init4         0x0000000000000074       0x16 /usr/lib/gcc/avr/4.3.5/avr5/libgcc.a(_copy_data.o)
-                0x0000000000000074                __do_copy_data
- .init4         0x000000000000008a       0x10 /usr/lib/gcc/avr/4.3.5/avr5/libgcc.a(_clear_bss.o)
-                0x000000000000008a                __do_clear_bss
+ .init4         0x00000074       0x16 /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/avr5/libgcc.a(_copy_data.o)
+                0x00000074                __do_copy_data
+ .init4         0x0000008a       0x10 /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/avr5/libgcc.a(_clear_bss.o)
+                0x0000008a                __do_clear_bss
  *(.init4)
  *(.init5)
  *(.init5)
@@ -286,111 +351,114 @@ LOAD /usr/lib/gcc/avr/4.3.5/avr5/libgcc.a
  *(.init8)
  *(.init8)
  *(.init9)
- .init9         0x000000000000009a        0x8 /usr/lib/gcc/avr/4.3.5/../../../avr/lib/avr5/crtm328p.o
+ .init9         0x0000009a        0x8 /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm328p.o
  *(.init9)
  *(.text)
- .text          0x00000000000000a2        0x4 /usr/lib/gcc/avr/4.3.5/../../../avr/lib/avr5/crtm328p.o
-                0x00000000000000a2                __vector_22
-                0x00000000000000a2                __vector_1
-                0x00000000000000a2                __vector_24
-                0x00000000000000a2                __vector_12
-                0x00000000000000a2                __bad_interrupt
-                0x00000000000000a2                __vector_6
-                0x00000000000000a2                __vector_3
-                0x00000000000000a2                __vector_25
-                0x00000000000000a2                __vector_13
-                0x00000000000000a2                __vector_17
-                0x00000000000000a2                __vector_19
-                0x00000000000000a2                __vector_5
-                0x00000000000000a2                __vector_4
-                0x00000000000000a2                __vector_9
-                0x00000000000000a2                __vector_2
-                0x00000000000000a2                __vector_21
-                0x00000000000000a2                __vector_15
-                0x00000000000000a2                __vector_8
-                0x00000000000000a2                __vector_14
-                0x00000000000000a2                __vector_10
-                0x00000000000000a2                __vector_16
-                0x00000000000000a2                __vector_18
-                0x00000000000000a2                __vector_20
-                0x00000000000000a6                . = ALIGN (0x2)
+ .text          0x000000a2        0x4 /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm328p.o
+                0x000000a2                __vector_22
+                0x000000a2                __vector_1
+                0x000000a2                __vector_24
+                0x000000a2                __vector_12
+                0x000000a2                __bad_interrupt
+                0x000000a2                __vector_6
+                0x000000a2                __vector_3
+                0x000000a2                __vector_25
+                0x000000a2                __vector_13
+                0x000000a2                __vector_17
+                0x000000a2                __vector_19
+                0x000000a2                __vector_5
+                0x000000a2                __vector_4
+                0x000000a2                __vector_9
+                0x000000a2                __vector_2
+                0x000000a2                __vector_21
+                0x000000a2                __vector_15
+                0x000000a2                __vector_8
+                0x000000a2                __vector_14
+                0x000000a2                __vector_10
+                0x000000a2                __vector_16
+                0x000000a2                __vector_18
+                0x000000a2                __vector_20
+                0x000000a6                . = ALIGN (0x2)
  *(.text.*)
  .text.setupControlTimer
-                0x00000000000000a6       0x46 main.o
-                0x00000000000000a6                setupControlTimer
+                0x000000a6       0x46 main.o
+                0x000000a6                setupControlTimer
  .text.setupSampleRate
-                0x00000000000000ec       0x3a main.o
-                0x00000000000000ec                setupSampleRate
+                0x000000ec       0x3a main.o
+                0x000000ec                setupSampleRate
  .text.__vector_11
-                0x0000000000000126      0x39e main.o
-                0x0000000000000126                __vector_11
+                0x00000126      0x39e main.o
+                0x00000126                __vector_11
  .text.__vector_23
-                0x00000000000004c4      0x2ce main.o
-                0x00000000000004c4                __vector_23
+                0x000004c4      0x2ce main.o
+                0x000004c4                __vector_23
  .text.__vector_7
-                0x0000000000000792      0x1d8 main.o
-                0x0000000000000792                __vector_7
- .text.main     0x000000000000096a      0x540 main.o
-                0x000000000000096a                main
+                0x00000792      0x1d8 main.o
+                0x00000792                __vector_7
+ .text.main     0x0000096a      0x56c main.o
+                0x0000096a                main
  .text.setupSPI
-                0x0000000000000eaa       0x7a /tmp/ccIVJAUA.o
-                0x0000000000000eaa                setupSPI
- .text.sendSPI  0x0000000000000f24        0xc /tmp/ccIVJAUA.o
-                0x0000000000000f24                sendSPI
+                0x00000ed6       0x7a /var/folders/hX/hXBB4wZrEYO-ZmkKU5fWSk+++TI/-Tmp-//ccFyWk6Q.o
+                0x00000ed6                setupSPI
+ .text.sendSPI  0x00000f50        0xc /var/folders/hX/hXBB4wZrEYO-ZmkKU5fWSk+++TI/-Tmp-//ccFyWk6Q.o
+                0x00000f50                sendSPI
  .text.writeMCP492x
-                0x0000000000000f30       0x1e /tmp/cco1pRqK.o
-                0x0000000000000f30                writeMCP492x
+                0x00000f5c       0x1e /var/folders/hX/hXBB4wZrEYO-ZmkKU5fWSk+++TI/-Tmp-//ccwHeNHJ.o
+                0x00000f5c                writeMCP492x
  .text.setupButtons
-                0x0000000000000f4e       0x26 /tmp/cckHOTC3.o
-                0x0000000000000f4e                setupButtons
+                0x00000f7a       0x26 /var/folders/hX/hXBB4wZrEYO-ZmkKU5fWSk+++TI/-Tmp-//ccQIqk6y.o
+                0x00000f7a                setupButtons
  .text.readKeyboard
-                0x0000000000000f74       0x12 /tmp/cckHOTC3.o
-                0x0000000000000f74                readKeyboard
+                0x00000fa0       0x12 /var/folders/hX/hXBB4wZrEYO-ZmkKU5fWSk+++TI/-Tmp-//ccQIqk6y.o
+                0x00000fa0                readKeyboard
  .text.readSettings
-                0x0000000000000f86       0x14 /tmp/cckHOTC3.o
-                0x0000000000000f86                readSettings
+                0x00000fb2       0x14 /var/folders/hX/hXBB4wZrEYO-ZmkKU5fWSk+++TI/-Tmp-//ccQIqk6y.o
+                0x00000fb2                readSettings
  .text.setupDisplay
-                0x0000000000000f9a       0x10 /tmp/ccuOnVld.o
-                0x0000000000000f9a                setupDisplay
+                0x00000fc6       0x10 /var/folders/hX/hXBB4wZrEYO-ZmkKU5fWSk+++TI/-Tmp-//cc5evZXv.o
+                0x00000fc6                setupDisplay
  .text.setDisplay
-                0x0000000000000faa        0x6 /tmp/ccuOnVld.o
-                0x0000000000000faa                setDisplay
+                0x00000fd6        0x6 /var/folders/hX/hXBB4wZrEYO-ZmkKU5fWSk+++TI/-Tmp-//cc5evZXv.o
+                0x00000fd6                setDisplay
  .text.updateDisplay
-                0x0000000000000fb0       0x86 /tmp/ccuOnVld.o
-                0x0000000000000fb0                updateDisplay
+                0x00000fdc       0x86 /var/folders/hX/hXBB4wZrEYO-ZmkKU5fWSk+++TI/-Tmp-//cc5evZXv.o
+                0x00000fdc                updateDisplay
  .text.disableOptoloader
-                0x0000000000001036        0xc /tmp/cc2fYJ8m.o
-                0x0000000000001036                disableOptoloader
+                0x00001062        0xc /var/folders/hX/hXBB4wZrEYO-ZmkKU5fWSk+++TI/-Tmp-//ccBcmVGr.o
+                0x00001062                disableOptoloader
  .text.setupOptoloader
-                0x0000000000001042       0x56 /tmp/cc2fYJ8m.o
-                0x0000000000001042                setupOptoloader
+                0x0000106e       0x56 /var/folders/hX/hXBB4wZrEYO-ZmkKU5fWSk+++TI/-Tmp-//ccBcmVGr.o
+                0x0000106e                setupOptoloader
  .text.enableOptoloader
-                0x0000000000001098       0x1c /tmp/cc2fYJ8m.o
-                0x0000000000001098                enableOptoloader
+                0x000010c4       0x1c /var/folders/hX/hXBB4wZrEYO-ZmkKU5fWSk+++TI/-Tmp-//ccBcmVGr.o
+                0x000010c4                enableOptoloader
  .text.runOptoloader
-                0x00000000000010b4      0x104 /tmp/cc2fYJ8m.o
-                0x00000000000010b4                runOptoloader
- .text.libgcc   0x00000000000011b8       0x28 /usr/lib/gcc/avr/4.3.5/avr5/libgcc.a(_udivmodhi4.o)
-                0x00000000000011b8                __udivmodhi4
- .text.libgcc   0x00000000000011e0       0x26 /usr/lib/gcc/avr/4.3.5/avr5/libgcc.a(_divmodhi4.o)
-                0x00000000000011e0                __divmodhi4
-                0x00000000000011e0                _div
+                0x000010e0      0x104 /var/folders/hX/hXBB4wZrEYO-ZmkKU5fWSk+++TI/-Tmp-//ccBcmVGr.o
+                0x000010e0                runOptoloader
+ .text.libgcc   0x000011e4       0x28 /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/avr5/libgcc.a(_udivmodhi4.o)
+                0x000011e4                __udivmodhi4
+ .text.libgcc   0x0000120c       0x26 /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/avr5/libgcc.a(_divmodhi4.o)
+                0x0000120c                __divmodhi4
+                0x0000120c                _div
  .text.avr-libc
-                0x0000000000001206       0x20 /usr/lib/gcc/avr/4.3.5/../../../avr/lib/avr5/libc.a(eerd_block_atmega328p.o)
-                0x0000000000001206                __eerd_block_m328p
-                0x000000000000120a                __eerd_blraw_m328p
+                0x00001232       0x20 /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/libc.a(eerd_block_atmega328p.o)
+                0x00001232                __eerd_block_m328p
+                0x00001236                __eerd_blraw_m328p
  .text.avr-libc
-                0x0000000000001226       0x14 /usr/lib/gcc/avr/4.3.5/../../../avr/lib/avr5/libc.a(eewr_block_atmega328p.o)
-                0x0000000000001226                __eewr_block_m328p
+                0x00001252       0x10 /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/libc.a(eerd_byte_atmega328p.o)
+                0x00001252                __eerd_byte_m328p
  .text.avr-libc
-                0x000000000000123a       0x1c /usr/lib/gcc/avr/4.3.5/../../../avr/lib/avr5/libc.a(eewr_byte_atmega328p.o)
-                0x000000000000123a                __eewr_byte_m328p
-                0x000000000000123c                __eewr_r18_m328p
-                0x0000000000001256                . = ALIGN (0x2)
+                0x00001262       0x14 /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/libc.a(eewr_block_atmega328p.o)
+                0x00001262                __eewr_block_m328p
+ .text.avr-libc
+                0x00001276       0x1c /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/libc.a(eewr_byte_atmega328p.o)
+                0x00001276                __eewr_byte_m328p
+                0x00001278                __eewr_r18_m328p
+                0x00001292                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x0000000000001256        0x0 /usr/lib/gcc/avr/4.3.5/avr5/libgcc.a(_exit.o)
-                0x0000000000001256                exit
-                0x0000000000001256                _exit
+ .fini9         0x00001292        0x0 /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/avr5/libgcc.a(_exit.o)
+                0x00001292                exit
+                0x00001292                _exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -409,111 +477,112 @@ LOAD /usr/lib/gcc/avr/4.3.5/avr5/libgcc.a
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x0000000000001256        0x4 /usr/lib/gcc/avr/4.3.5/avr5/libgcc.a(_exit.o)
+ .fini0         0x00001292        0x4 /usr/local/CrossPack-AVR-20100115/lib/gcc/avr/4.3.3/avr5/libgcc.a(_exit.o)
  *(.fini0)
-                0x000000000000125a                _etext = .
+                0x00001296                _etext = .
 
-.data           0x0000000000800100      0x242 load address 0x000000000000125a
-                0x0000000000800100                PROVIDE (__data_start, .)
+.data           0x00800100      0x242 load address 0x00001296
+                0x00800100                PROVIDE (__data_start, .)
  *(.data)
  *(.data*)
- .data.speed    0x0000000000800100        0x1 main.o
-                0x0000000000800100                speed
- .data.mode     0x0000000000800101        0x1 main.o
-                0x0000000000800101                mode
- .data.scales   0x0000000000800102       0x40 main.o
-                0x0000000000800102                scales
+ .data.speed    0x00800100        0x1 main.o
+                0x00800100                speed
+ .data.mode     0x00800101        0x1 main.o
+                0x00800101                mode
+ .data.scales   0x00800102       0x40 main.o
+                0x00800102                scales
  *(.rodata)
  *(.rodata*)
- .rodata.sine   0x0000000000800142      0x200 /tmp/ccUFJ8YT.o
-                0x0000000000800142                sine
+ .rodata.sine   0x00800142      0x200 /var/folders/hX/hXBB4wZrEYO-ZmkKU5fWSk+++TI/-Tmp-//cc9fs1om.o
+                0x00800142                sine
  *(.gnu.linkonce.d*)
-                0x0000000000800342                . = ALIGN (0x2)
-                0x0000000000800342                _edata = .
-                0x0000000000800342                PROVIDE (__data_end, .)
+                0x00800342                . = ALIGN (0x2)
+                0x00800342                _edata = .
+                0x00800342                PROVIDE (__data_end, .)
 
-.bss            0x0000000000800342      0x288
-                0x0000000000800342                PROVIDE (__bss_start, .)
+.bss            0x00800342      0x288
+                0x00800342                PROVIDE (__bss_start, .)
  *(.bss)
  *(.bss*)
  .bss.opto_enable_ctr
-                0x0000000000800342        0x1 main.o
-                0x0000000000800342                opto_enable_ctr
+                0x00800342        0x1 main.o
+                0x00800342                opto_enable_ctr
  .bss.keyboard_ctr
-                0x0000000000800343        0x1 main.o
-                0x0000000000800343                keyboard_ctr
+                0x00800343        0x1 main.o
+                0x00800343                keyboard_ctr
  .bss.sequencer_ctr
-                0x0000000000800344        0x1 main.o
-                0x0000000000800344                sequencer_ctr
- .bss.msg_ctr   0x0000000000800345        0x1 main.o
-                0x0000000000800345                msg_ctr
+                0x00800344        0x1 main.o
+                0x00800344                sequencer_ctr
+ .bss.msg_ctr   0x00800345        0x1 main.o
+                0x00800345                msg_ctr
  .bss.sequencer_i
-                0x0000000000800346        0x1 main.o
-                0x0000000000800346                sequencer_i
+                0x00800346        0x1 main.o
+                0x00800346                sequencer_i
  .bss.sequencer
-                0x0000000000800347       0x40 main.o
-                0x0000000000800347                sequencer
+                0x00800347       0x40 main.o
+                0x00800347                sequencer
  .bss.sequencer_metronome
-                0x0000000000800387        0x1 main.o
-                0x0000000000800387                sequencer_metronome
+                0x00800387        0x1 main.o
+                0x00800387                sequencer_metronome
  .bss.sequencer_metronome_ctr
-                0x0000000000800388        0x1 main.o
-                0x0000000000800388                sequencer_metronome_ctr
+                0x00800388        0x1 main.o
+                0x00800388                sequencer_metronome_ctr
  .bss.sequencer_flag
-                0x0000000000800389        0x1 main.o
-                0x0000000000800389                sequencer_flag
+                0x00800389        0x1 main.o
+                0x00800389                sequencer_flag
  .bss.harmonics_amplitudes
-                0x000000000080038a        0xa main.o
-                0x000000000080038a                harmonics_amplitudes
+                0x0080038a        0xa main.o
+                0x0080038a                harmonics_amplitudes
  .bss.led_refresh_flag
-                0x0000000000800394        0x1 main.o
-                0x0000000000800394                led_refresh_flag
+                0x00800394        0x1 main.o
+                0x00800394                led_refresh_flag
  .bss.led_display
-                0x0000000000800395        0x1 main.o
-                0x0000000000800395                led_display
+                0x00800395        0x1 main.o
+                0x00800395                led_display
  .bss.read_keyboard_flag
-                0x0000000000800396        0x1 main.o
-                0x0000000000800396                read_keyboard_flag
+                0x00800396        0x1 main.o
+                0x00800396                read_keyboard_flag
  .bss.settings_debounce
-                0x0000000000800397        0x1 main.o
-                0x0000000000800397                settings_debounce
- .bss.scale_i   0x0000000000800398        0x1 main.o
-                0x0000000000800398                scale_i
+                0x00800397        0x1 main.o
+                0x00800397                settings_debounce
+ .bss.scale_i   0x00800398        0x1 main.o
+                0x00800398                scale_i
  .bss.poly_buffer
-                0x0000000000800399       0x10 main.o
-                0x0000000000800399                poly_buffer
- .bss.poly_i    0x00000000008003a9        0x1 main.o
-                0x00000000008003a9                poly_i
- .bss.final.1534
-                0x00000000008003aa        0x2 main.o
- .bss.inc.1533  0x00000000008003ac       0x10 main.o
- .bss.msg_mode.1441
-                0x00000000008003bc        0x1 main.o
- .bss.temp_harmonics.1440
-                0x00000000008003bd        0x4 main.o
- .bss.num_bytes.1439
-                0x00000000008003c1        0x1 main.o
+                0x00800399       0x10 main.o
+                0x00800399                poly_buffer
+ .bss.poly_i    0x008003a9        0x1 main.o
+                0x008003a9                poly_i
+ .bss.final.1522
+                0x008003aa        0x2 main.o
+ .bss.inc.1521  0x008003ac       0x10 main.o
+ .bss.msg_mode.1429
+                0x008003bc        0x1 main.o
+ .bss.temp_harmonics.1428
+                0x008003bd        0x4 main.o
+ .bss.num_bytes.1427
+                0x008003c1        0x1 main.o
  *(COMMON)
- COMMON         0x00000000008003c2      0x208 main.o
-                0x00000000008003c2                harmonics
-                0x00000000008005c2                key_pressed
-                0x00000000008005c3                optoloader
-                0x00000000008005ca                PROVIDE (__bss_end, .)
-                0x000000000000125a                __data_load_start = LOADADDR (.data)
-                0x000000000000149c                __data_load_end = (__data_load_start + SIZEOF (.data))
+ COMMON         0x008003c2      0x208 main.o
+                0x008003c2                harmonics
+                0x008005c2                key_pressed
+                0x008005c3                optoloader
+                0x008005ca                PROVIDE (__bss_end, .)
+                0x00001296                __data_load_start = LOADADDR (.data)
+                0x000014d8                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x00000000008005ca        0x0
-                0x00000000008005ca                PROVIDE (__noinit_start, .)
+.noinit         0x008005ca        0x0
+                0x008005ca                PROVIDE (__noinit_start, .)
  *(.noinit*)
-                0x00000000008005ca                PROVIDE (__noinit_end, .)
-                0x00000000008005ca                _end = .
-                0x00000000008005ca                PROVIDE (__heap_start, .)
+                0x008005ca                PROVIDE (__noinit_end, .)
+                0x008005ca                _end = .
+                0x008005ca                PROVIDE (__heap_start, .)
 
-.eeprom         0x0000000000810000       0x40
+.eeprom         0x00810000       0x41
  *(.eeprom*)
- .eeprom        0x0000000000810000       0x40 main.o
-                0x0000000000810000                sequencer_EEPROM
-                0x0000000000810040                __eeprom_end = .
+ .eeprom        0x00810000       0x41 main.o
+                0x00810040                first_ee
+                0x00810000                sequencer_ee
+                0x00810041                __eeprom_end = .
 
 .fuse
  *(.fuse)
@@ -589,3 +658,5 @@ LOAD /usr/lib/gcc/avr/4.3.5/avr5/libgcc.a
  *(.debug_macinfo)
 OUTPUT(main.elf elf32-avr)
 LOAD linker stubs
+
+.debug_ranges

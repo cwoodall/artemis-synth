@@ -26,7 +26,8 @@ FUSEOPT = $(FUSEOPT_328)
 LOCKOPT = -U lock:w:0x2f:m
 
 # PROGRAMMER = -c stk500v2 -P avrdoper
-PROGRAMMER = -c avrispmkII -P usb
+#PROGRAMMER = -c avrispmkII -P usb
+PROGRAMMER = -c usbasp
 # PROGRAMMER contains AVRDUDE options to address your programmer
 
 FUSEOPT_8 = -U hfuse:w:0xc0:m -U lfuse:w:0x9f:m

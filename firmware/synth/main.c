@@ -30,8 +30,8 @@ uint8_t mode = KEYBOARD;
 #define TOTAL_SEQUENCES 8
 uint8_t sequencer_i = 0;
 
-//#define SEQUENCER_EEPROM (const void*)12
-uint8_t EEMEM sequencer_EEPROM[TOTAL_SEQUENCES][SEQUENCER_LENGTH] = {
+//#define SEQUENCER_ee (const void*)12
+uint8_t EEMEM sequencer_ee[TOTAL_SEQUENCES][SEQUENCER_LENGTH] = {
   {0,0,0,0,0,0,0,0},
   {0,0,0,0,0,0,0,0},
   {0,0,0,0,0,0,0,0},
@@ -41,6 +41,8 @@ uint8_t EEMEM sequencer_EEPROM[TOTAL_SEQUENCES][SEQUENCER_LENGTH] = {
   {0,0,0,0,0,0,0,0},
   {0,0,0,0,0,0,0,0}
 };
+
+uint8_t EEMEM first_ee = 0x00;
 
 uint8_t sequencer[TOTAL_SEQUENCES][SEQUENCER_LENGTH] = {
   {0,0,0,0,0,0,0,0},
@@ -124,11 +126,26 @@ int main(void)
 {
   // Disable Interrupts for setup
   cli();
+  
+  // By default load a sine wave into harmonic 
+  // [*] replace with EEPROM reads
   for (int i = 0; i < 256; i++)
     {
       harmonics[i] = sine[i];
     }
-  
+
+  first_ee = eeprom_read_byte(&first_ee);
+  if (first_ee == 0xFF)
+    {
+      eeprom_write_byte(&first_ee,0x33);
+	  eeprom_write_block((const void *)sequencer, (void *)sequencer_ee, 64);
+    }
+  else
+    {
+      // Load up sequencer information from ee_prom
+      eeprom_read_block((void*)sequencer, (const void *)sequencer_ee, 64);
+    }
+
   // Setup Timer2, which is our "control timer"
   setupControlTimer();
 
@@ -142,7 +159,6 @@ int main(void)
   // Setup Timer1 to work at 22KHz sample rate
   // This is our sample rate for the output audio
   setupSampleRate(22000); 
-  
   
   // Initialize display for keyboard mode
   led_display = setupDisplay();
@@ -158,7 +174,7 @@ int main(void)
   uint8_t keyboard = 0;
   uint8_t keyboard_prev = 0;
   
-  eeprom_read_block((void*)sequencer, (const void *)sequencer_EEPROM, 64);
+  
   sei(); // Enable Interrupts now that we are all ready to go
   for(;;) 
     {
@@ -468,7 +484,7 @@ ISR(TIMER2_COMPA_vect)
 	  disableOptoloader(&optoloader);
 	  opto_enable_ctr = 0;
 
-	  eeprom_write_block((const void *)sequencer, (void *)sequencer_EEPROM, 64);
+	  eeprom_write_block((const void *)sequencer, (void *)sequencer_ee, 64);
 
 	  setupSampleRate(22000);
 	}
