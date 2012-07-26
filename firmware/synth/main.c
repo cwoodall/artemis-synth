@@ -638,7 +638,7 @@ ISR(ANALOG_COMP_vect)
 		      harmonics[i] = (uint16_t) temp_harmonics;
 		    }
 		}
-	      //	      opto_enable_ctr = 0xFF;
+	      opto_enable_ctr = 0xFF;
 	    }
 	}
       else if (msg_ctr > 0)
