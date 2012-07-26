@@ -71,7 +71,9 @@ uint8_t read_keyboard_flag = 0;
 uint8_t settings_debounce = 0;
 
 #define MAX_LOOKUP  0x7FFF
+// Change to inline function
 #define GET_WAVE_VALUE(inst, num) (poly_buffer[num]?inst[inc[num]>>NOTES_BASE]:0)
+// Change to inline function
 #define INCREMENT_NOTE(note, i) 			\
   if (note)						\
     {							\
@@ -88,6 +90,9 @@ uint8_t settings_debounce = 0;
     {							\
       i = 0;						\
     }							
+
+// Change to inline function... Will likely work better, especially since there is no
+// timing constraint on this particular functionality..... Also kind of unneccisary...
 #define FREQUENCY_TO_COUNT(x) (F_CPU/1000)/(x/1000)
 
 // Setup Sample rate at 22kHz, externally we filter at 11kHz
@@ -95,6 +100,7 @@ uint8_t settings_debounce = 0;
 // to accurately reconstruct waves up to 11kHz
 void setupSampleRate();
 
+// Setup controls timer at a much lower frequency (near 300Hz)
 void setupControlTimer();
 
 #define SCALE_LENGTH 8
@@ -111,7 +117,7 @@ uint8_t poly_i = 0;
 uint8_t key_pressed;
 uint8_t debounce = 0;
 
-uint8_t shiftOnes(uint8_t a)
+inline uint8_t shiftOnes(uint8_t a)
 {
   uint8_t output = 0;
   uint8_t i = 0;
@@ -127,11 +133,11 @@ int main(void)
   // Disable Interrupts for setup
   cli();
   
-  // By default load a sine wave into harmonic 
+  // By default load a sine_table wave into harmonic 
   // [*] replace with EEPROM reads
   for (int i = 0; i < 256; i++)
     {
-      harmonics[i] = sine[i];
+      harmonics[i] = sine_table[i];
     }
 
   first_ee = eeprom_read_byte(&first_ee);
@@ -623,11 +629,11 @@ ISR(ANALOG_COMP_vect)
 		{
 		  for (uint16_t i = 0; i < 256; i++)
 		    {
-		      temp_harmonics = (((harmonics_amplitudes[0]*(sine[i]<<2))>>4) + 
-					((harmonics_amplitudes[1]*(sine[(i*2)%256]<<2))>>4) + 
-					((harmonics_amplitudes[2]*(sine[(i*4)%256]<<2))>>4) + 
-					((harmonics_amplitudes[3]*(sine[(i*8)%256]<<2))>>4) + 
-					((harmonics_amplitudes[4]*(sine[(i*16)%256]<<2))>>4))/5;
+		      temp_harmonics = (((harmonics_amplitudes[0]*(sine_table[i]<<2))>>4) + 
+					((harmonics_amplitudes[1]*(sine_table[(i*2)%256]<<2))>>4) + 
+					((harmonics_amplitudes[2]*(sine_table[(i*4)%256]<<2))>>4) + 
+					((harmonics_amplitudes[3]*(sine_table[(i*8)%256]<<2))>>4) + 
+					((harmonics_amplitudes[4]*(sine_table[(i*16)%256]<<2))>>4))/5;
 
 		      harmonics[i] = (uint16_t) temp_harmonics;
 		    }
