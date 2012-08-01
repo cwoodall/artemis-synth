@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Thu 19 Jul 2012 05:37:40 PM EDT
+EESchema Schematic File Version 2  date Tue 31 Jul 2012 10:24:17 PM EDT
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -30,6 +30,7 @@ LIBS:atmel
 LIBS:contrib
 LIBS:valves
 LIBS:mcp49x1
+LIBS:atmel1
 LIBS:tda2822m
 LIBS:artemis-synth-v1-cache
 EELAYER 25  0
@@ -37,10 +38,10 @@ EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
-Title ""
+Title "Artemis Synthesizer v1"
 Date "19 jul 2012"
-Rev ""
-Comp ""
+Rev "A"
+Comp "Christopher Woodall (c) 2012 MIT License"
 Comment1 ""
 Comment2 ""
 Comment3 ""
