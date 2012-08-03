@@ -8,6 +8,11 @@
 #define OPTO_ONEF_bm 0x04
 #define OPTO_ACTI_bm 0x08
 
+#define SEQUENCER_MSG 0x30 // Upper 4 bits of "0011" means a sequencer message is being sent
+#define HARMONICS_MSG 0xC0 // Upper 4 bits of "1100" means a harmonics message is being sent
+
+// The message sent for an epilogue
+#define EPILOGUE_MSG 0x80
 typedef struct {
   uint8_t zero_count;
   uint8_t prev_count;

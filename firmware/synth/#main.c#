@@ -20,9 +20,9 @@ uint8_t sequencer_ctr = 0;
 uint8_t msg_ctr = 0;
 uint8_t speed = 0x5F;
 
-#define KEYBOARD  0x01
-#define SEQUENCER 0x02
-#define BLINKING  0x03
+#define KEYBOARD   0x01
+#define SEQUENCER  0x02
+#define BLINKING   0x03
 #define OPTOLOADER 0x04 // Currently not used, maintianed by optoloader.flag...
 uint8_t mode = KEYBOARD;
 
