@@ -1,0 +1,13 @@
+# Problems:
+
+* Putting polarized parts in the wrong way.
+* We did not have 28pin sockets so we used 2 14 pin sockets so some were not aligned properly. CHECK YOUR BOM!!! DON'T FORGET THINGS.
+* No 8 pin sockets so if the DAC or Amp were put in wrong a lot of effort 
+   needed to go into rework. SOCKET ALL PINS.
+
+* Some had issues getting R10 into place correctly and bending. It is a 
+   polarized part and needs to be put in right. ALSO it is NOT LABELED... this
+   is bad... Needs to be redesigned
+
+* Volume too low for the most part. Needs to be fixed in future revisions. A constant complaint.
+* Web programming rig was effective, but I have some concerns about the actual useability of it.

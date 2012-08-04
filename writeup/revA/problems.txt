@@ -1,0 +1,9 @@
+<h1 id="problems">Problems:</h1>
+
+<ul>
+<li>We did not have 28-pin sockets so we used 2 14 pin sockets so some were not aligned properly. Check your BOM for parts and dimensions!</li>
+<li>No 8 pin sockets so if the DAC or Amp were put in wrong a lot of effort needed to go into rework. SOCKET ALL PINS.</li>
+<li>Some had issues getting R10 into place correctly and bending. It is a polarized part and needs to be put in right; however, the polarization is not labeled. Needs to be redesigned in future revisions. This will simplify the instructions</li>
+<li>Volume too low for the most part. Needs to be fixed in future revisions. A constant complaint.</li>
+<li>Web programming rig was effective, but I have some concerns about the actual usability of it. It is slow, and can be unreliable.</li>
+</ul>
