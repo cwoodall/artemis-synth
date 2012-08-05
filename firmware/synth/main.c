@@ -75,21 +75,21 @@ uint8_t settings_debounce = 0;
 // Change to inline function
 #define GET_WAVE_VALUE(inst, num) (poly_buffer[num]?inst[inc[num]>>NOTES_BASE]:0)
 // Change to inline function
-#define INCREMENT_NOTE(note, i) 			\
-  if (note)						\
-    {							\
-      if (i + note < MAX_LOOKUP)			\
-        {						\
-          i += note;					\
-        }						\
-      else						\
-        {						\
-          i = note - (MAX_LOOKUP - i);			\
-        }						\
-    }							\
-  else							\
-    {							\
-      i = 0;						\
+#define INCREMENT_NOTE(note, i)                 \
+  if (note)                                     \
+    {                                           \
+      if (i + note < MAX_LOOKUP)                \
+        {                                       \
+          i += note;                            \
+        }                                       \
+      else                                      \
+        {                                       \
+          i = note - (MAX_LOOKUP - i);          \
+        }                                       \
+    }                                           \
+  else                                          \
+    {                                           \
+      i = 0;                                    \
     }							
 
 // Setup Sample rate at 22kHz, externally we filter at 11kHz
