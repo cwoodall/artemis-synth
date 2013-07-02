@@ -1,4 +1,4 @@
-update=Tue 03 Jul 2012 10:17:06 AM EDT
+update=Tue 02 Jul 2013 02:34:59 PM EDT
 version=1
 last_client=eeschema
 [general]
@@ -44,9 +44,6 @@ LibName13=/home/cwoodall/Downloads/ohw-logo
 version=1
 LibDir=lib
 NetFmtName=
-HPGLSpd=20
-HPGLDm=15
-HPGLNum=1
 RptD_X=0
 RptD_Y=100
 RptLab=1
@@ -86,3 +83,5 @@ LibName31=mcp49x1
 LibName32=/home/cwoodall/Downloads/atmel
 LibName33=/home/cwoodall/Downloads/atmel1
 LibName34=tda2822m
+LibName35=r_us
+LibName36=pot_us

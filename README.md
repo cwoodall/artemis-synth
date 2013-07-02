@@ -1,12 +1,15 @@
 # Artemis Synthesizer 
 
-Version 1.0 for Summer 2012
+Version 2.0a for Summer 2013
 
 Christopher Woodall
+Eric Hazen
+Sam Damask
 
 ## Hardware
 
-All hardware designs are done in KiCAD
+Schematic and PCB files were made using KiCAD. Gerber files and PDFs are available.
+
 
 ## Firmware
 
