@@ -1,13 +1,8 @@
-update=Tue 02 Jul 2013 02:34:59 PM EDT
+update=Wed 03 Jul 2013 02:33:18 PM EDT
 version=1
-last_client=eeschema
+last_client=cvpcb
 [general]
 version=1
-[cvpcb]
-version=1
-NetIExt=net
-[cvpcb/libraries]
-EquName1=devcms
 [pcbnew]
 version=1
 PadDrlX=320
@@ -26,7 +21,6 @@ TxtLar=120
 MSegLar=80
 LastNetListRead=
 [pcbnew/libraries]
-LibDir=lib
 LibName1=sockets
 LibName2=connect
 LibName3=discret
@@ -40,10 +34,12 @@ LibName10=dip_sockets
 LibName11=EDF
 LibName12=/home/cwoodall/Downloads/SparkFun
 LibName13=/home/cwoodall/Downloads/ohw-logo
+LibName14=3-Pin 3.5mm Headphone Jack
+LibDir=lib
 [eeschema]
 version=1
 LibDir=lib
-NetFmtName=
+NetFmtName=Pcbnew
 RptD_X=0
 RptD_Y=100
 RptLab=1
@@ -80,8 +76,12 @@ LibName28=atmel
 LibName29=contrib
 LibName30=valves
 LibName31=mcp49x1
-LibName32=/home/cwoodall/Downloads/atmel
-LibName33=/home/cwoodall/Downloads/atmel1
-LibName34=tda2822m
-LibName35=r_us
-LibName36=pot_us
+LibName32=tda2822m
+LibName33=r_us
+LibName34=pot_us
+LibName35=3-pin_audio_jack
+[cvpcb]
+version=1
+NetIExt=net
+[cvpcb/libraries]
+EquName1=devcms

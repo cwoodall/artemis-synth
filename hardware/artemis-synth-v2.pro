@@ -1,0 +1,34 @@
+update=Wed 03 Jul 2013 02:41:47 PM EDT
+last_client=pcbnew
+[pcbnew]
+version=1
+LastNetListRead=artemis-synth-v1.net
+PadDrill=0
+PadSizeH=0.0005
+PadSizeV=0.0005
+PcbTextSizeV=1.5
+PcbTextSizeH=1.5
+PcbTextThickness=0.3
+ModuleTextSizeV=1.5
+ModuleTextSizeH=1.5
+ModuleTextSizeThickness=0.15
+SolderMaskClearance=0.1
+DrawSegmentWidth=0.2
+BoardOutlineThickness=0.15
+ModuleOutlineThickness=0.15
+[pcbnew/libraries]
+LibDir=lib
+LibName1=sockets
+LibName2=connect
+LibName3=discret
+LibName4=pin_array
+LibName5=divers
+LibName6=libcms
+LibName7=display
+LibName8=valves
+LibName9=led
+LibName10=dip_sockets
+LibName11=EDF
+LibName12=/home/cwoodall/Downloads/SparkFun
+LibName13=/home/cwoodall/Downloads/ohw-logo
+LibName14=3-Pin 3.5mm Headphone Jack

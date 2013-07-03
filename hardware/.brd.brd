@@ -1,0 +1,127 @@
+PCBNEW-BOARD Version 2 date Wed 03 Jul 2013 02:41:16 PM EDT
+
+# Created by Pcbnew(2012-oct-18)-testing
+
+$GENERAL
+encoding utf-8
+Units mm
+LayerCount 2
+EnabledLayers 1FFF8001
+Links 0
+NoConn 0
+Di 83.131479 173.914999 221.055001 232.57
+Ndraw 6
+Ntrack 0
+Nzone 0
+BoardThickness 1.6
+Nmodule 0
+Nnets 1
+$EndGENERAL
+
+$SHEETDESCR
+Sheet A3 16535 11693
+Title ""
+Date "3 jul 2013"
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndSHEETDESCR
+
+$SETUP
+Layers 2
+Layer[0] Back signal
+Layer[15] Front signal
+TrackWidth 0.254
+TrackClearence 0.254
+ZoneClearence 0.508
+Zone_45_Only 0
+TrackMinWidth 0.254
+DrawSegmWidth 0.2
+EdgeSegmWidth 0.15
+ViaSize 0.889
+ViaDrill 0.635
+ViaMinSize 0.889
+ViaMinDrill 0.508
+MicroViaSize 0.508
+MicroViaDrill 0.127
+MicroViasAllowed 0
+MicroViaMinSize 0.508
+MicroViaMinDrill 0.127
+TextPcbWidth 0.3
+TextPcbSize 1.5 1.5
+EdgeModWidth 0.15
+TextModSize 1.5 1.5
+TextModWidth 0.15
+PadSize 0.0005 0.0005
+PadDrill 0
+Pad2MaskClearance 0.1
+AuxiliaryAxisOrg 0 0
+VisibleElements FFFFFFBF
+PcbPlotParams (pcbplotparams (layerselection 3178497) (usegerberextensions true) (excludeedgelayer true) (linewidth 50800) (plotframeref false) (viasonmask false) (mode 1) (useauxorigin false) (hpglpennumber 1) (hpglpenspeed 20) (hpglpendiameter 15) (hpglpenoverlay 2) (psnegative false) (psa4output false) (plotreference true) (plotvalue true) (plotothertext true) (plotinvisibletext false) (padsonsilk false) (subtractmaskfromsilk false) (outputformat 1) (mirror false) (drillshape 1) (scaleselection 1) (outputdirectory ""))
+$EndSETUP
+
+$EQUIPOT
+Na 0 ""
+St ~
+$EndEQUIPOT
+$NCLASS
+Name "Default"
+Desc "This is the default net class."
+Clearance 0.254
+TrackWidth 0.254
+ViaDia 0.889
+ViaDrill 0.635
+uViaDia 0.508
+uViaDrill 0.127
+AddNet ""
+$EndNCLASS
+$DRAWSEGMENT
+Po 0 220.98 173.99 93.98 173.99 0.15
+De 28 0 900 0 0
+$EndDRAWSEGMENT
+$DRAWSEGMENT
+Po 0 220.98 224.79 220.98 173.99 0.15
+De 28 0 900 0 0
+$EndDRAWSEGMENT
+$DRAWSEGMENT
+Po 0 93.98 224.79 220.98 224.79 0.15
+De 28 0 900 0 0
+$EndDRAWSEGMENT
+$DRAWSEGMENT
+Po 0 93.98 173.99 93.98 224.79 0.15
+De 28 0 900 0 0
+$EndDRAWSEGMENT
+$COTATION
+Ge 0 24 0
+Va 50.8
+Te "2.0000 in"
+Po 88.82126 199.39 1.50114 1.50114 0.29972 900 1
+Sb 0 90.17 224.79 90.17 173.99 0.29972
+Sd 0 93.98 173.99 87.47 173.99 0.29972
+Sg 0 93.98 224.79 87.47 224.79 0.29972
+S1 0 90.17 173.99 90.75642 175.116503 0.29972
+S2 0 90.17 173.99 89.58358 175.116503 0.29972
+S3 0 90.17 224.79 90.75642 223.663497 0.29972
+S4 0 90.17 224.79 89.58358 223.663497 0.29972
+$endCOTATION
+$COTATION
+Ge 0 24 0
+Va 127
+Te "5.0000 in"
+Po 157.48 231.21874 1.50114 1.50114 0.29972 -0 1
+Sb 0 93.98 229.869999 220.98 229.869999 0.29972
+Sd 0 220.98 224.79 220.98 232.569999 0.29972
+Sg 0 93.98 224.79 93.98 232.569999 0.29972
+S1 0 220.98 229.869999 219.853497 230.456419 0.29972
+S2 0 220.98 229.869999 219.853497 229.283579 0.29972
+S3 0 93.98 229.869999 95.106503 230.456419 0.29972
+S4 0 93.98 229.869999 95.106503 229.283579 0.29972
+$endCOTATION
+$TRACK
+$EndTRACK
+$ZONE
+$EndZONE
+$EndBOARD
