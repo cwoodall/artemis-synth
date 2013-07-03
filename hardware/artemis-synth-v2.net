@@ -1,34 +1,34 @@
-# EESchema Netlist Version 1.1 created  Wed 03 Jul 2013 03:55:15 PM EDT
+# EESchema Netlist Version 1.1 created  Wed 03 Jul 2013 05:09:15 PM EDT
 (
- ( /4FE923C2 LED-5MM  D4 LED {Lib=LED}
+ ( /4FE923C2 LED-3MM  D4 LED {Lib=LED}
   (    1 /L0 )
   (    2 GND )
  )
- ( /4FE923C1 LED-5MM  D6 LED {Lib=LED}
+ ( /4FE923C1 LED-3MM  D6 LED {Lib=LED}
   (    1 /L1 )
   (    2 GND )
  )
- ( /4FE923C0 LED-5MM  D8 LED {Lib=LED}
+ ( /4FE923C0 LED-3MM  D8 LED {Lib=LED}
   (    1 /L2 )
   (    2 GND )
  )
- ( /4FE923BF LED-5MM  D10 LED {Lib=LED}
+ ( /4FE923BF LED-3MM  D10 LED {Lib=LED}
   (    1 /L3 )
   (    2 GND )
  )
- ( /4FE923B3 LED-5MM  D9 LED {Lib=LED}
+ ( /4FE923B3 LED-3MM  D9 LED {Lib=LED}
   (    1 +3.3V )
   (    2 /L3 )
  )
- ( /4FE9213A LED-5MM  D7 LED {Lib=LED}
+ ( /4FE9213A LED-3MM  D7 LED {Lib=LED}
   (    1 +3.3V )
   (    2 /L2 )
  )
- ( /4FE92131 LED-5MM  D5 LED {Lib=LED}
+ ( /4FE92131 LED-3MM  D5 LED {Lib=LED}
   (    1 +3.3V )
   (    2 /L1 )
  )
- ( /4FE9212D LED-5MM  D3 LED {Lib=LED}
+ ( /4FE9212D LED-3MM  D3 LED {Lib=LED}
   (    1 +3.3V )
   (    2 /L0 )
  )
@@ -156,40 +156,40 @@
   (    1 GND )
   (    2 +3.3V )
  )
- ( /5006C304 $noname  D2 TEPT4400 {Lib=OPTO_NPN}
+ ( /5006C304 LED-3MM  D2 TEPT4400 {Lib=OPTO_NPN}
   (    1 N-000021 )
   (    3 +3.3V )
  )
- ( /51D3224A $noname  R2 1k {Lib=R_US}
+ ( /51D3224A R4  R2 1k {Lib=R_US}
   (    1 +3.3V )
   (    2 N-000022 )
  )
- ( /51D32277 $noname  R3 1k {Lib=R_US}
+ ( /51D32277 R4  R3 1k {Lib=R_US}
   (    1 N-000022 )
   (    2 GND )
  )
- ( /51D3228C $noname  R5 47k {Lib=R_US}
+ ( /51D3228C R4  R5 47k {Lib=R_US}
   (    1 N-000021 )
   (    2 GND )
  )
- ( /51D3258C $noname  R6 100k {Lib=R_US}
+ ( /51D3258C R4  R6 100k {Lib=R_US}
   (    1 +3.3V )
   (    2 N-000024 )
  )
- ( /51D333E8 $noname  R4 10K {Lib=R_US}
+ ( /51D333E8 R4  R4 10K {Lib=R_US}
   (    1 +3.3V )
   (    2 /RST )
  )
- ( /51D3454A $noname  R8 1k {Lib=R_US}
+ ( /51D3454A R4  R8 1k {Lib=R_US}
   (    1 N-000011 )
   (    2 N-000020 )
  )
- ( /51D34592 $noname  RV1 1k {Lib=POT_US}
+ ( /51D34592 THUMBWHEEL_POT_3352T  RV1 1k {Lib=POT_US}
   (    1 N-000020 )
   (    2 N-000014 )
   (    3 GND )
  )
- ( /51D34598 $noname  R7 1k {Lib=R_US}
+ ( /51D34598 R4  R7 1k {Lib=R_US}
   (    1 N-000012 )
   (    2 N-000011 )
  )
@@ -197,27 +197,27 @@
   (    1 N-000011 )
   (    2 GND )
  )
- ( /51D345AA C1  C6 33uF {Lib=C}
+ ( /51D345AA C1V8  C6 33uF {Lib=C}
   (    1 N-000014 )
   (    2 N-000023 )
  )
- ( /51D359D9 $noname  R9 47k {Lib=R_US}
+ ( /51D359D9 R4  R9 47k {Lib=R_US}
   (    1 N-000023 )
   (    2 GND )
  )
- ( /51D36C03 $noname  C1 10u {Lib=CP1}
+ ( /51D36C03 C1V8  C1 10u {Lib=CP1}
   (    1 +3.3V )
   (    2 GND )
  )
- ( /51D36D9E $noname  D1 GREEN {Lib=LED}
+ ( /51D36D9E LED-3MM  D1 GREEN {Lib=LED}
   (    1 +3.3V )
   (    2 N-000009 )
  )
- ( /51D36F2E $noname  R1 220 {Lib=R_US}
+ ( /51D36F2E R4  R1 220 {Lib=R_US}
   (    1 N-000009 )
   (    2 GND )
  )
- ( /51D46B2B $noname  J2 CONN_JACK_STEREO_R/A_3PIN_3.5MM {Lib=3-PIN_AUDIO_JACK}
+ ( /51D46B2B 3-Pin  J2 CONN_JACK_STEREO_R/A_3PIN_3.5MM {Lib=3-PIN_AUDIO_JACK}
   (    1 GND )
   (    2 N-000023 )
   (    3 N-000023 )
