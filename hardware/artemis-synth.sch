@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Fri 05 Jul 2013 11:21:16 AM EDT
+EESchema Schematic File Version 2  date Fri 05 Jul 2013 12:34:07 PM EDT
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -36,7 +36,7 @@ LIBS:mcp49x1
 LIBS:battery2
 LIBS:artemis-synth-v1-cache
 LIBS:3-pin_audio_jack
-LIBS:artemis-synth-v2-cache
+LIBS:artemis-synth-cache
 EELAYER 27 0
 EELAYER END
 $Descr USLetter 11000 8500
