@@ -10,8 +10,7 @@ Sam Damask
 
 Schematic and PCB files were made using KiCAD. Gerber files and PDFs are available. The schematic files were created using a 25 mil grid and are sometimes off by 25 mils from the 50 mil grid. It is advised that you also use a 25 mil grid when editing the schematic files.
 
-There is a basic convention for digital signals on the PCB layout, which is the bottom layer travels vertically and the top layer travels horizontally.
-
+There is a basic convention for digital signals on the PCB layout, which is the bottom layer travels vertically and the top layer travels horizontally. The analog section, which takes up the left most part of the board routes all signals on the top layer so that they have ground right underneath. An improvement would introduce proper isolation technology.
 
 ## Firmware
 

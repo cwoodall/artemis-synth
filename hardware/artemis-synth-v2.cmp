@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2012-oct-18)-testing date = Wed 03 Jul 2013 02:37:12 PM EDT
+Cmp-Mod V01 Created by CvPcb (2012-oct-18)-testing date = Fri 05 Jul 2013 10:56:46 AM EDT
 
 BeginCmp
 TimeStamp = /4FE8EE52;
@@ -53,70 +53,70 @@ BeginCmp
 TimeStamp = /51D36D9E;
 Reference = D1;
 ValeurCmp = GREEN;
-IdModule  = LED-3MM;
+IdModule  = LED-3MM-CORRECTED;
 EndCmp
 
 BeginCmp
 TimeStamp = /5006C304;
 Reference = D2;
 ValeurCmp = TEPT4400;
-IdModule  = LED-3MM;
+IdModule  = LED-3MM-CORRECTED;
 EndCmp
 
 BeginCmp
 TimeStamp = /4FE9212D;
 Reference = D3;
 ValeurCmp = LED;
-IdModule  = LED-3MM;
+IdModule  = LED-3MM-CORRECTED;
 EndCmp
 
 BeginCmp
 TimeStamp = /4FE923C2;
 Reference = D4;
 ValeurCmp = LED;
-IdModule  = LED-3MM;
+IdModule  = LED-3MM-CORRECTED;
 EndCmp
 
 BeginCmp
 TimeStamp = /4FE92131;
 Reference = D5;
 ValeurCmp = LED;
-IdModule  = LED-3MM;
+IdModule  = LED-3MM-CORRECTED;
 EndCmp
 
 BeginCmp
 TimeStamp = /4FE923C1;
 Reference = D6;
 ValeurCmp = LED;
-IdModule  = LED-3MM;
+IdModule  = LED-3MM-CORRECTED;
 EndCmp
 
 BeginCmp
 TimeStamp = /4FE9213A;
 Reference = D7;
 ValeurCmp = LED;
-IdModule  = LED-3MM;
+IdModule  = LED-3MM-CORRECTED;
 EndCmp
 
 BeginCmp
 TimeStamp = /4FE923C0;
 Reference = D8;
 ValeurCmp = LED;
-IdModule  = LED-3MM;
+IdModule  = LED-3MM-CORRECTED;
 EndCmp
 
 BeginCmp
 TimeStamp = /4FE923B3;
 Reference = D9;
 ValeurCmp = LED;
-IdModule  = LED-3MM;
+IdModule  = LED-3MM-CORRECTED;
 EndCmp
 
 BeginCmp
 TimeStamp = /4FE923BF;
 Reference = D10;
 ValeurCmp = LED;
-IdModule  = LED-3MM;
+IdModule  = LED-3MM-CORRECTED;
 EndCmp
 
 BeginCmp
@@ -134,9 +134,9 @@ IdModule  = pin_array_3x2;
 EndCmp
 
 BeginCmp
-TimeStamp = /51D3236D;
+TimeStamp = /51D46B2B;
 Reference = J2;
-ValeurCmp = Headphone_Jack;
+ValeurCmp = CONN_JACK_STEREO_R/A_3PIN_3.5MM;
 IdModule  = 3-Pin 3.5mm Headphone Jack;
 EndCmp
 
