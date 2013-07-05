@@ -2,8 +2,8 @@
 
 Version 2.0a for Summer 2013
 
-Christopher Woodall
-Eric Hazen
+Christopher Woodall  
+Eric Hazen  
 Sam Damask
 
 ## Hardware
