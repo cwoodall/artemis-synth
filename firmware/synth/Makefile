@@ -3,13 +3,13 @@ OBJ            = main.o
 PROGRAMMER     = avrispmkII
 PORT           = usb
 MCU_TARGET     = atmega328p
-AVRDUDE_TARGET = m328p
+AVRDUDE_TARGET = m328p -F
 OPTIMIZE       = -Os -fpack-struct -fshort-enums -funsigned-char -funsigned-bitfields -ffunction-sections -fdata-sections
 DEFS           =
 LIBS           = HRL_SPI.c HRL_MCP492x.c inst.c buttons.c leds.c optoloader.c
 
 #BAUDRATE       = 57600
-HZ             = 16000000
+HZ             = 8000000
 
 # You should not have to change anything below here.
 CC             = avr-gcc
@@ -64,7 +64,7 @@ flash:  $(PRG).hex
 
 fuse:
 	avrdude -p $(AVRDUDE_TARGET) -c $(PROGRAMMER) -P $(PORT) -v \
-	-U lfuse:w:0xc6:m -U hfuse:w:0xd9:m 	
+	-U lfuse:w:0xe2:m -U hfuse:w:0xd9:m 	
 
 ddd: gdbinit
 	ddd --debugger "avr-gdb -x $(GDBINITFILE)"

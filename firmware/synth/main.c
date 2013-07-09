@@ -1,4 +1,7 @@
-#define F_CPU 16000000
+/** Artemis Synthesizer v2rC
+ *
+ */
+#define F_CPU 8000000
 #include <avr/io.h>
 #include <avr/interrupt.h>
 #include <util/atomic.h>
@@ -212,20 +215,20 @@ int main(void)
 	  else if (settings)
 	    {
 	      opto_enable_ctr = 0;
-	      if (!(settings & 0x01) && (sequencer_ctr == 0))
+	      if (!(settings & 0x02) && (sequencer_ctr == 0))
 		{
 		  sequencer_ctr = 1;
 		}
-	      else if (settings & 0x01)
+	      else if (settings & 0x02)
 		{
 		  sequencer_ctr = 0;
 		}
 	      
-	      if (!(settings & 0x20) && (keyboard_ctr == 0))
+	      if (!(settings & 0x01) && (keyboard_ctr == 0))
 		{
 		  keyboard_ctr = 1;
 		}
-	      else if (settings & 0x02)
+	      else if (settings & 0x01)
 		{
 		  keyboard_ctr = 0;
 		}
@@ -235,7 +238,7 @@ int main(void)
 	    {
 	      if (settings_debounce == 0)
 		{	
-		  if (((settings & 0x02) == 0) && ((settings_prev & 0x02) != 0))
+		  if (((settings & 0x01) == 0) && ((settings_prev & 0x01) != 0))
 		    { 
 		      if (scale_i < 3)
 			{
@@ -248,7 +251,7 @@ int main(void)
 		      settings_debounce = 1;
 		      setDisplay(&led_display, shiftOnes(scale_i+1));
 		    }
-		  if (((settings & 0x01) == 0) && ((settings_prev & 0x01) != 0))
+		  if (((settings & 0x02) == 0) && ((settings_prev & 0x02) != 0))
 		    {
 		      if (scale_i > 0) 
 			{
@@ -281,7 +284,7 @@ int main(void)
 		    poly_buffer[6] = 0;
 		    poly_buffer[7] = 0;
 		    
-		    poly_i = 0;
+            poly_i = 0;
 
 		    for (uint8_t j = 0; j < 8; j++) 
 		      {
@@ -662,7 +665,8 @@ void setupSampleRate22kHz()
   // set compare match register to desired timer count:
   // We want to compare at 22kHz
   // target time/timer resolution
-  // (1/22kHz)/(1/16MHz) = 727
+//  // (1/22kHz)/(1/16MHz) = 727
+  // (1/22kHz)/(1/8MHz) = 364
   OCR1A = 727; 
 
   // turn on CTC mode:
@@ -694,7 +698,7 @@ ISR(TIMER1_COMPA_vect)
            GET_WAVE_VALUE(harmonics, 4) +
            GET_WAVE_VALUE(harmonics, 5) +
            GET_WAVE_VALUE(harmonics, 6) +
-           GET_WAVE_VALUE(harmonics, 7))/poly_i;
+           GET_WAVE_VALUE(harmonics, 7))>>2;
 
   writeMCP492x(final, MCP492x_CONFIG);
 }
