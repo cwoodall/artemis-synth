@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Tue 09 Jul 2013 11:47:29 AM EDT
+EESchema Schematic File Version 2  date Tue 09 Jul 2013 12:44:30 PM EDT
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -458,10 +458,10 @@ F 1 "GND" H 1725 2030 30  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L BATTERY BT1
+L BATTERY BAT1
 U 1 1 4FE8EE52
 P 1725 1650
-F 0 "BT1" V 1750 1375 50  0000 C CNN
+F 0 "BAT1" V 1750 1375 50  0000 C CNN
 F 1 "3 V w/ 2 AA Batteries" V 1825 1075 50  0000 C CNN
 F 2 "2PIN" H 1725 1560 50  0001 C CNN
 	1    1725 1650
