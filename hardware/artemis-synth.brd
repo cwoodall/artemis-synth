@@ -1,4 +1,4 @@
-PCBNEW-BOARD Version 2 date Tue 09 Jul 2013 12:45:45 PM EDT
+PCBNEW-BOARD Version 2 date Tue 09 Jul 2013 12:50:10 PM EDT
 
 # Created by Pcbnew(2012-oct-18)-testing
 
@@ -3114,9 +3114,9 @@ Po 240.665 146.05 1.524 1.524 0.2286 0
 De 21 1 0 Normal
 $EndTEXTPCB
 $TEXTPCB
-Te "Artemis Synth "
+Te "Artemis Synth"
 nl "C. Woodall"
-nl "Rev. B | 2013-07-03 "
+nl "Rev. C | 2013-07-03 "
 Po 190.5 146.05 1.524 1.524 0.2286 0
 De 21 1 0 Normal L C
 $EndTEXTPCB

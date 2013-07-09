@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Tue 09 Jul 2013 12:44:30 PM EDT
+EESchema Schematic File Version 2  date Tue 09 Jul 2013 12:50:36 PM EDT
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -44,7 +44,7 @@ encoding utf-8
 Sheet 1 1
 Title "Artemis Synthesizer"
 Date "9 jul 2013"
-Rev "B"
+Rev "C"
 Comp "Christopher Woodall (c) 2012-2013"
 Comment1 "Creative Commons Attribution-ShareAlike 3.0 Unported License."
 Comment2 ""
