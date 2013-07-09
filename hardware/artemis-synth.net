@@ -1,4 +1,4 @@
-# EESchema Netlist Version 1.1 created  Fri 05 Jul 2013 10:56:59 AM EDT
+# EESchema Netlist Version 1.1 created  Tue 09 Jul 2013 11:47:35 AM EDT
 (
  ( /4FE923C2 LED-3MM  D4 LED {Lib=LED}
   (    1 /L0 )
@@ -108,7 +108,7 @@
   (    5 GND )
   (    6 N-000024 )
   (    7 GND )
-  (    8 N-000012 )
+  (    8 N-000011 )
  )
  ( /4FDC0550 C1  C2 .1uF {Lib=C}
   (    1 +3.3V )
@@ -158,13 +158,13 @@
  )
  ( /5006C304 LED-3MM  D2 TEPT4400 {Lib=OPTO_NPN}
   (    1 N-000021 )
-  (    3 +3.3V )
+  (    2 +3.3V )
  )
- ( /51D3224A R4  R2 1k {Lib=R_US}
+ ( /51D3224A R4  R2 100k {Lib=R_US}
   (    1 +3.3V )
   (    2 N-000022 )
  )
- ( /51D32277 R4  R3 1k {Lib=R_US}
+ ( /51D32277 R4  R3 100k {Lib=R_US}
   (    1 N-000022 )
   (    2 GND )
  )
@@ -181,24 +181,24 @@
   (    2 /RST )
  )
  ( /51D3454A R4  R8 1k {Lib=R_US}
-  (    1 N-000011 )
+  (    1 N-000019 )
   (    2 N-000020 )
  )
  ( /51D34592 THUMBWHEEL_POT_3352T  RV1 1k {Lib=POT_US}
   (    1 N-000020 )
-  (    2 N-000014 )
+  (    2 N-000013 )
   (    3 GND )
  )
  ( /51D34598 R4  R7 1k {Lib=R_US}
-  (    1 N-000012 )
-  (    2 N-000011 )
+  (    1 N-000011 )
+  (    2 N-000019 )
  )
  ( /51D3459E C1  C5 .1uF {Lib=C}
-  (    1 N-000011 )
+  (    1 N-000019 )
   (    2 GND )
  )
- ( /51D345AA C1V8  C6 33uF {Lib=C}
-  (    1 N-000014 )
+ ( /51D345AA C1V8  C6 10uF {Lib=C}
+  (    1 N-000013 )
   (    2 N-000023 )
  )
  ( /51D359D9 R4  R9 47k {Lib=R_US}
@@ -413,161 +413,161 @@ $endfootprintlist
 }
 { Pin List by Nets
 Net 1 "/BT0" "BT0"
+ IC1 2
  SW1 1
  SW1 2
- IC1 2
 Net 2 "/BT1" "BT1"
+ IC1 3
  SW2 1
  SW2 2
- IC1 3
 Net 3 "/BT9" "BT9"
- IC1 28
- SW10 2
  SW10 1
+ SW10 2
+ IC1 28
 Net 4 "/BT4" "BT4"
  SW5 2
  SW5 1
  IC1 6
 Net 5 "/BT8" "BT8"
- SW9 2
- SW9 1
  IC1 27
+ SW9 1
+ SW9 2
 Net 6 "/BT7" "BT7"
  SW8 2
  SW8 1
  IC1 15
 Net 7 "/BT5" "BT5"
- IC1 11
  SW6 1
+ IC1 11
  SW6 2
 Net 8 "/BT6" "BT6"
- IC1 14
- SW7 2
  SW7 1
+ SW7 2
+ IC1 14
 Net 9 "" ""
  D1 2
  R1 1
 Net 10 "+3.3V" "+3.3V"
- D3 1
- D5 1
  D7 1
+ D5 1
  D9 1
- R6 1
- C2 1
- D2 3
- R2 1
- C4 2
+ D3 1
  C1 1
  D1 1
- R4 1
- U1 1
  BT1 1
+ U1 1
  J1 2
  IC1 20
  IC1 7
+ R4 1
+ R6 1
+ C4 2
+ R2 1
+ D2 2
+ C2 1
 Net 11 "" ""
- C5 1
- R7 2
- R8 1
-Net 12 "" ""
  R7 1
  U1 8
-Net 13 "GND" "GND"
- SW1 3
- SW10 3
- SW1 4
- SW7 4
- SW2 3
+Net 12 "GND" "GND"
+ SW8 3
+ SW8 4
  SW7 3
- SW4 3
- U1 5
- U1 7
+ SW7 4
  SW5 4
  SW5 3
  SW4 4
- SW2 4
- C2 2
- SW6 3
+ SW4 3
+ SW10 3
  SW3 4
  SW3 3
+ SW2 4
+ SW1 3
+ SW1 4
+ SW2 3
+ J1 6
+ C3 1
+ BT1 2
+ C4 1
  SW6 4
+ SW6 3
+ C2 2
+ U1 7
+ U1 5
+ D8 2
+ SW9 3
+ SW10 4
+ D10 2
+ SW9 4
+ D6 2
+ D4 2
+ IC1 22
+ IC1 8
  R5 2
  R3 2
- IC1 8
- IC1 22
- D10 2
- D8 2
- D6 2
- SW10 4
- SW8 3
- BT1 2
- C3 1
- SW9 4
- SW9 3
- SW8 4
- D4 2
- J1 6
- C4 1
  R9 2
  C1 2
+ J2 1
  RV1 3
  C5 2
- J2 1
  R1 2
-Net 14 "" ""
+Net 13 "" ""
  C6 1
  RV1 2
-Net 15 "/BT3" "BT3"
+Net 14 "/BT3" "BT3"
  SW4 2
  SW4 1
  IC1 5
-Net 16 "/L0" "L0"
+Net 15 "/L0" "L0"
  IC1 26
  D4 1
  D3 2
-Net 17 "/L1" "L1"
- D6 1
+Net 16 "/L1" "L1"
  IC1 25
+ D6 1
  D5 2
-Net 18 "/L2" "L2"
- IC1 24
+Net 17 "/L2" "L2"
  D8 1
  D7 2
-Net 19 "/L3" "L3"
+ IC1 24
+Net 18 "/L3" "L3"
  IC1 23
- D10 1
  D9 2
+ D10 1
+Net 19 "" ""
+ R8 1
+ C5 1
+ R7 2
 Net 20 "" ""
- RV1 1
  R8 2
+ RV1 1
 Net 21 "" ""
- D2 1
- IC1 12
  R5 1
+ IC1 12
+ D2 1
 Net 22 "" ""
- R2 2
  R3 1
+ R2 2
  IC1 13
 Net 23 "" ""
+ R9 1
+ J2 2
  J2 3
  C6 2
- J2 2
- R9 1
 Net 24 "" ""
- U1 6
  R6 2
+ U1 6
  C3 2
 Net 25 "/SCK" "SCK"
  U1 3
- J1 3
  IC1 19
+ J1 3
 Net 26 "/MISO" "MISO"
- J1 1
  IC1 18
+ J1 1
 Net 27 "/MOSI" "MOSI"
  U1 4
- IC1 17
  J1 4
+ IC1 17
 Net 28 "/BT2" "BT2"
  SW3 2
  SW3 1

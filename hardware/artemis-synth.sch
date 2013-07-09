@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Fri 05 Jul 2013 12:34:07 PM EDT
+EESchema Schematic File Version 2  date Tue 09 Jul 2013 11:47:29 AM EDT
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -43,7 +43,7 @@ $Descr USLetter 11000 8500
 encoding utf-8
 Sheet 1 1
 Title "Artemis Synthesizer"
-Date "5 jul 2013"
+Date "9 jul 2013"
 Rev "B"
 Comp "Christopher Woodall (c) 2012-2013"
 Comment1 "Creative Commons Attribution-ShareAlike 3.0 Unported License."
@@ -56,10 +56,10 @@ Optoloader\nSettings Interface
 $Comp
 L +3.3V #PWR01
 U 1 1 4FE933FC
-P 5850 5675
-F 0 "#PWR01" H 5850 5635 30  0001 C CNN
-F 1 "+3.3V" H 5850 5785 30  0000 C CNN
-	1    5850 5675
+P 5850 5625
+F 0 "#PWR01" H 5850 5585 30  0001 C CNN
+F 1 "+3.3V" H 5850 5735 30  0000 C CNN
+	1    5850 5625
 	-1   0    0    -1  
 $EndComp
 $Comp
@@ -653,7 +653,7 @@ L R_US R2
 U 1 1 51D3224A
 P 5250 5975
 F 0 "R2" H 5405 6100 50  0000 C CNN
-F 1 "1k" H 5400 5950 50  0000 C CNN
+F 1 "100k" H 5400 5950 50  0000 C CNN
 F 2 "R4" H 5400 6050 50  0001 C CNN
 	1    5250 5975
 	-1   0    0    -1  
@@ -663,7 +663,7 @@ L R_US R3
 U 1 1 51D32277
 P 5250 6750
 F 0 "R3" H 5405 6875 50  0000 C CNN
-F 1 "1k" H 5400 6775 50  0000 C CNN
+F 1 "100k" H 5400 6775 50  0000 C CNN
 F 2 "R4" H 5400 6875 50  0001 C CNN
 	1    5250 6750
 	-1   0    0    -1  
@@ -743,7 +743,7 @@ L C C6
 U 1 1 51D345AA
 P 9000 2850
 F 0 "C6" V 8825 2925 50  0000 L CNN
-F 1 "33uF" V 8725 2825 50  0000 L CNN
+F 1 "10uF" V 8725 2825 50  0000 L CNN
 F 2 "C1V8" H 8825 2850 50  0001 C CNN
 	1    9000 2850
 	0    -1   -1   0   
@@ -935,25 +935,7 @@ Connection ~ 800  7475
 Wire Wire Line
 	800  7475 900  7475
 Wire Wire Line
-	800  5275 800  5375
-Wire Wire Line
-	800  5375 800  5775
-Wire Wire Line
-	800  5775 800  5875
-Wire Wire Line
-	800  5875 800  6300
-Wire Wire Line
-	800  6300 800  6400
-Wire Wire Line
-	800  6400 800  6850
-Wire Wire Line
-	800  6850 800  6950
-Wire Wire Line
-	800  6950 800  7375
-Wire Wire Line
-	800  7375 800  7475
-Wire Wire Line
-	800  7475 800  7650
+	800  5275 800  7650
 Wire Wire Line
 	800  5275 900  5275
 Wire Wire Line
@@ -1007,9 +989,7 @@ Connection ~ 2525 7350
 Wire Wire Line
 	2525 7350 2625 7350
 Wire Wire Line
-	1725 1950 1725 2025
-Wire Wire Line
-	1725 2025 1725 2100
+	1725 1950 1725 2100
 Wire Wire Line
 	5100 4075 5350 4075
 Wire Wire Line
@@ -1019,14 +999,10 @@ Wire Wire Line
 Wire Wire Line
 	5850 1975 5850 2050
 Wire Wire Line
-	6350 1850 6350 1975
-Wire Wire Line
-	6350 1975 6350 2025
+	6350 1850 6350 2025
 Connection ~ 3100 2375
 Wire Wire Line
-	3050 2375 3100 2375
-Wire Wire Line
-	3100 2375 3200 2375
+	3050 2375 3200 2375
 Wire Wire Line
 	6350 1350 6350 1350
 Wire Wire Line
@@ -1034,9 +1010,7 @@ Wire Wire Line
 Wire Wire Line
 	3200 4275 3050 4275
 Wire Wire Line
-	3050 4275 3050 4375
-Wire Wire Line
-	3050 4375 3050 4525
+	3050 4275 3050 4525
 Wire Wire Line
 	9625 1075 10150 1075
 Wire Wire Line
@@ -1061,9 +1035,7 @@ Wire Wire Line
 	3200 4375 3050 4375
 Connection ~ 3050 4375
 Wire Wire Line
-	3100 1875 3100 2075
-Wire Wire Line
-	3100 2075 3100 2375
+	3100 1875 3100 2375
 Connection ~ 3100 2075
 Wire Wire Line
 	5750 2675 5750 2675
@@ -1077,38 +1049,16 @@ Wire Wire Line
 Wire Wire Line
 	7000 1975 7000 2050
 Wire Wire Line
-	6450 1900 6450 1975
-Wire Wire Line
-	6450 1975 6450 2025
+	6450 1900 6450 2025
 Connection ~ 6450 1975
 Wire Wire Line
 	5350 3875 5100 3875
 Wire Wire Line
-	1725 1200 1725 1250
-Wire Wire Line
-	1725 1250 1725 1350
+	1725 1200 1725 1350
 Wire Wire Line
 	2625 5250 2525 5250
 Wire Wire Line
-	2525 5250 2525 5350
-Wire Wire Line
-	2525 5350 2525 5750
-Wire Wire Line
-	2525 5750 2525 5850
-Wire Wire Line
-	2525 5850 2525 6275
-Wire Wire Line
-	2525 6275 2525 6375
-Wire Wire Line
-	2525 6375 2525 6825
-Wire Wire Line
-	2525 6825 2525 6925
-Wire Wire Line
-	2525 6925 2525 7350
-Wire Wire Line
-	2525 7350 2525 7450
-Wire Wire Line
-	2525 7450 2525 7625
+	2525 5250 2525 7625
 Wire Wire Line
 	2525 7450 2625 7450
 Connection ~ 2525 7450
@@ -1140,21 +1090,13 @@ Wire Wire Line
 Wire Wire Line
 	8900 6050 8900 6200
 Wire Wire Line
-	8025 5550 8025 5600
+	8025 5550 8025 5650
 Wire Wire Line
-	8025 5600 8025 5650
+	8475 5550 8475 5650
 Wire Wire Line
-	8475 5550 8475 5600
+	8900 5550 8900 5650
 Wire Wire Line
-	8475 5600 8475 5650
-Wire Wire Line
-	8900 5550 8900 5600
-Wire Wire Line
-	8900 5600 8900 5650
-Wire Wire Line
-	9375 5550 9375 5600
-Wire Wire Line
-	9375 5600 9375 5650
+	9375 5550 9375 5650
 Wire Wire Line
 	9100 5600 9375 5600
 Wire Wire Line
@@ -1172,11 +1114,7 @@ Wire Wire Line
 Wire Wire Line
 	5750 2375 5750 2375
 Wire Wire Line
-	5850 5675 5850 5725
-Wire Wire Line
-	5850 6125 5850 6450
-Wire Wire Line
-	5850 6450 5850 6525
+	5850 6125 5850 6525
 Wire Wire Line
 	6350 1350 6350 1250
 Wire Wire Line
@@ -1190,11 +1128,7 @@ Wire Wire Line
 Wire Wire Line
 	5750 2275 5750 2375
 Wire Wire Line
-	9200 2850 9300 2850
-Wire Wire Line
-	9300 2850 9600 2850
-Wire Wire Line
-	9600 2850 9650 2850
+	9200 2850 9650 2850
 Wire Wire Line
 	9450 2750 9650 2750
 Wire Wire Line
@@ -1206,9 +1140,7 @@ Wire Wire Line
 Wire Wire Line
 	8400 2525 8300 2525
 Wire Wire Line
-	7625 2525 7725 2525
-Wire Wire Line
-	7725 2525 7800 2525
+	7625 2525 7800 2525
 Wire Wire Line
 	7725 2575 7725 2525
 Connection ~ 7725 2525
@@ -1257,7 +1189,7 @@ Wire Wire Line
 	9600 3300 9650 3300
 Connection ~ 9600 2850
 Wire Wire Line
-	5250 6225 5250 6300
+	5250 6225 5250 6500
 Wire Wire Line
-	5250 6300 5250 6500
+	5850 5625 5850 5725
 $EndSCHEMATC
