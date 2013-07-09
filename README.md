@@ -18,13 +18,12 @@ There is a basic convention for digital signals on the PCB layout, which is the 
 
 [Current Documentation](http://ohm.bu.edu/cgi-bin/edf/SoundSynthesizer)
 
-## Licensing
-
-(c) Christopher Woodall 2012-2013, under a Creative Commons Attribution-ShareAlike 3.0 Unported License.
-
 ## Versioning
 
 The basic versioning method is `Version NUM Rev LETTER (vNUMrLETTER)`. The version number indicates major version changes (and more importantly the associated software version). The revision letter marks the board revision and does not restart with new versions.
 
 Branched projects are allowed to restart revision numbering and version numbering so long as the name of the project changes in some manner. This is requested to prevent confusion.
 
+## Licensing
+
+(c) Christopher Woodall 2012-2013, under a Creative Commons Attribution-ShareAlike 3.0 Unported License.
