@@ -1,6 +1,6 @@
 PRG            = main
 OBJ            = main.o
-PROGRAMMER     = usbasp
+PROGRAMMER     = avrispmkII
 PORT           = usb
 MCU_TARGET     = atmega328p
 AVRDUDE_TARGET = m328p
