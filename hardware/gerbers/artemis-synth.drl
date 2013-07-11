@@ -1,5 +1,5 @@
 M48
-;DRILL file {Pcbnew (2012-oct-18)-testing} date Thu 11 Jul 2013 02:07:37 PM EDT
+;DRILL file {Pcbnew (2012-oct-18)-testing} date Thu 11 Jul 2013 02:17:39 PM EDT
 ;FORMAT={2:4/ absolute / inch / suppress trailing zeros}
 FMAT,2
 INCH,LZ
@@ -11,6 +11,7 @@ T5C0.051
 T6C0.062
 T7C0.064
 T8C0.071
+T9C0.120
 %
 G90
 G05
@@ -220,5 +221,10 @@ T8
 X0605Y-0635
 X062469Y-061531
 X062469Y-065469
+T9
+X0605Y-058
+X0605Y-075
+X107Y-058
+X107Y-075
 T0
 M30
