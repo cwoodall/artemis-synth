@@ -1,10 +1,10 @@
-Cmp-Mod V01 Created by CvPcb (2012-oct-18)-testing date = Fri 05 Jul 2013 10:56:46 AM EDT
+Cmp-Mod V01 Created by CvPcb (2012-oct-18)-testing date = Thu 11 Jul 2013 01:44:42 PM EDT
 
 BeginCmp
 TimeStamp = /4FE8EE52;
-Reference = BT1;
+Reference = BAT1;
 ValeurCmp = 3_V_w/_2_AA_Batteries;
-IdModule  = 2PIN EXTERNAL WITH SUPPORT HOLES;
+IdModule  = 2PIN;
 EndCmp
 
 BeginCmp
@@ -38,15 +38,15 @@ EndCmp
 BeginCmp
 TimeStamp = /51D3459E;
 Reference = C5;
-ValeurCmp = .1uF;
+ValeurCmp = .22uF;
 IdModule  = C1;
 EndCmp
 
 BeginCmp
 TimeStamp = /51D345AA;
 Reference = C6;
-ValeurCmp = 33uF;
-IdModule  = C1V8;
+ValeurCmp = 1uF;
+IdModule  = C1;
 EndCmp
 
 BeginCmp
@@ -120,13 +120,6 @@ IdModule  = LED-3MM-CORRECTED;
 EndCmp
 
 BeginCmp
-TimeStamp = /4FDABFE3;
-Reference = IC1;
-ValeurCmp = ATMEGA328P;
-IdModule  = DIP-28__300;
-EndCmp
-
-BeginCmp
 TimeStamp = /4FDABF46;
 Reference = J1;
 ValeurCmp = AVR-ISP-6;
@@ -150,14 +143,14 @@ EndCmp
 BeginCmp
 TimeStamp = /51D3224A;
 Reference = R2;
-ValeurCmp = 1k;
+ValeurCmp = 100k;
 IdModule  = R4;
 EndCmp
 
 BeginCmp
 TimeStamp = /51D32277;
 Reference = R3;
-ValeurCmp = 1k;
+ValeurCmp = 100k;
 IdModule  = R4;
 EndCmp
 
@@ -185,14 +178,14 @@ EndCmp
 BeginCmp
 TimeStamp = /51D34598;
 Reference = R7;
-ValeurCmp = 1k;
+ValeurCmp = 680;
 IdModule  = R4;
 EndCmp
 
 BeginCmp
-TimeStamp = /51D3454A;
+TimeStamp = /51DECB38;
 Reference = R8;
-ValeurCmp = 1k;
+ValeurCmp = 220;
 IdModule  = R4;
 EndCmp
 
@@ -285,6 +278,13 @@ TimeStamp = /4FDE48FE;
 Reference = U1;
 ValeurCmp = MCP4921;
 IdModule  = DIP-8__300;
+EndCmp
+
+BeginCmp
+TimeStamp = /4FDABFE3;
+Reference = U2;
+ValeurCmp = ATMEGA328P;
+IdModule  = DIP-28__300;
 EndCmp
 
 EndListe
