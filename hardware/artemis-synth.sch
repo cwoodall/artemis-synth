@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Thu 11 Jul 2013 02:39:11 PM EDT
+EESchema Schematic File Version 2  date Thu 11 Jul 2013 03:24:18 PM EDT
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -646,8 +646,6 @@ F 2 "LED-3MM-CORRECTED" H 6100 5925 50  0001 C CNN
 	1    5950 5925
 	-1   0    0    -1  
 $EndComp
-Text Notes 6409 5750 2    40   ~ 0
-Fix annotation\nand footprint\nin future\ndesigns\n
 $Comp
 L R_US R2
 U 1 1 51D3224A

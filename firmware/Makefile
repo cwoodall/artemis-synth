@@ -6,7 +6,9 @@ MCU_TARGET     = atmega328p
 AVRDUDE_TARGET = m328p -F
 OPTIMIZE       = -Os -fpack-struct -fshort-enums -funsigned-char -funsigned-bitfields -ffunction-sections -fdata-sections
 DEFS           =
-LIBS           = HRL_SPI.c HRL_MCP492x.c inst.c buttons.c leds.c optoloader.c
+SRC_DIR        = src
+INCLUDE_DIR    = include
+LIBS           = src/HRL_SPI.c src/HRL_MCP492x.c src/inst.c src/buttons.c src/leds.c src/optoloader.c
 
 #BAUDRATE       = 57600
 HZ             = 8000000
@@ -18,9 +20,9 @@ CXX            = avr-gcc
 # Override is only needed by avr-lib build system.
 
 
-override CFLAGS        = -std=c99 -g -DF_CPU=$(HZ) -Wall $(OPTIMIZE) -mmcu=$(MCU_TARGET) $(DEFS)
-override LDFLAGS       = -Wl,-Map,$(PRG).map -s -Wl,--gc-sections
-override CPPFLAGS      = -std=c99 -g -DF_CPU=$(HZ) -Wall $(OPTIMIZE) -fvtable-gc -mmcu=$(MCU_TARGET) $(DEFS)
+override CFLAGS        = -std=c99 -g -DF_CPU=$(HZ) -Wall $(OPTIMIZE) -mmcu=$(MCU_TARGET) $(DEFS) -I$(INCLUDE_DIR)
+override LDFLAGS       = -Wl,-Map,$(PRG).map -s -Wl,--gc-sections -I$(INCLUDE_DIR)
+override CPPFLAGS      = -std=c99 -g -DF_CPU=$(HZ) -Wall $(OPTIMIZE) -fvtable-gc -mmcu=$(MCU_TARGET) $(DEFS) -I$(INCLUDE_DIR)
 
 OBJCOPY        = avr-objcopy
 OBJDUMP        = avr-objdump
