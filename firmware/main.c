@@ -1,5 +1,9 @@
-/** Artemis Synthesizer v2rC
+/** 
+ *  Artemis Synthesizer v2.00 Firmware
+ *  Date: 2013-07-15  
  *
+ *  Copyright (c) 2012-2013 Christopher Woodall 
+ *  MIT License
  */
 #define F_CPU 8000000
 #include <avr/io.h>

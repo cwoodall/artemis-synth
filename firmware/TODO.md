@@ -1,4 +1,3 @@
 # TODO LIST
 
-* Move over to 8MHz as the central oscillator
-* Test against speakers and headphones.
+* Make one button switch scales and the other octaves

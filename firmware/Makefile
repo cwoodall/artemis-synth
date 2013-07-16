@@ -1,3 +1,4 @@
+## Makefile for Artemis Synthesizer Version 2
 PRG            = main
 OBJ            = main.o
 PROGRAMMER     = avrispmkII
