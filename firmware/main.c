@@ -112,9 +112,9 @@ void setupControlTimer();
 uint8_t scale_i = 0;
 uint16_t scales[4][SCALE_LENGTH] = {
   {C5, D5, E5, F5, G5, A5, B5, C6},
-  {C4, D4, E4, G4, A4, C5, D5, E5},
-  {C4, Ds4, F4, Fs4, G4, As4, C5, Ds5},
-  {C4, D4, Ds4, F4, G4, A4, As4, C5}
+  {C5, D5, E5, G5, A5, C6, D6, E6},
+  {C5, Ds5, F5, Fs5, G5, As5, C6, Ds6},
+  {C5, D5, Ds5, F5, G5, A5, As5, C6}
 };
 
 uint16_t poly_buffer[8] = {0,0,0,0,0,0,0,0};
@@ -374,7 +374,7 @@ int main(void)
 			}
 		}
 		settings_prev = settings;
-    }
+	}
 	return 0;
 }
 
@@ -567,7 +567,7 @@ ISR(TIMER1_COMPA_vect)
 	
 	INCREMENT_NOTE(poly_buffer[0], inc[0]);
 	INCREMENT_NOTE(poly_buffer[1], inc[1]);
-	INCREMENT_NOTE(poly_buffer[2], inc[2]);
+  INCREMENT_NOTE(poly_buffer[2], inc[2]);
 	INCREMENT_NOTE(poly_buffer[3], inc[3]);
 	INCREMENT_NOTE(poly_buffer[4], inc[4]);
 	INCREMENT_NOTE(poly_buffer[5], inc[5]);

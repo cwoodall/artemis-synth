@@ -1,0 +1,9 @@
+To program type
+
+> sudo bash program.sh
+
+After programming is done it will prompt you to either hit ENTER to continue
+(program a new chip) or ^C (Control C) to exit.
+
+Please check over output of AVR Dude to verify that programming went as
+expected.
