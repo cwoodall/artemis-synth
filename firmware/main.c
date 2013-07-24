@@ -111,10 +111,10 @@ void setupControlTimer();
 #define SCALE_LENGTH 8
 uint8_t scale_i = 0;
 uint16_t scales[4][SCALE_LENGTH] = {
-    {C6, D6, E6, F6, G6, A6, B6, C7},
-	{C5, D5, E5, G5, A5, C6, D6, E6},
-	{C5, Ds5, F5, Fs5, G5, As5, C6, Ds6},
-	{C5, D5, Ds5, F5, G5, A5, As5, C6}
+  {C5, D5, E5, F5, G5, A5, B5, C6},
+  {C4, D4, E4, G4, A4, C5, D5, E5},
+  {C4, Ds4, F4, Fs4, G4, As4, C5, Ds5},
+  {C4, D4, Ds4, F4, G4, A4, As4, C5}
 };
 
 uint16_t poly_buffer[8] = {0,0,0,0,0,0,0,0};
@@ -412,7 +412,7 @@ ISR(TIMER2_COMPA_vect)
 			setDisplay(&led_display, shiftOnes(scale_i+1));
 			disableOptoloader(&optoloader);
 			opto_enable_ctr = 0;
-
+			
 			eeprom_write_block((const void *)sequencer, (void *)sequencer_ee, 64);
 
 			setupSampleRate11kHz();
@@ -421,7 +421,7 @@ ISR(TIMER2_COMPA_vect)
 		if (opto_enable_ctr > 0) {
 			opto_enable_ctr += 1;
 		}      
-    } else {
+	} else {
 		if (opto_enable_ctr == 0xFF) {
 			optoloader.flags |= OPTO_ACTI_bm;
 			setDisplay(&led_display, 0xFF);
@@ -467,13 +467,13 @@ ISR(TIMER2_COMPA_vect)
 				sequencer_metronome = 0;
 			}
 		}
-    }
+	}
 
 	if (settings_debounce == 30) {
 		settings_debounce = 0;
-    } else if (settings_debounce >= 1) {
+	} else if (settings_debounce >= 1) {
 		settings_debounce += 1;
-    }
+	}
 
 	led_refresh_flag ^= 0x01;
 	led_refresh_flag |= 0x02;
@@ -518,10 +518,10 @@ ISR(ANALOG_COMP_vect)
 						// Simplify this code...
 						// Also % 256 -> and 255 (& 255)
 						temp_harmonics = (((harmonics_amplitudes[0]*(sine_table[i]<<2))>>4) + 
-										  ((harmonics_amplitudes[1]*(sine_table[(i*2)%256]<<2))>>4) + 
-										  ((harmonics_amplitudes[2]*(sine_table[(i*4)%256]<<2))>>4) + 
-										  ((harmonics_amplitudes[3]*(sine_table[(i*8)%256]<<2))>>4) + 
-										  ((harmonics_amplitudes[4]*(sine_table[(i*16)%256]<<2))>>4))/5;
+															((harmonics_amplitudes[1]*(sine_table[(i*2)%256]<<2))>>4) + 
+															((harmonics_amplitudes[2]*(sine_table[(i*4)%256]<<2))>>4) + 
+															((harmonics_amplitudes[3]*(sine_table[(i*8)%256]<<2))>>4) + 
+															((harmonics_amplitudes[4]*(sine_table[(i*16)%256]<<2))>>4))/5;
 
 						harmonics[i] = (uint16_t) temp_harmonics;
 					}
@@ -536,8 +536,8 @@ ISR(ANALOG_COMP_vect)
 			}
 		}
 		msg_ctr += 1;
-    }
-
+	}
+	
 	TIMSK2 |= (1<<OCIE2A);
 }
 
@@ -575,13 +575,13 @@ ISR(TIMER1_COMPA_vect)
 	INCREMENT_NOTE(poly_buffer[7], inc[7]);
 	
 	final = (GET_WAVE_VALUE(harmonics, 0) + 
-			 GET_WAVE_VALUE(harmonics, 1) +
-			 GET_WAVE_VALUE(harmonics, 2) +
-			 GET_WAVE_VALUE(harmonics, 3) +
-			 GET_WAVE_VALUE(harmonics, 4) +
-			 GET_WAVE_VALUE(harmonics, 5) +
-			 GET_WAVE_VALUE(harmonics, 6) +
-			 GET_WAVE_VALUE(harmonics, 7))>>2;
+					 GET_WAVE_VALUE(harmonics, 1) +
+					 GET_WAVE_VALUE(harmonics, 2) +
+					 GET_WAVE_VALUE(harmonics, 3) +
+					 GET_WAVE_VALUE(harmonics, 4) +
+					 GET_WAVE_VALUE(harmonics, 5) +
+					 GET_WAVE_VALUE(harmonics, 6) +
+					 GET_WAVE_VALUE(harmonics, 7))>>2;
 	
 	writeMCP492x(final, MCP492x_CONFIG);
 }
