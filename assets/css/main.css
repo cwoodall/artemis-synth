@@ -1,0 +1,92 @@
+#header {
+    position: fixed;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 350px;
+    top: 0;
+}
+
+.containingbox
+{
+		height: 350px;
+}
+
+.floatleft
+{
+		float: left;
+		width: 50px;
+		height: 350px;
+}
+.floatleft2
+{
+		float: left;
+		width: 950px;
+		height: 350px;
+}
+.floatleft3
+{
+		float: left;
+		width: 100px;
+		height: 350px;
+}
+
+#content {
+    position: fixed;
+    top: 350px;
+    bottom: 0px;
+		left: 0;
+    right: 0;
+		overflow: auto;
+		
+
+}
+
+
+#feedback { font-size: 1.4em; }
+#selectable0 .ui-selecting { background: #FECA40; }
+#selectable0 .ui-selected { background: #F39814; color: white; }
+#selectable0 { list-style-type: none; margin: 0; padding: 0; width: 95%; }
+#selectable0 li { margin: 2px; padding: 0.4em; font-size: 1.4em; height: 18px; }
+
+#selectable1 .ui-selecting { background: #FECA40; }
+#selectable1 .ui-selected { background: #00FF00; color: white; }
+#selectable1 { list-style-type: none; margin: 0; padding: 0; width: 95%; }
+#selectable1 li { margin: 2px; padding: 0.4em; font-size: 1.4em; height: 18px; }
+
+#selectable2 .ui-selecting { background: #FECA40; }
+#selectable2 .ui-selected { background: #00FFFF; color: white; }
+#selectable2 { list-style-type: none; margin: 0; padding: 0; width: 95%; }
+#selectable2 li { margin: 2px; padding: 0.4em; font-size: 1.4em; height: 18px; }
+
+#selectable3 .ui-selecting { background: #FECA40; }
+#selectable3 .ui-selected { background: #FF00FF; color: white; }
+#selectable3 { list-style-type: none; margin: 0; padding: 0; width: 95%; }
+#selectable3 li { margin: 2px; padding: 0.4em; font-size: 1.4em; height: 18px; }
+
+#selectable4 .ui-selecting { background: #FECA40; }
+#selectable4 .ui-selected { background: #FF0000; color: white; }
+#selectable4 { list-style-type: none; margin: 0; padding: 0; width: 95%; }
+#selectable4 li { margin: 2px; padding: 0.4em; font-size: 1.4em; height: 18px; }
+
+#selectable5 .ui-selecting { background: #FECA40; }
+#selectable5 .ui-selected { background: #000A00; color: white; }
+#selectable5 { list-style-type: none; margin: 0; padding: 0; width: 95%; }
+#selectable5 li { margin: 2px; padding: 0.4em; font-size: 1.4em; height: 18px; }
+
+#selectable6 .ui-selecting { background: #FECA40; }
+#selectable6 .ui-selected { background: #0000FF; color: white; }
+#selectable6 { list-style-type: none; margin: 0; padding: 0; width: 95%; }
+#selectable6 li { margin: 2px; padding: 0.4em; font-size: 1.4em; height: 18px; }
+
+#selectable7 .ui-selecting { background: #FECA40; }
+#selectable7 .ui-selected { background: #808000; color: white; }
+#selectable7 { list-style-type: none; margin: 0; padding: 0; width: 95%; }
+#selectable7 li { margin: 2px; padding: 0.4em; font-size: 1.4em; height: 18px; }
+
+#selectable8 .ui-selecting { background: #FECA40; }
+#selectable8 .ui-selected { background: #000000; color: white; }
+#selectable8 { list-style-type: none; margin: 0; padding: 0; width: 7%; }
+#selectable8 li { margin: 2px; padding: 0.4em; font-size: 1.4em; height: 18px; }
+
+
