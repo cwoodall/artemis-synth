@@ -78,8 +78,9 @@
 					<br/>
 					<input type="button" value="Waveform" onClick="transmit(1)"/>
 					<br />
-					<input type="range" id="delay" min="150" max="200" value="150" step="50" onchange="showDelay(this.value);" />
-					<span id="delay_range">150</span>
+                    <div style="visibility:hidden">
+					  <input type="range" id="delay" min="150" max="200" value="150" step="50" onchange="showDelay(this.value);" />
+					  <span id="delay_range">150</span>
 					</div>
 				</div>
 
