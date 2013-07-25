@@ -46,12 +46,14 @@
       <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="navbar-inner">
             <a class="brand" href="#" style="margin-left:10px">Artemis Synthesizer</a>
+            <p style="margin-right:20px" class="navbar-text pull-right">Get Sources from <a href="http://www.github.com/cwoodall/artemis-synth">Github</a></p>
             <ul class="nav">
               <li class="active"><a href="#">To Top</a></li>
               <li><a href="#sequencer">Sequencer</a></li>
               <li><a href="#harmonics">Harmonics</a></li>
+
             </ul>
-            
+
         </div>
       </div>
 
@@ -65,7 +67,7 @@
 				<div class="span3"> 
                   <div class="well">
 					<h2>Programmer</h2>
-                    <div id="data_box" style="width:100%;height:200px;border:2px solid black;"></div>
+                    <div id="data_box" style="width:100%;height:200px;border:2px solid black; background-color:white"></div>
 					<script type="text/javascript">
 						var dCanvas = document.getElementById("data_box");
 					</script>
@@ -107,12 +109,14 @@
 							}
 						</script> 
 						<ol id="selectable8"></ol><br/>
-						&nbsp;&nbsp;Final Waveform:<canvas id="final" width="900" height="200"></canvas>
+					    <h3>Final Waveform</h3>
+                        <canvas id="final" height="200" width="300px"></canvas>
 					</div>
 					
 					<div class="row-fluid">
-					<h3><a href="#">Fundamental</a></h3>
+					<h3>Fundamental</h3>
 						<div>
+
 							&nbsp;&nbsp;<input type="range" id="fund_int" min="0" max="100" value="100" step="25" onchange="showValue(this.value);ClearAndRedraw();waveform();playAudio(0,0,9)" />
 							
 							<span id="fund_range">100</span>
@@ -123,12 +127,13 @@
 								}
 							</script>
 							
+							<div><canvas id="fund" width="300" height="200"></canvas></div>
+
 							
-							<div style="text-align: center"><canvas id="fund" width="900" height="200"></canvas></div>
 						</div>
-						
+						<hr/>
 						<h3><a href="#">1st Harmonic</a></h3>
-					<div>
+					    <div>
 						&nbsp;&nbsp;<input type="range" id="harm1_int" min="0" max="100" value="100" step="25" onchange="showValue1(this.value);ClearAndRedraw();waveform();playAudio(0,0,9)" />
 						
 						<span id="harm1_range">100</span>
@@ -138,12 +143,11 @@
 							document.getElementById("harm1_range").innerHTML=newValue;
 							}
 						</script>  
+
+					      <div><canvas id="harm1" width="300" height="200"></canvas></div>
 						
-						<br/>
-						<div style="text-align: center"><canvas id="harm1" width="900" height="200"></canvas></div>
-						<br/>
 					</div>
-					
+					<hr/>
 					<h3><a href="#">2nd Harmonic</a></h3>
 					<div>
 						&nbsp;&nbsp;<input type="range" id="harm2_int" min="0" max="100" value="100" step="25" onchange="showValue2(this.value);ClearAndRedraw();waveform();playAudio(0,0,9)" />
@@ -155,12 +159,22 @@
 							}
 						</script> 
 						<br/>
-						<div style="text-align: center"><canvas id="harm2" width="900" height="200"></canvas></div>
+						<div><canvas id="harm2" width="300" height="200"></canvas></div>
 					</div>
 					
 				</div>
 			</div>
 			
 		</div>
+        
+        <div id="footer">
+          <hr />
+          <div class="row-fluid">
+            <div class="span6">Website by Christopher Woodall & Sam Damask</div>
+            <div class="span6">
+              <p class="pull-right">Powered by <a href="http://twitter.github.io/bootstrap">Bootstrap</p></a>
+            </div>
+          </div>
+        </div>
 	</body>
 </html>
